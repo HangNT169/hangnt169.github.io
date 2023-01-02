@@ -13,7 +13,7 @@
 title: Blog Github
 
 # Your name to show in the footer
-author: Nguyễn Công Thắng
+author: Nguyễn Thúy Hằng
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -47,13 +47,9 @@ round-avatar: true
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: congthang25092003@gmail.com
+  email: hangnt169@fpt.edu.vn
   # rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: thang.250903
-  github: ThangncPH26123
-  instagram: victory_nguyen.2509
-  twitter: kevin de bruyne
-  youtube: channel/UCvrif-I2SWtM659etN_QOeA
+  github: HangNT169
 #  medium: yourname
 #  reddit: yourname
 #  linkedin: daattali
