@@ -3,7 +3,7 @@ layout: post
 title: Hướng dẫn tạo 1 project spring boot - jsp
 subtitle: Hướng dẫn tạo 1 project spring boot - jsp
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/sourcetree.png
+thumbnail-img: /assets/img/taoproject.jpg
 share-img: /assets/img/path.jpg
 tags: [Hướng dẫn tạo 1 project spring boot - jsp]
 ---

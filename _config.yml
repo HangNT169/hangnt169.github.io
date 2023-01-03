@@ -21,8 +21,7 @@ author: Nguyễn Thúy Hằng
 
 navbar-links:
   About Me:
-    - My facebook: "https://www.facebook.com/thang.250903"
-    - My github: "https://github.com/ThangncPH26123"
+    - My github: "https://github.com/HangNT169"
 
 ################
 # --- Logo --- #
@@ -88,7 +87,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "https://thangncph26123.github.io/"
+url-pretty: "https://hangnt169.github.io/"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
