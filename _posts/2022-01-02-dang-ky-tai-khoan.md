@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Đăng ký tài khoản inteliji Ultimate bằng mail FPT
-subtitle: Đăng ký tài khoản inteliji Ultimate bằng mail FPT
+title: Đăng ký tài khoản Inteliji Ultimate bằng mail FPT
+subtitle: Đăng ký tài khoản Inteliji Ultimate bằng mail FPT
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/sourcetree.png
+thumbnail-img: /assets/img/inteliji.png
 share-img: /assets/img/path.jpg
-tags: [Đăng ký tài khoản inteliji Ultimate bằng mail FPT]
+tags: [Đăng ký tài khoản Inteliji Ultimate bằng mail FPT]
 ---
 
 Tạo tài khoản jetbrains bằng gmail fpt

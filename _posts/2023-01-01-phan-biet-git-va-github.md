@@ -3,7 +3,7 @@ layout: post
 title: Git và Github
 subtitle: Phân biệt Git và Github
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/sourcetree.png
+thumbnail-img: /assets/img/gitvagithub.png
 share-img: /assets/img/path.jpg
 tags: [Phân biệt Git và Github]
 ---
