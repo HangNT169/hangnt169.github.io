@@ -27,4 +27,41 @@ Tạo project
 
 - B1: Chọn new project -> next -> create
 
+![#######](/assets/img/anh67.png) 
+
+![#######](/assets/img/anh68.png) 
+
+Cấu trúc thư mục
+
+![#######](/assets/img/anh69.png) 
+
+* ## File pom.xml
+
+Thực hiện dependency để chạy dự án
+
+![#######](/assets/img/anh70.png) 
+
+Để cập nhật lại file pom nhấn chuột phải -> maven -> reload project
+
+* ## Tạo class với file hello trong package controller
+
+Đánh dấu class là controller bằng cách sử dụng annotation @Controller
+
+![#######](/assets/img/anh71.png) 
+
+* ## Hello.Jsp
+
+![#######](/assets/img/anh72.png) 
+
+* ## Cấu hình application.properties
+
+![#######](/assets/img/anh73.png) 
+
+Nhấn http://localhost:8080/ trong trình duyệt, kết quả sau sẽ xuất hiện.
+
+* ## Kết bài
+
+Trong bài viết này, chúng ta đã học cách tạo 1 project spring boot - jsp.
+Tất cả các mẫu mã hiển thị trong bài viết đều có sẵn trên github.
+
 ## The End
