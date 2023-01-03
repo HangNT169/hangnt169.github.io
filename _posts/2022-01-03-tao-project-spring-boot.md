@@ -39,7 +39,7 @@ Cấu trúc thư mục
 
 Thực hiện dependency để chạy dự án
 
-![#######](/assets/img/anh70.png) 
+![#######](/assets/img/anh70.jpg) 
 
 Để cập nhật lại file pom nhấn chuột phải -> maven -> reload project
 
@@ -47,15 +47,15 @@ Thực hiện dependency để chạy dự án
 
 Đánh dấu class là controller bằng cách sử dụng annotation @Controller
 
-![#######](/assets/img/anh71.png) 
+![#######](/assets/img/anh71.jpg) 
 
 * ## Hello.Jsp
 
-![#######](/assets/img/anh72.png) 
+![#######](/assets/img/anh72.jpg) 
 
 * ## Cấu hình application.properties
 
-![#######](/assets/img/anh73.png) 
+![#######](/assets/img/anh73.jpg) 
 
 Nhấn http://localhost:8080/ trong trình duyệt, kết quả sau sẽ xuất hiện.
 
