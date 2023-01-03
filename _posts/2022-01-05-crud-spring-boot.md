@@ -264,14 +264,12 @@ public class SinhVienController {
         model.addAttribute("data",sinhViens);
         return "index"; // return file 
     }
-
 }
 
 
 * index.jsp
 
-> 
-<!-- 
+```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -283,7 +281,7 @@ public class SinhVienController {
 </head>
 <body >
 <div class="container mt-3">
->
+
     <h1>Add Sinh vien Form</h1>
     <a href="addSinhVien" class="btn btn-primary"> Add Sinh Vien </a>
     <div class="row">
@@ -316,8 +314,7 @@ public class SinhVienController {
 </body>
 
 </html>
-
- -->
+```
 
 * ### Thêm mới một sinh viên
 
