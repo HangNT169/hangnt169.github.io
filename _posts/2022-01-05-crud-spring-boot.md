@@ -24,7 +24,8 @@ Trước khi thực hiện bất kỳ thao tác nào trên dữ liệu, bạn c�
 
 Bạn cần bao gồm các phụ thuộc bắt buộc trong tập lệnh pom.xml để làm việc trên ứng dụng này bằng Spring Boot JPA.
 
-> <dependency>
+```
+ <dependency>
 
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -98,10 +99,11 @@ Bạn cần bao gồm các phụ thuộc bắt buộc trong tập lệnh pom.xml
             <version>1.2</version>
         </dependency>
 } 
+```
 
 Config trong file application.properties
 
-> 
+```
 spring.datasource.url=jdbc:mysql://localhost:3306/**tên dự database**
 spring.datasource.username= ** username **
 spring.datasource.password=  ** password**
@@ -110,13 +112,16 @@ spring.datasource.sql-script-encoding=UTF-8
 spring.jpa.properties.hibernate.globally_quoted_identifiers=true
 spring.jpa.hibernate.ddl-auto=none
 spring.jpa.show-sql=true
+
 spring.mvc.view.prefix: /WEB-INF/view/
 spring.mvc.view.suffix: .jsp
+```
 
 * ### Lớp thực thể (Entity Class)
 Giả sử chúng ta có lớp thực thể sau được gọi SinhVien.
 
-> package com.example.demo.model;
+```
+package com.example.demo.model;
 
 import lombok.Data;
 import javax.persistence.Column;
@@ -140,22 +145,25 @@ public class SinhVien {
     @Column(name = "ten_sinh_vien", nullable = true)
     private String tenSinhVien;
 }
+```
 
 * Các annotation mình sử dụng trong đoạn code trên là các annotation của JPA:
 
->
+```
 @Entity xác định lớp hiện tại là một entity.
 @Table xác định tên bảng ánh xạ sang.
 @Id xác định thuộc tính hiện tại là ID trong bảng CSDL.
 @GeneratedValue xác định kiểu sinh khóa chính, ở đây là AUTO_INCREMENT.
 @Column xác định thuộc tính hiện tại là một cột trong CSDL.
+```
 
 * ### Spring Data JPA Repository
 
 Spring Data JPA API cung cấp hỗ trợ kho lưu trữ cho Java Persistence API (JPA) và nó giúp giảm bớt sự phát triển của các ứng dụng cần truy cập các nguồn dữ liệu JPA.
 Tôi sẽ tạo giao diện kho lưu trữ và bạn không cần tạo bất kỳ phương thức nào trong giao diện này vì Spring cung cấp các phương thức để thực hiện các thao tác CRUD cơ bản.
 
-> package com.example.demo.repository;
+```
+package com.example.demo.repository;
 
 import com.example.demo.model.SinhVien;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -187,6 +195,7 @@ public interface SinhVienService {
     SinhVien findById(long id);
 
 }
+```
 
 * ### Implements
 
@@ -194,7 +203,8 @@ Lớp SinhVienServiceImpl ghi đè các phương thức của SinhVienService v�
 Bạn nhận được kết quả của các truy vấn nối từ kho lưu trữ và chuyển cho lớp điều khiển REST.
 Tôi sử dụng cùng một phương pháp để lưu hoặc cập nhật thông tin công ty mới hoặc hiện có tương ứng.
 
-> package com.example.demo.service.impl;
+```
+package com.example.demo.service.impl;
 
 import com.example.demo.model.SinhVien;
 import com.example.demo.repository.SinhVienRepo;
@@ -246,12 +256,14 @@ public class SinhVienServiceImpl  implements SinhVienService {
     }
 
 }
+```
 
 * ### Hiển thị dữ liệu sinh viên
 
 * Controller
 
-> @Controller
+```
+@Controller
 public class SinhVienController {
 
     @Autowired
@@ -265,7 +277,7 @@ public class SinhVienController {
         return "index"; // return file 
     }
 }
-
+```
 
 * index.jsp
 
@@ -320,7 +332,8 @@ public class SinhVienController {
 
 * Controller
 
-> @GetMapping("/addSinhVien")
+```
+@GetMapping("/addSinhVien")
     public String  viewAddSinhVien()
     {
         return "addSinhVien";
@@ -332,10 +345,12 @@ public class SinhVienController {
         sinhVienService.insert(sinhVien);
         return "redirect:/view";
     }
+```
 
 * addSinhVien.jsp
 
-> <%@ page language="java" contentType="text/html; charset=UTF-8"
+```
+<%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -369,12 +384,13 @@ public class SinhVienController {
 </body>
 
 </html>
+```
 
 * ### Cập nhật sinh viên
 
 * Controller
-
->    @PostMapping("/editSinhVien/updateSinhVien")
+```
+  @PostMapping("/editSinhVien/updateSinhVien")
     public String updateSinhVien( @ModelAttribute("sinhVien") SinhVien sinhVien){
         sinhVienService.update( sinhVien);
         return "redirect:/view";
@@ -386,10 +402,12 @@ public class SinhVienController {
         return "updateSinhVien";
 
     }
+```
 
 * updateSinhVien.jsp
 
-> <%@ page language="java" contentType="text/html; charset=UTF-8"
+```
+<%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -433,17 +451,19 @@ public class SinhVienController {
 </body>
 
 </html>
+```
 
 * ### Xóa Sinh viên
 
 * Controller
 
->   
+``` 
 @GetMapping("/deleteSinhVien/{id}")
     public String deleteSinhVien(@PathVariable("id") Long id){
         sinhVienService.delete(id);
         return "redirect:/view";
     }
+```
 
 * ## Kết luận
 Trong bài viết này, chúng ta đã học cách CRUD 1 project 1 bảng mysql spring boot vs jsp</h2>
