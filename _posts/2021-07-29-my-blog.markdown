@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "Tạo page github bằng Jekyll"
+date:   2021-07-29 15:48:33 +0700
+categories: jekyll update
+---
+# Giới thiệu:
+
+Github là dịch vụ lưu trữ mà nguồn quen thuộc với các bạn lập trình viên. Github cũng cung cấp dịch vụ Github Pages cho phép bạn lưu trữ các website của dự án, website cá nhân và tổ chức trên chính Github. Ưu điểm của việc sử dụng Github lưu trữ website cá nhân là:
+
+Nó hoàn toàn miễn phí. Nó đã giúp tôi tiết kiệm được hơn 1 triệu đồng (tôi phải sử dụng để thuê hosting WordPress bên Namecheap mỗi năm). Bạn có thể sử dụng tên miền miễn phí dạng .github.io, tuy nhiên cũng có thể dùng luôn các tên miền bạn sở hữu như anhquandev02.com :D
+
+Hỗ trợ Jekyll. Jekyll là phần mềm tạo các website tĩnh từ các file Markdown hoặc html. Thông thường bạn cần biên dịch tất cả các file sang mã html trước rồi mới upload lên các máy chủ lưu trữ. Nhưng với Github, điều đó là không cần thiết. Bạn có thể chỉnh sửa các bài viết, các trang của website sử dụng Jekyll và commit lên Github, vậy là xong.
+
+Khá quen thuộc với các lập trình viên. Nếu bạn là một lập trình viên thì việc commit code lên Github là một việc khá quen thuộc rồi. Làm website, viết blog theo cách đó chắc chắn sẽ làm bạn thấy thoải mái.
+
+# Tạo Website bằng JekyII:
+
+1. Tải và cài đặt Ruby+Devkit [Downloads rubyinstaller.org](https://rubyinstaller.org/)
+   
+2. Chạy ridk install đã cài đặt ở bước 1 sau hoàn thành, chọn cài đặt thứ 3
+
+    ![]()
+    ![img_1.png](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/img_1.png)
+3. Mở command prompt(cmd ) thay đổi( path) đến thư mục bạn muốn rồi cài đặt Jekyll and Bundler bằng dòng lệnh gem install jekyll bundler.
+    
+    ![img_2.png](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/img_2.png)    
+
+4. Tạo repository với tên định dạng như sau .github.io
+
+   ![img_3.png](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/img_3.png)
+
+5. Mở git bash và trỏ tới thư mục chứa nguồn file web và thay thế nó thành repo của bạn.
+    
+    ![img_4.png](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/img_4.png)
+
+6. Dùng git init tạo repo.
+
+7. Không khả dụng phát hành nguồn trang web của bạn. Ví dụ, nếu bạn muốn phát hành trang web ở thư mục docs như default branch thì tạo và thay đổi đường dẫn đến thư mục docs đó.
+
+    ![img_5.png](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/img_5.png)
+
+    Nếu bạn muốn phát hành với branch abc khác có thể tạo 1 branch bằng git checkout -b abc
+
+8. Tạo 1 trang Jekyll mới
+   
+    ![img_6.png](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/img_6.png) 
+
+9. Mở Gemfile mà Jekyll vừa tạo
+
+10. Thêm “#” ở đầu dòng bắt đầu bởi gem “Jekyll” để chú thích dòng lại
+
+    ![img_7.png](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/img_7.png)
+
+11. Thay đổi dòng lệnh # gem “github-pages” thành gem “github-pages”,
+    “~> GITHUB-PAGES-VERSION”, group: :jekyll_plugins với GITHUB-PAGES-VERSION 
+    xem ở [Dependency versions | GitHub Pages](https://pages.github.com/versions/)
+
+    ![img_8.png](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/img_8.png)
+
+12. Lưu và đóng Gemfile.
+
+13. Tại git bash chạy lệnh bundle update
+
+14. (Tuỳ chọn) thay đổi 1 số thông tin ở file _config.yml .
+
+15. (Tuỳ chọn) chạy thử web:
+
+    - Mở git bash chạy bundle install( Nếu như đã install 1 lần và bước sau chạy lỗi nên dùng bundle update hoặc xoá file gemfile.lock)
+
+    - Chạy lệnh bundle exec jekyll serve![img_9.png](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/img_9.png)
+
+    (Nếu dính lỗi webrick thì chạy lệnh bundle add webrick)
+
+    - Xem trang web bằng địa chỉ [http://localhost:4000](http://localhost:4000)
+
+16. Add và commit
+    
+    ![img_10.png](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/img_10.png)
+    ![img_11.png](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/img_11.png)
+    
+17. Add your GitHub repository as a remote (git remote add …)
+
+18. Đẩy lên repo(git push)
+
+19. Chọn nguồn phát hành trên trang github.com: Chọn setting-> Pages-> chọn sourse( bạn có thể thay đổi trạng thái phát hành public -> private hoặc ngược lại)
+
+Để xem web site click your site’s url( thường mất khoảng 20 phút)
