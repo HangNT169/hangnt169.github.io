@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "Tạo page github bằng Jekyll"
-date:   2021-07-29 15:48:33 +0700
-categories: jekyll update
+title: Tạo page github bằng Jekyll
+subtitle: Tạo page github bằng Jekyll
+cover-img: /assets/img/path.jpg
+thumbnail-img: /assets/img/taopagegithub.png
+share-img: /assets/img/path.jpg
+tags: [Tạo page github bằng Jekyll]
 ---
 # Giới thiệu:
 

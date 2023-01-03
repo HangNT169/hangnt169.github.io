@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "Deploy Java Servlet Tomcat bằng Docker"
-date: 2021-11-24 15:48:33 -0700
-categories: jekyll update
+title: Deploy Java Servlet Tomcat bằng Docker
+subtitle: Deploy Java Servlet Tomcat bằng Docker
+cover-img: /assets/img/path.jpg
+thumbnail-img: /assets/img/deploy.jpg
+share-img: /assets/img/path.jpg
+tags: [Deploy Java Servlet Tomcat bằng Docker]
 ---
-
 # Demo: Deploy Java Servlet Tomcat bằng Docker
 
 1. Cấu trúc Dynamic Web Project theo MVC như sau:

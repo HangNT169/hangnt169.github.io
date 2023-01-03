@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "Java web demo"
-date:   2021-11-3 15:48:33 +0700
-categories: jekyll update
+title: Java web demo
+subtitle: Java web demo
+cover-img: /assets/img/path.jpg
+thumbnail-img: /assets/img/ademo.png
+share-img: /assets/img/path.jpg
+tags: [Java web demo]
 ---
 # Demo: Servlet hello-world
 

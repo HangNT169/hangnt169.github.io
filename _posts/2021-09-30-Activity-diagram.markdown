@@ -1,10 +1,12 @@
 ---
 layout: post
-title:  "Activity diagram"
-date:   2021-09-30 15:48:33 +0700
-categories: jekyll update
+title: Activity diagram
+subtitle: Activity diagram
+cover-img: /assets/img/path.jpg
+thumbnail-img: /assets/img/actiaaa.png
+share-img: /assets/img/path.jpg
+tags: [Activity diagram]
 ---
-
 ## Activity diagram là gì?
 
 •Là một sơ đồ dung để mô hình hóa các hoạt động trong một quy trình nghiệp vụ.
