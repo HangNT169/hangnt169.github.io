@@ -2,9 +2,9 @@
 layout: post
 title: Java web demo
 subtitle: Java web demo
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/02.jpg
 thumbnail-img: /assets/img/ademo.png
-share-img: /assets/img/path.jpg
+share-img: /assets/img/02.jpg
 tags: [Java web demo]
 ---
 # Demo: Servlet hello-world

@@ -2,9 +2,9 @@
 layout: post
 title: Xử lý conflig
 subtitle: Hướng dẫn xử lý conflig khi làm việc với git
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/03.jpg
 thumbnail-img: /assets/img/conflig.avif
-share-img: /assets/img/path.jpg
+share-img: /assets/img/03.jpg
 tags: [Hướng dẫn xử lý conflig khi làm việc với git]
 ---
 

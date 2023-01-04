@@ -2,9 +2,9 @@
 layout: post
 title: Sử dụng Git
 subtitle: Hướng dẫn sử dụng Git
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/04.jpg
 thumbnail-img: /assets/img/github.png
-share-img: /assets/img/path.jpg
+share-img: /assets/img/04.jpg
 tags: [Hướng dẫn sử dụng Git]
 ---
 

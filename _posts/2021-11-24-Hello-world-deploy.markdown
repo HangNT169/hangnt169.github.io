@@ -2,9 +2,9 @@
 layout: post
 title: Deploy Java Servlet Tomcat bằng Docker
 subtitle: Deploy Java Servlet Tomcat bằng Docker
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/03.jpg
 thumbnail-img: /assets/img/deploy.jpg
-share-img: /assets/img/path.jpg
+share-img: /assets/img/03.jpg
 tags: [Deploy Java Servlet Tomcat bằng Docker]
 ---
 # Demo: Deploy Java Servlet Tomcat bằng Docker

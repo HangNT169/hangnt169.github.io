@@ -2,9 +2,9 @@
 layout: post
 title: Đăng ký tài khoản Inteliji Ultimate bằng mail FPT
 subtitle: Đăng ký tài khoản Inteliji Ultimate bằng mail FPT
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/01.jpg
 thumbnail-img: /assets/img/inteliji.png
-share-img: /assets/img/path.jpg
+share-img: /assets/img/01.jpg
 tags: [Đăng ký tài khoản Inteliji Ultimate bằng mail FPT]
 ---
 

@@ -2,9 +2,9 @@
 layout: post
 title: Activity diagram
 subtitle: Activity diagram
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/01.jpg
 thumbnail-img: /assets/img/actiaaa.png
-share-img: /assets/img/path.jpg
+share-img: /assets/img/01.jpg
 tags: [Activity diagram]
 ---
 ## Activity diagram là gì?

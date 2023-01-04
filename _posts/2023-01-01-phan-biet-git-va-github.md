@@ -2,9 +2,9 @@
 layout: post
 title: Git và Github
 subtitle: Phân biệt Git và Github
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/05.jpg
 thumbnail-img: /assets/img/gitvagithub.jpg
-share-img: /assets/img/path.jpg
+share-img: /assets/img/05.jpg
 tags: [Phân biệt Git và Github]
 ---
 

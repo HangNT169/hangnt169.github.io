@@ -2,9 +2,9 @@
 layout: post
 title: Đăng nhập ứng dụng, Website bằng tài khoản Google.
 subtitle: Đăng nhập ứng dụng, Website bằng tài khoản Google.
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/04.jpg
 thumbnail-img: /assets/img/loginaaa.png
-share-img: /assets/img/path.jpg
+share-img: /assets/img/04.jpg
 tags: [Đăng nhập ứng dụng, Website bằng tài khoản Google.]
 ---
 ## Giới thiệu

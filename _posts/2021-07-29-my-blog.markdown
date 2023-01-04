@@ -2,9 +2,9 @@
 layout: post
 title: Tạo page github bằng Jekyll
 subtitle: Tạo page github bằng Jekyll
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/03.jpg
 thumbnail-img: /assets/img/taopagegithub.png
-share-img: /assets/img/path.jpg
+share-img: /assets/img/03.jpg
 tags: [Tạo page github bằng Jekyll]
 ---
 # Giới thiệu:

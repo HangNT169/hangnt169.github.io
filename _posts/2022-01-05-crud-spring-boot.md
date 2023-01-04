@@ -2,9 +2,9 @@
 layout: post
 title:  CRUD 1 project 1 bảng mysql spring boot vs jsp
 subtitle:  CRUD 1 project 1 bảng mysql spring boot vs jsp
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/02.jpg
 thumbnail-img: /assets/img/crudspringboot.jpg
-share-img: /assets/img/path.jpg
+share-img: /assets/img/02.jpg
 tags: [ CRUD 1 project 1 bảng mysql spring boot vs jsp]
 ---
 
