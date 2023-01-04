@@ -2,9 +2,9 @@
 layout: post
 title: Tạo web application JSP Servlet sử dụng JSTL với Tomcat10 
 subtitle: Tạo web application JSP Servlet sử dụng JSTL với Tomcat10 
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/01.jpg
 thumbnail-img: /assets/img/webapplication.jpg
-share-img: /assets/img/path.jpg
+share-img: /assets/img/01.jpg
 tags: [Tạo web application JSP Servlet sử dụng JSTL với Tomcat10]
 ---
 
