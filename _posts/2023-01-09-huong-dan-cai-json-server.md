@@ -14,7 +14,7 @@ tags: [Hướng dẫn cài đặt Json Server]
 
 * B2: Mở VS Code -> Chọn mục extention -> Cài đặt Node Essentials
 
-* B3: Mở cửa sổ windows -> Tìm kiếm ứng dụng PowerShell -> Mở bằng Run as Admintractor
+* B3: Mở cửa sổ windows -> Tìm kiếm ứng dụng PowerShell -> Chuột phải -> Mở bằng Run as Admintractor
 
 * B4: Gõ lệnh: **Set-ExecutionPolicy Unrestricted**
 
