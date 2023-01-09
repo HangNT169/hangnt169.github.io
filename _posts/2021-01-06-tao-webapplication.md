@@ -107,6 +107,7 @@ Time is ${stuff}
 
 ![#######](/assets/img/anh89.png) 
 
-* Xem chi tiết code tại: <a>https://github.com/thangdtph27626/JSP_SERVLET.github.io</a>
+* Xem chi tiết code tại: [Markdown](https://github.com/thangdtph27626/JSP_SERVLET.github.io)
+ 
 
 ## The End
