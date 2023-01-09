@@ -101,13 +101,13 @@ Time is ${stuff}
 </body>
 ```
 
-* Tham khảo thêm tại: https://www.tutorialspoint.com/jsp/jsp_standard_tag_library.htm
+* Tham khảo thêm [tại đây](https://www.tutorialspoint.com/jsp/jsp_standard_tag_library.htm)
 
 * ### Kết quả
 
 ![#######](/assets/img/anh89.png) 
 
-* Xem chi tiết code tại: [Markdown](https://github.com/thangdtph27626/JSP_SERVLET.github.io)
+* Xem chi tiết code [tại đây](https://github.com/thangdtph27626/JSP_SERVLET.github.io)
  
 
 ## The End
