@@ -109,4 +109,6 @@ Time is ${stuff}
 
 * Xem chi tiết code tại: https://github.com/thangdtph27626/JSP_SERVLET.github.io
 
+{@vimeo: https://www.youtube.com/watch?v=RSfP6olzBI4&list=RDRSfP6olzBI4&start_radio=1}
+
 ## The End
