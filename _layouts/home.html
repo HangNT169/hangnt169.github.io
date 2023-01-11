@@ -128,7 +128,7 @@ layout: page
     } else if(page_input.value > Number(total)){
       window.open("/page" + total, "_self");
     }else{
-      window.open("/page" + page_input.value, "_self");
+      window.open("/page" + parseInt(page_input.value), "_self");
     }
   });
 </script>
