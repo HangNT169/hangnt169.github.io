@@ -120,6 +120,7 @@ layout: page
   let page_input = document.querySelector("#input-value");
   let total_pages = document.querySelector("#max-value");
   page_input.value = Number(page_current_index.value) + 1;
+  alert(page_current_index.value)
   page_input.addEventListener("change", function (event) {
     event.preventDefault();
     let total = total_pages.value.slice(-1);
