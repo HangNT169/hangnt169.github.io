@@ -90,13 +90,13 @@ layout: page
   </li>
   {% endif %} {% if paginator.previous_page %}
   <li class="page-item">
+    <input hidden value="{{ paginator.previous_page }}" id="page_current_index">
     <input
       type="number"
       id="input-value"
       min="1"
       max="{{ paginator.total_pages }}"
       style="width: 40px; border: none; appearance: none; text-align: center"
-      value="{{ ++paginator.previous_page }}"
     />
     <input
       style="width: 70px; border: none"
@@ -116,18 +116,18 @@ layout: page
 </ul>
 
 <script>
+  let page_current_index = document.querySelector("#page_current_index");
   let page_input = document.querySelector("#input-value");
   let total_pages = document.querySelector("#max-value");
+  page_input.value = page_input.value + 1;
   page_input.addEventListener("change", function (event) {
     event.preventDefault();
     let total = total_pages.value.slice(-1);
-    if (page_input.value > Number(total)) {
-      alert(total_pages.value.slice(-1))
-      window.open("/page" + total_pages.value.slice(-1), "_self");
-    }
     if (page_input.value <= 1) {
       window.open("/", "_self");
-    } else {
+    } else if(page_input.value > Number(total)){
+      window.open("/page" + total, "_self");
+    }else{
       window.open("/page" + page_input.value, "_self");
     }
   });
