@@ -34,7 +34,6 @@ common-js:
       const container = document.querySelector(".container-fluid");
       const toggle = document.querySelector(".toggle");
       toggle.addEventListener("click", () => {
-        document.body.style.backgroundColor = "black"
         container.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
