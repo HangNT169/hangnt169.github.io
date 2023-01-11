@@ -122,6 +122,7 @@ layout: page
     event.preventDefault();
     let total = total_pages.value.slice(-1);
     if (page_input.value > Number(total)) {
+      alert(total_pages.value.slice(-1))
       window.open("/page" + total_pages.value.slice(-1), "_self");
     }
     if (page_input.value <= 1) {
