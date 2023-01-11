@@ -1121,7 +1121,7 @@ pre {
 
 .toggle {
   cursor: pointer;
-  margin: auto 10px auto 10px;
+  margin: 12px 10px 12px 10px;
   transition: .3s linear;
   background-color: rgba(8, 8, 8, 0.575);
   color: #fff;
