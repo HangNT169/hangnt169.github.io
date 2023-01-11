@@ -26,9 +26,10 @@ common-js:
 
   <body>
     <div class="container-fluid">
-      {% include gtm_body.html %} {% include nav.html %} {{ content }} {%
-      include footer.html %} {% include footer-scripts.html %}
+      {% include gtm_body.html %} {% include nav.html %} {{ content }} 
     </div>
+    {%
+      include footer.html %} {% include footer-scripts.html %}
     <script>
       const container = document.querySelector(".container-fluid");
       const toggle = document.querySelector(".toggle");
