@@ -25,14 +25,15 @@ common-js:
   {% include head.html %}
 
   <body>
-    <div class="container">
+    <div class="container-fluid">
       {% include gtm_body.html %} {% include nav.html %} {{ content }} {%
       include footer.html %} {% include footer-scripts.html %}
     </div>
     <script>
-      const container = document.querySelector(".container");
+      const container = document.querySelector(".container-fluid");
       const toggle = document.querySelector(".toggle");
       toggle.addEventListener("click", () => {
+        document.body.classList.toggle('dark');
         container.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
