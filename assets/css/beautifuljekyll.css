@@ -1121,7 +1121,7 @@ pre {
 
 .toggle {
   cursor: pointer;
-  margin: 0px 10px;
+  margin: 10px 10px 10px 10px;
   transition: .3s linear;
   background-color: rgba(8, 8, 8, 0.575);
   color: #fff;
@@ -1135,7 +1135,3 @@ pre {
   transition: .3s linear;
 }
 
-.nav-item.custom .toggle i{
-  background-color: #2980b9;
-  margin-top: 10px;
-}
