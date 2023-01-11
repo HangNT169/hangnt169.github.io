@@ -1135,6 +1135,7 @@ pre {
   transition: .3s linear;
 }
 
-.nav-item.custom .toggle .bi.bi-sun{
+.nav-item.custom .toggle i{
   background-color: #2980b9;
+  margin-top: 10px;
 }
