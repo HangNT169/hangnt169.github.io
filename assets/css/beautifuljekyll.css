@@ -1136,6 +1136,5 @@ pre {
 }
 
 .nav-item.custom .toggle .bi.bi-sun{
-  margin-top: auto;
-  margin-bottom: auto;
+  background-color: #2980b9;
 }
