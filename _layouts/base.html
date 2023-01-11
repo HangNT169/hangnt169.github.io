@@ -34,11 +34,18 @@ common-js:
       const footer_tag = document.querySelector("footer");
       const toggle = document.querySelector(".toggle");
       toggle.addEventListener("click", () => {
-        body_tag.classList.toggle("dark") && head_tag.classList.toggle("dark") && footer_tag.classList.toggle("dark")
+        body_tag.classList.toggle("dark") 
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
           : (toggle.firstElementChild.className = "far fa-sun");
-          
+          head_tag.classList.toggle("dark") 
+          ? // đổi icon sang ban đêm
+            (toggle.firstElementChild.className = "far fa-moon")
+          : (toggle.firstElementChild.className = "far fa-sun");
+          footer_tag.classList.toggle("dark") 
+          ? // đổi icon sang ban đêm
+            (toggle.firstElementChild.className = "far fa-moon")
+          : (toggle.firstElementChild.className = "far fa-sun");
       });
     </script>
   </body>
