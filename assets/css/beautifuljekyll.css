@@ -1135,3 +1135,7 @@ pre {
   transition: .3s linear;
 }
 
+.dark {
+  transition: .3s linear;
+}
+
