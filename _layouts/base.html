@@ -27,6 +27,7 @@ common-js:
     {% include head.html %} {% include gtm_body.html %} {% include nav.html %}
     {{ content }} {% include footer.html %} {% include footer-scripts.html %}
     <script>
+      const all = document.querySelectorAll("*")
       const body_tag = document.querySelector("body");
       const head_tag = document.querySelector("head");
       const footer_tag = document.querySelector("footer");
@@ -36,6 +37,7 @@ common-js:
       const div_tag = document.querySelector("div");
       const toggle = document.querySelector(".toggle");
       toggle.addEventListener("click", () => {
+        all.style.color = "white";
         body_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
