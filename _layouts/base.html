@@ -21,20 +21,23 @@ common-js:
 
 <!DOCTYPE html>
 <html lang="{{ page.language | default: site.language | default: 'en' }}">
-<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
-{% include head.html %}
+  <!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+  {% include head.html %}
 
-<body>
-
-  {% include gtm_body.html %}
-
-  {% include nav.html %}
-
-  {{ content }}
-
-  {% include footer.html %}
-
-  {% include footer-scripts.html %}
-
-</body>
+  <body>
+    <div class="container">
+      {% include gtm_body.html %} {% include nav.html %} {{ content }} {%
+      include footer.html %} {% include footer-scripts.html %}
+    </div>
+    <script>
+      const container = document.querySelector(".container");
+      const toggle = document.querySelector(".toggle");
+      toggle.addEventListener("click", () => {
+        container.classList.toggle("dark")
+          ? // đổi icon snag ban đêm
+            (toggle.firstElementChild.className = "far fa-moon")
+          : (toggle.firstElementChild.className = "bx bx-sun");
+      });
+    </script>
+  </body>
 </html>
