@@ -88,7 +88,7 @@ layout: page
       >&larr; Newer Posts</a
     >
   </li>
-  {% endif %} {% if paginator.previous_page %}
+  {% endif %} {% if paginator.previous_page >= 0 %}
   <li class="page-item">
     <input hidden value="{{ paginator.previous_page }}" id="page_current_index">
     <input
