@@ -1135,7 +1135,7 @@ pre {
   transition: .3s linear;
 }
 
-.nav-item.custom .toggle{
+.nav-item.custom .toggle .bi.bi-sun{
   margin-top: auto;
   margin-bottom: auto;
 }
