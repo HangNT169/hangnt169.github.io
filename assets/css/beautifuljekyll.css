@@ -1138,5 +1138,6 @@ pre {
 .dark {
   transition: .3s linear;
   background-color: black;
+  color: white;
 }
 
