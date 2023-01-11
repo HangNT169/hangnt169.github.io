@@ -88,7 +88,7 @@ layout: page
       >&larr; Newer Posts</a
     >
   </li>
-  {% endif %} {% if paginator.previous_page >= 0 %}
+  {% endif %} 
   <li class="page-item">
     <input hidden value="{{ paginator.previous_page }}" id="page_current_index">
     <input
@@ -106,7 +106,7 @@ layout: page
     />
     <!-- <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">&larr; {{ paginator.total_pages }}</a> -->
   </li>
-  {% endif %} {% if paginator.next_page %}
+  {% if paginator.next_page %}
   <li class="page-item">
     <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}"
       >Older Posts &rarr;</a
