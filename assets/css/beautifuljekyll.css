@@ -1132,11 +1132,11 @@ pre {
 .toggle:hover {
   color: #000000;
   background-color: #fff;
-  transition: .10s linear;
+  transition: .8s linear;
 }
 
 .dark {
-  transition: .10s linear;
+  transition: .8s linear;
   background-color: rgb(36, 35, 35);
   color: white !important;
 }
