@@ -79,7 +79,6 @@ layout: page
   {% endfor %}
 </ul>
 
-{% if paginator.total_pages > 1 %}
 <ul class="pagination main-pager">
   {% if paginator.previous_page %}
   <li class="page-item">
@@ -93,7 +92,7 @@ layout: page
   <li class="page-item">
     <input type="number"
       id="input-value" min="1" max="{{ paginator.total_pages }}" 
-      style="width: 30px; border: none"
+      style="width: 30px; border: none; appearance: none;"
       value="{{ paginator.previous_page }}"
     />
     <input
@@ -111,7 +110,6 @@ layout: page
   </li>
   {% endif %}
 </ul>
-{% endif %}
 
 <script>
   let page_input = document.querySelector("#input-value");
