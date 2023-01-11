@@ -32,6 +32,8 @@ common-js:
       const footer_tag = document.querySelector("footer");
       const ul_tag = document.querySelector("ul");
       const nav_tag = document.querySelector("nav");
+      const header_tag = document.querySelector("header");
+      const div_tag = document.querySelector("div");
       const toggle = document.querySelector(".toggle");
       toggle.addEventListener("click", () => {
         body_tag.classList.toggle("dark")
@@ -51,6 +53,14 @@ common-js:
             (toggle.firstElementChild.className = "far fa-moon")
           : (toggle.firstElementChild.className = "far fa-sun");
         nav_tag.classList.toggle("dark")
+          ? // đổi icon sang ban đêm
+            (toggle.firstElementChild.className = "far fa-moon")
+          : (toggle.firstElementChild.className = "far fa-sun");
+        div_tag.classList.toggle("dark")
+          ? // đổi icon sang ban đêm
+            (toggle.firstElementChild.className = "far fa-moon")
+          : (toggle.firstElementChild.className = "far fa-sun");
+        header_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
           : (toggle.firstElementChild.className = "far fa-sun");
