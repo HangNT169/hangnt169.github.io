@@ -92,9 +92,9 @@ layout: page
   {% endif %} {% if paginator.previous_page %}
   <li class="page-item">
     <input
-      id="input-value"
+      id="input-value" min="1" max="{{ paginator.total_pages }}" 
       style="width: 30px; border: none"
-      value="{{ paginator.current_pages }}"
+      value="{{ paginator.total_pages }}"
     />
     <input
       style="width: 70px; border: none"
