@@ -47,19 +47,19 @@ Các thành phần:
 
 ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/Activity/6.png)
 
-\*Merge node: Chiều ngược lại của Decision node. Gộp các nhánh con của Decision node thành 1 luồng duy nhất.
+* Merge node: Chiều ngược lại của Decision node. Gộp các nhánh con của Decision node thành 1 luồng duy nhất.
 
 ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/Activity/7.png)
 
-\*Fork node: Tách luồng xử lý thành nhiều nhánh con chạy song song. Thể hiện cho việc đồng thời xảy ra.
+* *Fork node: Tách luồng xử lý thành nhiều nhánh con chạy song song. Thể hiện cho việc đồng thời xảy ra.
 
 ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/Activity/8.png)
 
-\*Join node: Chiều ngược lại của Fork node. Sau khi hành động song song kết thúc, gom các luồng xử lí về 1 luồng chính.
+* Join node: Chiều ngược lại của Fork node. Sau khi hành động song song kết thúc, gom các luồng xử lí về 1 luồng chính.
 
 ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/Activity/9.png)
 
-\*Swimlane: Phân làn trong biểu đồ sử dụng. Phần kí hiệu này thường được sử dụng để làm rõ luồng hoạt động của các đối tượng riêng biệt.
+* Swimlane: Phân làn trong biểu đồ sử dụng. Phần kí hiệu này thường được sử dụng để làm rõ luồng hoạt động của các đối tượng riêng biệt.
 
 ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/Activity/10.png)
 
