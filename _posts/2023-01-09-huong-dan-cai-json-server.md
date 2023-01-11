@@ -22,7 +22,7 @@ tags: [Hướng dẫn cài đặt Json Server]
 
 * B6: Vào VSCode -> Chọn New terminal -> Gõ lệnh **npm install -g json-server** để install npm
 
-* B7: Sau đó gõ lệnh: json-server --watch db.json để chạy file db.json (hai dấu gạch ở chỗ watch)
+* B7: Sau đó gõ lệnh: json-server --watch db.json để chạy file db.json (hai dấu gạch ở trước watch)
 
 Xem chi tiết video hướng dẫn [tại đây](https://www.youtube.com/watch?v=Vrc6iNn609o&t=23s)
 
