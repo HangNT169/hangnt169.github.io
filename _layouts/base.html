@@ -22,14 +22,15 @@ common-js:
 <!DOCTYPE html>
 <html lang="{{ page.language | default: site.language | default: 'en' }}">
   <!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
-  {% include head.html %}
+  
 
   <body>
     <div class="container-fluid">
+      {% include head.html %}
       {% include gtm_body.html %} {% include nav.html %} {{ content }} 
+      {%
+        include footer.html %} {% include footer-scripts.html %}
     </div>
-    {%
-      include footer.html %} {% include footer-scripts.html %}
     <script>
       const body_tag = document.querySelector("body");
       const toggle = document.querySelector(".toggle");
@@ -38,6 +39,7 @@ common-js:
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
           : (toggle.firstElementChild.className = "far fa-sun");
+          
       });
     </script>
   </body>
