@@ -106,7 +106,7 @@ layout: page
   {% endif %}
   {% if paginator.previous_page %}
   <li class="page-item">
-    <input type="form-control" value="{{ paginator.total_pages }}">
+    <input type="form-control" width="30px" value="{{ paginator.total_pages }}"><input type="form-control" width="30px" value="/  {{ paginator.total_pages }}">
     <!-- <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">&larr; {{ paginator.total_pages }}</a> -->
   </li>
   {% endif %}
