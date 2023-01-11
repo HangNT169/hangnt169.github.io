@@ -1137,7 +1137,7 @@ pre {
 
 .dark {
   transition: .7s linear;
-  background-color: rgb(129, 129, 129);
-  color: white;
+  background-color: rgb(36, 35, 35);
+  color: white !important;
 }
 
