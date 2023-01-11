@@ -120,6 +120,7 @@ layout: page
   let total_pages = document.querySelector("#max-value");
   page_input.addEventListener("change", function (event) {
     event.preventDefault();
+    alert(total_pages.value)
     if (page_input.value > total_pages.value) {
       window.open("/page" + total_pages.value, "_self");
     }
