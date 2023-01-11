@@ -121,9 +121,8 @@ layout: page
   page_input.addEventListener("change", function (event) {
     event.preventDefault();
     let total = total_pages.value.slice(-1);
-    if (page_input.value > total) {
-      alert(total)
-      window.open("/page" + total, "_self");
+    if (page_input.value > Number(total)) {
+      window.open("/page" + total_pages.value.slice(-1), "_self");
     }
     if (page_input.value <= 1) {
       window.open("/", "_self");
