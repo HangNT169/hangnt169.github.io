@@ -92,13 +92,11 @@ layout: page
   {% endif %} {% if paginator.previous_page %}
   <li class="page-item">
     <input
-      class="form-control"
       id="input-value"
       style="width: 30px; border: none"
       value="{{ paginator.total_pages }}"
     />
     <input
-      type="form-control"
       style="width: 70px; border: none"
       value="|     {{ paginator.total_pages }}"
       readonly
