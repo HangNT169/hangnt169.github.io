@@ -82,6 +82,9 @@ rss-description: This website is a virtual proof that I'm awesome
 share-links-active:
   twitter: true
   facebook: true
+  zalo: true
+  instagram: true
+  github: true
   linkedin: true
   vk: false
 
