@@ -97,7 +97,7 @@ layout: page
       value="{{ paginator.previous_page }}"
     />
     <input
-      style="width: 70px; border: none"
+      style="width: 70px; border: none" id="max-value"
       value="|    {{ paginator.total_pages }}"
       readonly
     />
@@ -115,10 +115,11 @@ layout: page
 
 <script>
   let page_input = document.querySelector("#input-value");
+  let total_pages = document.querySelector("#max-value")
   page_input.addEventListener("change", function (event) {
     event.preventDefault();
-    if(page_input.value > `{{ paginator.total_pages }}`){
-      window.open("/page" + `{{ paginator.total_pages }}`, "_self");
+    if(page_input.value > total_pages.value){
+      window.open("/page" + total_pages.value, "_self");
     }
     if (page_input.value <= 1) {
       window.open("/", "_self");
