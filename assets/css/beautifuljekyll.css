@@ -1121,12 +1121,12 @@ pre {
 
 .toggle {
   cursor: pointer;
-  margin: 12px 10px 12px 10px;
+  margin: 6px 10px 6px 10px;
   transition: .3s linear;
   background-color: rgba(8, 8, 8, 0.575);
   color: #fff;
   border-radius: 10px;
-  padding: 10px;
+  padding: 6px;
 }
 
 .toggle:hover {
