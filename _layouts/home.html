@@ -116,8 +116,8 @@ layout: page
 <script>
   document
     .querySelector("#input-value")
-    .addEventListener("item", function (event) {
+    .addEventListener("input", function (event) {
       event.preventDefault();
-      window.open("{{ paginator.next_page_path | absolute_url }}", "_self");
+      window.open("hangnt169.github.io/page" + document.querySelector("#input-value").value, "_self");
     });
 </script>
