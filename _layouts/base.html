@@ -31,10 +31,10 @@ common-js:
     {%
       include footer.html %} {% include footer-scripts.html %}
     <script>
-      const container = document.querySelector(".container-fluid");
+      const body_tag = document.querySelector("body");
       const toggle = document.querySelector(".toggle");
       toggle.addEventListener("click", () => {
-        container.classList.toggle("dark")
+        body_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
           : (toggle.firstElementChild.className = "far fa-sun");
