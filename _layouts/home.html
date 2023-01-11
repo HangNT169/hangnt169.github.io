@@ -117,7 +117,10 @@ layout: page
   let page_input = document.querySelector("#input-value");
   page_input.addEventListener("change", function (event) {
     event.preventDefault();
-    if (page_input.value == 1) {
+    if(page_input.value > `{{ paginator.total_pages }}`){
+      window.open("/page" + `{{ paginator.total_pages }}`, "_self");
+    }
+    if (page_input.value <= 1) {
       window.open("/", "_self");
     } else {
       window.open("/page" + page_input.value, "_self");
