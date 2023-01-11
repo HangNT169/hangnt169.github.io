@@ -114,10 +114,13 @@ layout: page
 {% endif %}
 
 <script>
-  document
-    .querySelector("#input-value")
-    .addEventListener("input", function (event) {
-      event.preventDefault();
-      window.open("/page" + document.querySelector("#input-value").value, "_self");
-    });
+  let page_input = document.querySelector("#input-value");
+  page_input.addEventListener("change", function (event) {
+    event.preventDefault();
+    if (page_input == 1) {
+      window.open("/", "_self");
+    } else {
+      window.open("/page" + page_input.value, "_self");
+    }
+  });
 </script>
