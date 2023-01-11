@@ -1134,3 +1134,8 @@ pre {
   background-color: #fff;
   transition: .3s linear;
 }
+
+.nav-item.custom .toggle{
+  margin-top: auto;
+  margin-bottom: auto;
+}
