@@ -52,6 +52,7 @@ common-js:
       var index = 0;
       toggle.addEventListener("click", () => {
         // đổi icon sang ban đêm
+        alert(index)
         if (index % 2 == 0) {
           container_tag.classList.toggle("dark");
           toggle.firstElementChild.className = "far fa-moon";
