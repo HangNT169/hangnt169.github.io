@@ -24,8 +24,9 @@ common-js:
   <!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
 
   <body>
+    <div id="container-custom">
     {% include head.html %} {% include gtm_body.html %} {% include nav.html %}
-    {{ content }} {% include footer.html %} {% include footer-scripts.html %}
+    {{ content }} {% include footer.html %} {% include footer-scripts.html %}</div>
     <script>
       const body_tag = document.querySelector("body");
       const html_tag = document.querySelector("html");
@@ -37,10 +38,15 @@ common-js:
       const row_tag = document.querySelector("row");
       const div_tag = document.querySelector("div");
       const toggle = document.querySelector(".toggle");
+      const container_tag = document.querySelector("#container-custom");
       const h2_tag = document.querySelector("h2");
       toggle.addEventListener("click", () => {
         document.querySelector("#input-value").style.backgroundColor =  "rgb(208, 198, 167)";
         document.querySelector("#max-value").style.backgroundColor =  "rgb(208, 198, 167)";
+        container_tag.classList.toggle("dark")
+          ? // đổi icon sang ban đêm
+            (toggle.firstElementChild.className = "far fa-moon", document.querySelector("#input-value").style.backgroundColor =  "rgb(208, 198, 167)", document.querySelector("#max-value").style.backgroundColor =  "rgb(208, 198, 167)")
+          : (toggle.firstElementChild.className = "far fa-sun" , document.querySelector("#input-value").style.backgroundColor =  "white", document.querySelector("#max-value").style.backgroundColor =  "white");
         body_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon", document.querySelector("#input-value").style.backgroundColor =  "rgb(208, 198, 167)", document.querySelector("#max-value").style.backgroundColor =  "rgb(208, 198, 167)")
