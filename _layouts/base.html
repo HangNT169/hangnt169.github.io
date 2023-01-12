@@ -51,37 +51,34 @@ common-js:
       const navbar_brand = document.querySelector(".navbar-brand");
       var index = 0;
       toggle.addEventListener("click", () => {
-        // đổi icon sang ban đêm
-        alert(index)
         if (index % 2 == 0) {
-          container_tag.classList.toggle("dark");
           toggle.firstElementChild.className = "far fa-moon";
-          body_tag.classList.toggle("dark");
-          head_tag.classList.toggle("dark");
-          footer_tag.classList.toggle("dark");
-          header_tag.classList.toggle("dark");
-          div_tag.classList.toggle("dark");
-          ul_tag.classList.toggle("dark");
-          nav_tag.classList.toggle("dark");
-          input_value.classList.toggle("dark");
-          max_value.classList.toggle("dark");
-          navbar_brand.classList.toggle("dark");
-          for (var i = 0; i < post_tag.length; i++) {
-            post_tag[i].classList.toggle("dark");
-            postmeta_tag[i].classList.toggle("dark");
-            postreadmore_tag[i].classList.toggle("dark");
-            postsub_tag[i].classList.toggle("dark");
-          }
-          for (var i = 0; i < nav_link_tag.length; i++) {
-            nav_link_tag[i].classList.toggle("dark");
-          }
-          for (var i = 0; i < blog_tag.length; i++) {
-            blog_tag[i].classList.toggle("dark");
-            span_tag[i].classList.toggle("dark");
-          }
         } else {
-          container_tag.classList.toggle("dark");
           toggle.firstElementChild.className = "far fa-sun";
+        }
+        container_tag.classList.toggle("dark");
+        body_tag.classList.toggle("dark");
+        head_tag.classList.toggle("dark");
+        footer_tag.classList.toggle("dark");
+        header_tag.classList.toggle("dark");
+        div_tag.classList.toggle("dark");
+        ul_tag.classList.toggle("dark");
+        nav_tag.classList.toggle("dark");
+        input_value.classList.toggle("dark");
+        max_value.classList.toggle("dark");
+        navbar_brand.classList.toggle("dark");
+        for (var i = 0; i < post_tag.length; i++) {
+          post_tag[i].classList.toggle("dark");
+          postmeta_tag[i].classList.toggle("dark");
+          postreadmore_tag[i].classList.toggle("dark");
+          postsub_tag[i].classList.toggle("dark");
+        }
+        for (var i = 0; i < nav_link_tag.length; i++) {
+          nav_link_tag[i].classList.toggle("dark");
+        }
+        for (var i = 0; i < blog_tag.length; i++) {
+          blog_tag[i].classList.toggle("dark");
+          span_tag[i].classList.toggle("dark");
         }
         index++;
       });
