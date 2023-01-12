@@ -57,18 +57,30 @@ common-js:
               "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
               "rgb(49, 49, 49)"),
-            post_tag.iterable.map((item) => {
-              item.classList.toggle("dark");
-            }),
-            postmeta_tag.iterable.map((item) => {
-              item.classList.toggle("dark");
-            }),
-            postreadmore_tag.iterable.map((item) => {
-              item.classList.toggle("dark");
-            }),
-            postsub_tag.iterable.map((item) => {
-              item.classList.toggle("dark");
-            }))
+            post_tag[0].classList.toggle("dark"),
+            post_tag[1].classList.toggle("dark"),
+            post_tag[2].classList.toggle("dark"),
+            post_tag[3].classList.toggle("dark"),
+            post_tag[4].classList.toggle("dark"),
+            
+            postmeta_tag[0].classList.toggle("dark"),
+            postmeta_tag[1].classList.toggle("dark"),
+            postmeta_tag[2].classList.toggle("dark"),
+            postmeta_tag[3].classList.toggle("dark"),
+            postmeta_tag[4].classList.toggle("dark"),
+            
+            postreadmore_tag[0].classList.toggle("dark"),
+            postreadmore_tag[1].classList.toggle("dark"),
+            postreadmore_tag[2].classList.toggle("dark"),
+            postreadmore_tag[3].classList.toggle("dark"),
+            postreadmore_tag[4].classList.toggle("dark"),
+
+            postsub_tag[0].classList.toggle("dark"),
+            postsub_tag[1].classList.toggle("dark"),
+            postsub_tag[2].classList.toggle("dark"),
+            postsub_tag[3].classList.toggle("dark"),
+            postsub_tag[4].classList.toggle("dark")
+            )
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
