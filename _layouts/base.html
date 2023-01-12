@@ -45,7 +45,6 @@ common-js:
       const postmeta_tag = document.querySelectorAll(".post-meta");
       const input_value = document.querySelector("#input-value");
       const max_value = document.querySelector("#max-value");
-      const ul_i = document.querySelectorAll("ul i");
       const p_tag = document.querySelectorAll("p");
       const blog_tag = document.querySelectorAll(".blog-tags a");
       const span_tag = document.querySelectorAll(".blog-tags span");
@@ -55,16 +54,8 @@ common-js:
       toggle.addEventListener("click", () => {
         if (index % 2 == 0) {
           toggle.firstElementChild.className = "far fa-moon";
-          for (var i = 0; i < ul_i.length; i++) {
-            ul_i[i].style.backgroundColor = "white";
-            ul_i[i].style.color = "black";
-          }
         } else {
           toggle.firstElementChild.className = "far fa-sun";
-          for (var i = 0; i < ul_i.length; i++) {
-            ul_i[i].style.backgroundColor = "black";
-            ul_i[i].style.color = "white";
-          }
         }
         container_tag.classList.toggle("dark");
         body_tag.classList.toggle("dark");
