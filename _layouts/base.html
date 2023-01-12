@@ -39,14 +39,15 @@ common-js:
       const div_tag = document.querySelector("div");
       const toggle = document.querySelector(".toggle");
       toggle.addEventListener("click", () => {
+        post_tag.classList.toggle("dark")
+          ? // đổi icon sang ban đêm
+            (toggle.firstElementChild.className = "far fa-moon")
+          : (toggle.firstElementChild.className = "far fa-sun");
         body_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
           : (toggle.firstElementChild.className = "far fa-sun");
-          post_tag.classList.toggle("dark")
-          ? // đổi icon sang ban đêm
-            (toggle.firstElementChild.className = "far fa-moon")
-          : (toggle.firstElementChild.className = "far fa-sun");
+        
         head_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
