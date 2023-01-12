@@ -75,6 +75,9 @@ common-js:
           for (var i = 0; i < nav_link_tag.length; i++) {
             nav_link_tag[i].classList.toggle("dark");
           }
+          for (var i = 0; i < a_tag.length; i++) {
+            a_tag[i].classList.toggle("dark");
+          }
         } else {
           toggle.firstElementChild.className = "far fa-sun";
           document.querySelector("#input-value").style.backgroundColor =
