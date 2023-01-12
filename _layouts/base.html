@@ -54,6 +54,7 @@ common-js:
       toggle.addEventListener("click", () => {
         if (container_tag.classList.toggle("dark")) {
           // đổi icon sang ban đêm
+          toggle.firstElementChild.className = "far fa-moon";
           body_tag.classList.toggle("dark")
           head_tag.classList.toggle("dark")
           footer_tag.classList.toggle("dark")
@@ -61,7 +62,6 @@ common-js:
           div_tag.classList.toggle("dark")
           ul_tag.classList.toggle("dark")
           nav_tag.classList.toggle("dark")
-          toggle.firstElementChild.className = "far fa-moon";
           input_value.classList.toggle("dark");
           max_value.classList.toggle("dark");
           navbar_brand.classList.toggle("dark");
