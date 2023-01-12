@@ -28,7 +28,6 @@ common-js:
     {{ content }} {% include footer.html %} {% include footer-scripts.html %}
     <script>
       const body_tag = document.querySelector("body");
-      const post_tag = document.querySelector("post-title");
       const html_tag = document.querySelector("html");
       const head_tag = document.querySelector("head");
       const footer_tag = document.querySelector("footer");
@@ -39,15 +38,10 @@ common-js:
       const div_tag = document.querySelector("div");
       const toggle = document.querySelector(".toggle");
       toggle.addEventListener("click", () => {
-        post_tag.classList.toggle("dark")
-          ? // đổi icon sang ban đêm
-            (toggle.firstElementChild.className = "far fa-moon")
-          : (toggle.firstElementChild.className = "far fa-sun");
         body_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
           : (toggle.firstElementChild.className = "far fa-sun");
-        
         head_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
@@ -56,30 +50,30 @@ common-js:
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
           : (toggle.firstElementChild.className = "far fa-sun");
-        ul_tag.classList.toggle("dark")
-          ? // đổi icon sang ban đêm
-            (toggle.firstElementChild.className = "far fa-moon")
-          : (toggle.firstElementChild.className = "far fa-sun");
-        nav_tag.classList.toggle("dark")
-          ? // đổi icon sang ban đêm
-            (toggle.firstElementChild.className = "far fa-moon")
-          : (toggle.firstElementChild.className = "far fa-sun");
-        div_tag.classList.toggle("dark")
-          ? // đổi icon sang ban đêm
-            (toggle.firstElementChild.className = "far fa-moon")
-          : (toggle.firstElementChild.className = "far fa-sun");
-        header_tag.classList.toggle("dark")
-          ? // đổi icon sang ban đêm
-            (toggle.firstElementChild.className = "far fa-moon")
-          : (toggle.firstElementChild.className = "far fa-sun");
-        row_tag.classList.toggle("dark")
-          ? // đổi icon sang ban đêm
-            (toggle.firstElementChild.className = "far fa-moon")
-          : (toggle.firstElementChild.className = "far fa-sun");
-        html_tag.classList.toggle("dark")
-          ? // đổi icon sang ban đêm
-            (toggle.firstElementChild.className = "far fa-moon")
-          : (toggle.firstElementChild.className = "far fa-sun");
+        // ul_tag.classList.toggle("dark")
+        //   ? // đổi icon sang ban đêm
+        //     (toggle.firstElementChild.className = "far fa-moon")
+        //   : (toggle.firstElementChild.className = "far fa-sun");
+        // nav_tag.classList.toggle("dark")
+        //   ? // đổi icon sang ban đêm
+        //     (toggle.firstElementChild.className = "far fa-moon")
+        //   : (toggle.firstElementChild.className = "far fa-sun");
+        // div_tag.classList.toggle("dark")
+        //   ? // đổi icon sang ban đêm
+        //     (toggle.firstElementChild.className = "far fa-moon")
+        //   : (toggle.firstElementChild.className = "far fa-sun");
+        // header_tag.classList.toggle("dark")
+        //   ? // đổi icon sang ban đêm
+        //     (toggle.firstElementChild.className = "far fa-moon")
+        //   : (toggle.firstElementChild.className = "far fa-sun");
+        // row_tag.classList.toggle("dark")
+        //   ? // đổi icon sang ban đêm
+        //     (toggle.firstElementChild.className = "far fa-moon")
+        //   : (toggle.firstElementChild.className = "far fa-sun");
+        //   ht.classList.toggle("dark")
+        //   ? // đổi icon sang ban đêm
+        //     (toggle.firstElementChild.className = "far fa-moon")
+        //   : (toggle.firstElementChild.className = "far fa-sun");
       });
     </script>
   </body>
