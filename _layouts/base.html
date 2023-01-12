@@ -28,6 +28,7 @@ common-js:
     {{ content }} {% include footer.html %} {% include footer-scripts.html %}
     <script>
       const body_tag = document.querySelector("body");
+      const container_tag = document.querySelector("container-md");
       const head_tag = document.querySelector("head");
       const footer_tag = document.querySelector("footer");
       const ul_tag = document.querySelector("ul");
@@ -42,6 +43,10 @@ common-js:
             (toggle.firstElementChild.className = "far fa-moon")
           : (toggle.firstElementChild.className = "far fa-sun");
         head_tag.classList.toggle("dark")
+          ? // đổi icon sang ban đêm
+            (toggle.firstElementChild.className = "far fa-moon")
+          : (toggle.firstElementChild.className = "far fa-sun");
+        container_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
           : (toggle.firstElementChild.className = "far fa-sun");
