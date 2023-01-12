@@ -51,9 +51,9 @@ common-js:
       const navbar_brand = document.querySelector(".navbar-brand");
       var index = 0;
       toggle.addEventListener("click", () => {
-        container_tag.classList.toggle("dark");
         // đổi icon sang ban đêm
         if (index % 2 == 0) {
+          container_tag.classList.toggle("dark");
           toggle.firstElementChild.className = "far fa-moon";
           body_tag.classList.toggle("dark");
           head_tag.classList.toggle("dark");
@@ -79,6 +79,7 @@ common-js:
             span_tag[i].classList.toggle("dark");
           }
         } else {
+          container_tag.classList.toggle("dark");
           toggle.firstElementChild.className = "far fa-sun";
         }
         index++;
