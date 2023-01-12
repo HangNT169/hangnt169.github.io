@@ -41,10 +41,10 @@ common-js:
       const toggle = document.querySelector(".toggle");
       const container_tag = document.querySelector("#container-custom");
       const h2_tag = document.querySelector("h2");
-      const post_tag = document.querySelector(".post-title");
-      const postsub_tag = document.querySelector(".post-subtitle");
-      const postmeta_tag = document.querySelector(".post-meta");
-      const postreadmore_tag = document.querySelector(".post-read-more");
+      const post_tag = document.querySelectorAll(".post-title");
+      const postsub_tag = document.querySelectorAll(".post-subtitle");
+      const postmeta_tag = document.querySelectorAll(".post-meta");
+      const postreadmore_tag = document.querySelectorAll(".post-read-more");
       toggle.addEventListener("click", () => {
         document.querySelector("#input-value").style.backgroundColor =
           "rgb(49, 49, 49)";
@@ -57,10 +57,18 @@ common-js:
               "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
               "rgb(49, 49, 49)"),
-            post_tag.classList.toggle("dark"),
-            postmeta_tag.classList.toggle("dark"),
-            postreadmore_tag.classList.toggle("dark"),
-            postsub_tag.classList.toggle("dark"))
+            post_tag.map((item) => {
+              item.classList.toggle("dark");
+            }),
+            postmeta_tag.map((item) => {
+              item.classList.toggle("dark");
+            }),
+            postreadmore_tag.map((item) => {
+              item.classList.toggle("dark");
+            }),
+            postsub_tag.map((item) => {
+              item.classList.toggle("dark");
+            }))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
