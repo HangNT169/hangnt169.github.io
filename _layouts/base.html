@@ -42,18 +42,21 @@ common-js:
       const container_tag = document.querySelector("#container-custom");
       const h2_tag = document.querySelector("h2");
       const post_tag = document.querySelector(".post-title");
+      const postsub_tag = document.querySelector(".post-subtitle");
+      const postmeta_tag = document.querySelector(".post-meta");
+      const postreadmore_tag = document.querySelector(".post-read-more");
       toggle.addEventListener("click", () => {
         document.querySelector("#input-value").style.backgroundColor =
-          "rgb(208, 198, 167)";
+          "rgb(49, 49, 49)";
         document.querySelector("#max-value").style.backgroundColor =
-          "rgb(208, 198, 167)";
+          "rgb(49, 49, 49)";
         container_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
@@ -63,9 +66,45 @@ common-js:
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
+          : ((toggle.firstElementChild.className = "far fa-sun"),
+            (document.querySelector("#input-value").style.backgroundColor =
+              "white"),
+            (document.querySelector("#max-value").style.backgroundColor =
+              "white"));
+              postmeta_tag.classList.toggle("dark")
+          ? // đổi icon sang ban đêm
+            ((toggle.firstElementChild.className = "far fa-moon"),
+            (document.querySelector("#input-value").style.backgroundColor =
+              "rgb(49, 49, 49)"),
+            (document.querySelector("#max-value").style.backgroundColor =
+              "rgb(49, 49, 49)"))
+          : ((toggle.firstElementChild.className = "far fa-sun"),
+            (document.querySelector("#input-value").style.backgroundColor =
+              "white"),
+            (document.querySelector("#max-value").style.backgroundColor =
+              "white"));
+              postreadmore_tag.classList.toggle("dark")
+          ? // đổi icon sang ban đêm
+            ((toggle.firstElementChild.className = "far fa-moon"),
+            (document.querySelector("#input-value").style.backgroundColor =
+              "rgb(49, 49, 49)"),
+            (document.querySelector("#max-value").style.backgroundColor =
+              "rgb(49, 49, 49)"))
+          : ((toggle.firstElementChild.className = "far fa-sun"),
+            (document.querySelector("#input-value").style.backgroundColor =
+              "white"),
+            (document.querySelector("#max-value").style.backgroundColor =
+              "white"));
+              postsub_tag.classList.toggle("dark")
+          ? // đổi icon sang ban đêm
+            ((toggle.firstElementChild.className = "far fa-moon"),
+            (document.querySelector("#input-value").style.backgroundColor =
+              "rgb(49, 49, 49)"),
+            (document.querySelector("#max-value").style.backgroundColor =
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
@@ -75,9 +114,9 @@ common-js:
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
@@ -87,9 +126,9 @@ common-js:
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
@@ -99,9 +138,9 @@ common-js:
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
@@ -111,9 +150,9 @@ common-js:
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
@@ -123,9 +162,9 @@ common-js:
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
@@ -135,9 +174,9 @@ common-js:
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
@@ -147,9 +186,9 @@ common-js:
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
@@ -159,9 +198,9 @@ common-js:
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
@@ -171,9 +210,9 @@ common-js:
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
@@ -183,9 +222,9 @@ common-js:
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
             (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(208, 198, 167)"),
+              "rgb(49, 49, 49)"),
             (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(208, 198, 167)"))
+              "rgb(49, 49, 49)"))
           : ((toggle.firstElementChild.className = "far fa-sun"),
             (document.querySelector("#input-value").style.backgroundColor =
               "white"),
