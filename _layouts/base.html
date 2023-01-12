@@ -44,6 +44,8 @@ common-js:
       const post_tag = document.querySelectorAll(".post-title");
       const postsub_tag = document.querySelectorAll(".post-subtitle");
       const postmeta_tag = document.querySelectorAll(".post-meta");
+      const input_value = document.querySelector("#input-value");
+      const max_value = document.querySelector("#max-value");
       const postreadmore_tag = document.querySelectorAll(".post-read-more");
       toggle.addEventListener("click", () => {
         document.querySelector("#input-value").style.backgroundColor =
@@ -53,10 +55,8 @@ common-js:
         container_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
-            (document.querySelector("#input-value").style.backgroundColor =
-              "rgb(49, 49, 49)"),
-            (document.querySelector("#max-value").style.backgroundColor =
-              "rgb(49, 49, 49)"),
+            input_value.classList.toggle("dark"),
+            max_value.classList.toggle("dark"),
             post_tag[0].classList.toggle("dark"),
             post_tag[1].classList.toggle("dark"),
             post_tag[2].classList.toggle("dark"),
@@ -86,54 +86,7 @@ common-js:
               "white"),
             (document.querySelector("#max-value").style.backgroundColor =
               "white"));
-        // post_tag.classList.toggle("dark")
-        //   ? // đổi icon sang ban đêm
-        //     ((toggle.firstElementChild.className = "far fa-moon"),
-        //     (document.querySelector("#input-value").style.backgroundColor =
-        //       "rgb(49, 49, 49)"),
-        //     (document.querySelector("#max-value").style.backgroundColor =
-        //       "rgb(49, 49, 49)"))
-        //   : ((toggle.firstElementChild.className = "far fa-sun"),
-        //     (document.querySelector("#input-value").style.backgroundColor =
-        //       "white"),
-        //     (document.querySelector("#max-value").style.backgroundColor =
-        //       "white"));
-        // postmeta_tag.classList.toggle("dark")
-        //   ? // đổi icon sang ban đêm
-        //     ((toggle.firstElementChild.className = "far fa-moon"),
-        //     (document.querySelector("#input-value").style.backgroundColor =
-        //       "rgb(49, 49, 49)"),
-        //     (document.querySelector("#max-value").style.backgroundColor =
-        //       "rgb(49, 49, 49)"))
-        //   : ((toggle.firstElementChild.className = "far fa-sun"),
-        //     (document.querySelector("#input-value").style.backgroundColor =
-        //       "white"),
-        //     (document.querySelector("#max-value").style.backgroundColor =
-        //       "white"));
-        // postreadmore_tag.classList.toggle("dark")
-        //   ? // đổi icon sang ban đêm
-        //     ((toggle.firstElementChild.className = "far fa-moon"),
-        //     (document.querySelector("#input-value").style.backgroundColor =
-        //       "rgb(49, 49, 49)"),
-        //     (document.querySelector("#max-value").style.backgroundColor =
-        //       "rgb(49, 49, 49)"))
-        //   : ((toggle.firstElementChild.className = "far fa-sun"),
-        //     (document.querySelector("#input-value").style.backgroundColor =
-        //       "white"),
-        //     (document.querySelector("#max-value").style.backgroundColor =
-        //       "white"));
-        // postsub_tag.classList.toggle("dark")
-        //   ? // đổi icon sang ban đêm
-        //     ((toggle.firstElementChild.className = "far fa-moon"),
-        //     (document.querySelector("#input-value").style.backgroundColor =
-        //       "rgb(49, 49, 49)"),
-        //     (document.querySelector("#max-value").style.backgroundColor =
-        //       "rgb(49, 49, 49)"))
-        //   : ((toggle.firstElementChild.className = "far fa-sun"),
-        //     (document.querySelector("#input-value").style.backgroundColor =
-        //       "white"),
-        //     (document.querySelector("#max-value").style.backgroundColor =
-        //       "white"));
+        
         body_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             ((toggle.firstElementChild.className = "far fa-moon"),
