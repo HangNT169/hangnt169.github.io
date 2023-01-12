@@ -21,6 +21,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <div id="check_toggle" class="toggle">
+    <i class="far fa-sun" title="Change skin"></i>
+  </div>
+
   <div class="collapse navbar-collapse" id="main-navbar">
     <ul class="navbar-nav ml-auto">
       {%- for link in site.navbar-links -%} {%- if link[1].first %}
@@ -65,9 +69,7 @@
       {%- endif -%}
     </ul>
   </div>
-  <div id="check_toggle" class="toggle">
-    <i class="far fa-sun" title="Change skin"></i>
-  </div>
+
 
   {% if site.navbar-extra %} {% for file in site.navbar-extra %} {% include {{
   file }} %} {% endfor %} {% endif %} {% if site.avatar and page.show-avatar !=
