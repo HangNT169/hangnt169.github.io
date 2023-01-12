@@ -39,6 +39,7 @@ common-js:
       const toggle = document.querySelector(".toggle");
       const h2_tag = document.querySelector("h2");
       toggle.addEventListener("click", () => {
+        document.querySelector("input").style.backgroundColor =  "rgb(208, 198, 167)";
         body_tag.classList.toggle("dark")
           ? // đổi icon sang ban đêm
             (toggle.firstElementChild.className = "far fa-moon")
