@@ -59,13 +59,14 @@
           <span id="nav-search-text">Search</span>
         </a>
       </li>
-      <li class="nav-item">
-        <div id="check_toggle" class="toggle">
-          <i class="far fa-sun" title="Change skin"></i>
-        </div>
-      </li>
+      <!-- <li class="nav-item">
+        
+      </li> -->
       {%- endif -%}
     </ul>
+    <div id="check_toggle" class="toggle">
+      <i class="far fa-sun" title="Change skin"></i>
+    </div>
   </div>
 
   {% if site.navbar-extra %} {% for file in site.navbar-extra %} {% include {{
