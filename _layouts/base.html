@@ -46,6 +46,7 @@ common-js:
       const input_value = document.querySelector("#input-value");
       const max_value = document.querySelector("#max-value");
       const ul_i = document.querySelectorAll("ul i");
+      const p_tag = document.querySelectorAll("p");
       const blog_tag = document.querySelectorAll(".blog-tags a");
       const span_tag = document.querySelectorAll(".blog-tags span");
       const postreadmore_tag = document.querySelectorAll(".post-read-more");
@@ -83,6 +84,9 @@ common-js:
         }
         for (var i = 0; i < ul_i.length; i++) {
           ul_i[i].classList.toggle("light");
+        }
+        for (var i = 0; i < p_tag.length; i++) {
+          p_tag[i].classList.toggle("dark");
         }
         index++;
       });
