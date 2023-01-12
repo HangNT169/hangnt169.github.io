@@ -52,6 +52,7 @@ common-js:
       toggle.addEventListener("click", () => {
         if (container_tag.classList.toggle("dark") == true) {
           // đổi icon sang ban đêm
+          alert("Tối rồi")
           toggle.firstElementChild.className = "far fa-moon";
           body_tag.classList.toggle("dark");
           head_tag.classList.toggle("dark");
@@ -77,6 +78,7 @@ common-js:
             span_tag[i].classList.toggle("dark");
           }
         } else {
+          alert("Sáng rồi")
           toggle.firstElementChild.className = "far fa-sun";
           document.querySelector("#input-value").style.backgroundColor =
             "white";
