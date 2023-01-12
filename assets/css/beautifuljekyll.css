@@ -1141,11 +1141,4 @@ pre {
   color: white !important;
 }
 
-.light {
-  transition: .8s linear;
-  background-color: white;
-  color: black !important;
-  border-radius: 50%;
-  height: 50%;
-}
 

@@ -55,8 +55,16 @@ common-js:
       toggle.addEventListener("click", () => {
         if (index % 2 == 0) {
           toggle.firstElementChild.className = "far fa-moon";
+          for (var i = 0; i < ul_i.length; i++) {
+            ul_i[i].style.backgroundColor = "white";
+            ul_i[i].style.color = "black";
+          }
         } else {
           toggle.firstElementChild.className = "far fa-sun";
+          for (var i = 0; i < ul_i.length; i++) {
+            ul_i[i].style.backgroundColor = "black";
+            ul_i[i].style.color = "white";
+          }
         }
         container_tag.classList.toggle("dark");
         body_tag.classList.toggle("dark");
@@ -81,9 +89,6 @@ common-js:
         for (var i = 0; i < blog_tag.length; i++) {
           blog_tag[i].classList.toggle("dark");
           span_tag[i].classList.toggle("dark");
-        }
-        for (var i = 0; i < ul_i.length; i++) {
-          ul_i[i].classList.toggle("light");
         }
         for (var i = 0; i < p_tag.length; i++) {
           p_tag[i].classList.toggle("dark");
