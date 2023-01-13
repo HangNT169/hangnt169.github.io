@@ -20,7 +20,6 @@ const blog_tag = document.querySelectorAll(".blog-tags a");
 const span_tag = document.querySelectorAll(".blog-tags span");
 const postreadmore_tag = document.querySelectorAll(".post-read-more");
 const navbar_brand = document.querySelector(".navbar-brand");
-const all = document.querySelectorAll("*");
 var index = 0;
 toggle.addEventListener("click", () => {
   if (index % 2 == 0) {
@@ -35,9 +34,6 @@ toggle.addEventListener("click", () => {
       p_tag[i].style.color = "gray !important";
       p1_tag[i].style.color = "gray !important";
     }
-  }
-  for (var i = 0; i < all.length; i++) {
-    all[i].classList.toggle("dark");
   }
   container_tag.classList.toggle("dark");
   body_tag.classList.toggle("dark");
