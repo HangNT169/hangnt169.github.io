@@ -36,6 +36,9 @@ toggle.addEventListener("click", () => {
       p1_tag[i].style.color = "gray !important";
     }
   }
+  for (var i = 0; i < all.length; i++) {
+    all[i].classList.toggle("dark");
+  }
   container_tag.classList.toggle("dark");
   body_tag.classList.toggle("dark");
   head_tag.classList.toggle("dark");
@@ -59,9 +62,6 @@ toggle.addEventListener("click", () => {
   for (var i = 0; i < blog_tag.length; i++) {
     blog_tag[i].classList.toggle("dark");
     span_tag[i].classList.toggle("dark");
-  }
-  for (var i = 0; i < all.length; i++) {
-    all[i].classList.toggle("dark");
   }
   index++;
 });
