@@ -30,7 +30,7 @@ toggle.addEventListener("click", () => {
       p1_tag[i].style.color = "white !important";
     }
   } else {
-    toggle.firstElementChild.className = "far fa-sun";
+    toggle.firstElementChild.className = "fad fa-sun";
     for (var i = 0; i < p_tag.length; i++) {
       p_tag[i].style.color = "gray !important";
       p1_tag[i].style.color = "gray !important";
