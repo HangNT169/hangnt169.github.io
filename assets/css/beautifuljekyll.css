@@ -1125,7 +1125,7 @@ pre {
   transition: .3s linear;
   background-color: rgba(8, 8, 8, 0.575);
   color: #fff;
-  border-radius: 10px;
+  border-radius: 1rem;
   padding: 6px;
 }
 
