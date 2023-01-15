@@ -1142,6 +1142,6 @@ pre {
 }
 
 .far.fa-sun {
-  background-color: yellow;
+  color: yellow !important;
 }
 
