@@ -1135,6 +1135,10 @@ pre {
   transition: .7s linear;
 }
 
+.page-heading h1 {
+  color: rgb(55, 127, 194);
+}
+
 .dark-skin {
   color: #ffffff;
   background-color: #000000;
