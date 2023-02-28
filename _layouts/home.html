@@ -169,14 +169,16 @@ layout: page
       Logout.style.display = "block";
     }
   }
-
-  LogoutPost.addEventListener("click", function () {
-    localStorage.removeItem("utterances-session");
-    window.location.reload();
-  });
-
-  Logout.addEventListener("click", function () {
-    localStorage.removeItem("utterances-session");
-    window.location.reload();
-  });
+  if (LogoutPost != null) {
+    LogoutPost.addEventListener("click", function () {
+      localStorage.removeItem("utterances-session");
+      window.location.reload();
+    });
+  }
+  if (Logout != null) {
+    Logout.addEventListener("click", function () {
+      localStorage.removeItem("utterances-session");
+      window.location.reload();
+    });
+  }
 </script>
