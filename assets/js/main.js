@@ -21,8 +21,7 @@ const filteredElements = Array.from(allElements).filter(
 
 let index = 0;
 
-let value = localStorage.getItem("check_skin");
-alert(localStorage.getItem("check_skin"))
+let value = localStorage.getItem("check_skin") === "true";
 toggle.addEventListener("click", () => {
   changeSkin();
 });
