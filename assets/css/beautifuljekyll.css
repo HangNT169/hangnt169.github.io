@@ -1132,7 +1132,7 @@ pre {
 .toggle:hover {
   color: #000000;
   background-color: #fff;
-  transition: .2s linear;
+  transition: .7s linear;
 }
 
 .dark-skin {
@@ -1141,7 +1141,6 @@ pre {
 }
 
 .dark {
-  transition: .8s linear;
   background-color: rgb(49, 49, 49);
   color: white !important;
 }
