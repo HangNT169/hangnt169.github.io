@@ -3,7 +3,6 @@ const toggle = document.querySelector(".toggle");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const allElements = document.querySelectorAll("*");
-const fasFaCircle = document.querySelector(".fas.fa-envelope.fa-stack-1x.fa-inverse");
 
 var icon = document.createElement('link');
 icon.type = 'image/x-icon';
@@ -42,10 +41,6 @@ function changeSkin() {
       p_tag[i].style.color = "white !important";
       p1_tag[i].style.color = "white !important";
     }
-    // for (let i = 0; i < fasFaCircle.length; i++) {
-      fasFaCircle.style.color = "black !important";
-      fasFaCircle.style.backgroundColor = "white !important";
-    // }
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
     for (let i = 0; i < p_tag.length; i++) {
