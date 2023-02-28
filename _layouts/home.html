@@ -128,7 +128,7 @@ layout: page
   crossorigin="anonymous"
   async
 ></script>
-<br>
+<br />
 <div class="row" style="text-align: center">
   <button class="btn btn-primary" id="logout" type="button">Đăng xuất</button>
 </div>
@@ -150,11 +150,7 @@ layout: page
   });
 
   document.querySelector("#logout").addEventListener("click", function () {
-    document.cookie.split(";").forEach(function (c) {
-      document.cookie = c
-        .replace(/^ +/, "")
-        .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-    });
+    document.cookie = "logged_in=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     window.location.reload(true);
   });
 </script>
