@@ -53,6 +53,5 @@ function changeSkin() {
 }
 
 if (value) {
-  index++;
   changeSkin();
 }
