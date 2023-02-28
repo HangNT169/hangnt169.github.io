@@ -16,7 +16,7 @@ có version là 17 và netbean dành cho Java 1-3 (Netbean nên chọn 12.4 tr�
 java --version
 ```
 
-![img.png](img.png)
+![img.png](../assets/img/hang/img.png)
 
 Chạy xong câu lệnh đấy ra version là 17 là được.
 <br/>
