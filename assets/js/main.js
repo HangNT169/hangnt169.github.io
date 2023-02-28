@@ -7,7 +7,7 @@ const allElements = document.querySelectorAll("*");
 var icon = document.createElement('link');
 icon.type = 'image/x-icon';
 icon.rel = 'shortcut icon';
-icon.href = '../img/avatar-icon.jpg';
+icon.href = '../../assets/img/avatar-icon.jpg';
 document.getElementsByTagName('head')[0].appendChild(icon);
 
 const filteredElements = Array.from(allElements).filter(
