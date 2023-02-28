@@ -3,7 +3,6 @@ const toggle = document.querySelector(".toggle");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const allElements = document.querySelectorAll("*");
-const dropdownItem = document.querySelectorAll(".dropdown-menu.dropdown-menu-right");
 
 const filteredElements = Array.from(allElements).filter(
   (element) =>
@@ -16,6 +15,7 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("post-subheading") &&
     !element.classList.contains("fa-sun") &&
     !element.classList.contains("fa-moon") &&
+    !element.classList.contains("dropdown-item") &&
     !element.classList.contains("toggle") &&
     !element.classList.contains("post-meta")
 );
@@ -34,9 +34,6 @@ function changeSkin() {
       localStorage.setItem("check_skin", true);
       p_tag[i].style.color = "white !important";
       p1_tag[i].style.color = "white !important";
-    }
-    for (let i = 0; i < dropdownItem.length; i++) {
-      dropdownItem[i].style.color = "black !important";
     }
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
