@@ -3,6 +3,7 @@ const toggle = document.querySelector(".toggle");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const allElements = document.querySelectorAll("*");
+
 const filteredElements = Array.from(allElements).filter(
   (element) =>
     !element.classList.contains("container-md") &&
@@ -19,16 +20,28 @@ const filteredElements = Array.from(allElements).filter(
 );
 
 let index = 0;
-toggle.addEventListener("click", () => {
+
+let value = localStorage.getItem("check_skin");
+
+if (value) {
+  index++;
+  functionChangeSkin();
+} else {
+  functionChangeSkin();
+}
+
+let functionChangeSkin = toggle.addEventListener("click", () => {
   if (index % 2 == 0) {
     toggle.firstElementChild.className = "far fa-moon";
     for (let i = 0; i < p_tag.length; i++) {
+      localStorage.setItem("check_skin", true);
       p_tag[i].style.color = "white !important";
       p1_tag[i].style.color = "white !important";
     }
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
     for (let i = 0; i < p_tag.length; i++) {
+      localStorage.setItem("check_skin", false);
       p_tag[i].style.color = "gray !important";
       p1_tag[i].style.color = "gray !important";
     }
