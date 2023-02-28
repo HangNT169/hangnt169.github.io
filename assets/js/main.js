@@ -22,7 +22,7 @@ const filteredElements = Array.from(allElements).filter(
 let index = 0;
 
 let value = localStorage.getItem("check_skin");
-
+alert(localStorage.getItem("check_skin"))
 toggle.addEventListener("click", () => {
   changeSkin();
 });
@@ -49,7 +49,6 @@ function changeSkin() {
   for (let i = 0; i < page_link.length; i++) {
     page_link[i].classList.toggle("dark");
   }
-  alert(localStorage.getItem("check_skin"))
   index++;
 }
 
