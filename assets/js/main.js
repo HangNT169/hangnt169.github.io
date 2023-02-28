@@ -5,7 +5,7 @@ const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const postMeta = document.querySelectorAll("span.post-meta");
 const allElements = document.querySelectorAll("*");
 const heading = document.querySelector(".page-heading h1");
-
+document.querySelector(".text-link").innerHTML = "HangNT169";
 var icon = document.createElement("link");
 icon.type = "image/x-icon";
 icon.rel = "shortcut icon";
