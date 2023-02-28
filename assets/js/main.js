@@ -45,7 +45,9 @@ function changeSkin() {
     for (let i = 0; i < postMeta.length; i++) {
       postMeta[i].style.backgroundColor = "transparent";
     }
-    heading.style.textShadow = "8px 5px 4px white";
+    if (heading != null) {
+      heading.style.textShadow = "8px 5px 4px white";
+    }
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
     for (let i = 0; i < p_tag.length; i++) {
