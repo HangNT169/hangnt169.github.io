@@ -23,7 +23,11 @@ let index = 0;
 
 let value = localStorage.getItem("check_skin");
 
-let functionChangeSkin = toggle.addEventListener("click", () => {
+toggle.addEventListener("click", () => {
+  changeSkin();
+});
+
+function changeSkin() {
   if (index % 2 == 0) {
     toggle.firstElementChild.className = "far fa-moon";
     for (let i = 0; i < p_tag.length; i++) {
@@ -46,12 +50,11 @@ let functionChangeSkin = toggle.addEventListener("click", () => {
     page_link[i].classList.toggle("dark");
   }
   index++;
-});
+}
 
 if (value) {
   index++;
-  functionChangeSkin();
+  changeSkin();
 } else {
-  functionChangeSkin();
+  changeSkin();
 }
-
