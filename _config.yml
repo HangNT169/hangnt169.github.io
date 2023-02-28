@@ -286,7 +286,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
-  - README.md
+  - 2023-02-28-huong-dan-dang-ky-tai-khoan-intellij.md
   - screenshot.png
   - docs/
 
