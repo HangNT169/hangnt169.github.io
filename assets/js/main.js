@@ -12,7 +12,7 @@ toggle.addEventListener("click", () => {
     for (var i = 0; i < p_tag.length; i++) {
       p_tag[i].style.color = "white !important";
       p1_tag[i].style.color = "white !important";
-      const moon = document.querySelector("fa-mooon")
+      const moon = document.querySelector("far.fa-mooon")
       moon.classList.toggle("dark-skin");
     }
   } else {
