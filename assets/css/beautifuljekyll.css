@@ -1135,6 +1135,11 @@ pre {
   /* transition: .8s linear; */
 }
 
+.dark-skin {
+  color: #ffffff;
+  background-color: #000000;
+}
+
 .dark {
   /* transition: .8s linear; */
   background-color: rgb(49, 49, 49);
