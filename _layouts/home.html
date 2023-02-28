@@ -88,9 +88,13 @@ layout: page
       >&larr; Newer Posts</a
     >
   </li>
-  {% endif %} 
+  {% endif %}
   <li class="page-item">
-    <input hidden value="{{ paginator.previous_page }}" id="page_current_index">
+    <input
+      hidden
+      value="{{ paginator.previous_page }}"
+      id="page_current_index"
+    />
     <input
       type="number"
       id="input-value"
@@ -115,15 +119,18 @@ layout: page
   {% endif %}
 </ul>
 <div id="utterances-comments"></div>
-<script src="https://utteranc.es/client.js"
-        repo="HangNT169/hangnt169.github.io"
-        issue-term="pathname"
-        label="Comment"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-<div class="row"><button class="btn btn-primary" type="button">Đăng xuất</button></div>
+<script
+  src="https://utteranc.es/client.js"
+  repo="HangNT169/hangnt169.github.io"
+  issue-term="pathname"
+  label="Comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script>
+<div class="row" style="text-align: center">
+  <button class="btn btn-primary" type="button">Đăng xuất</button>
+</div>
 <script>
   let page_current_index = document.querySelector("#page_current_index");
   let page_input = document.querySelector("#input-value");
@@ -134,9 +141,9 @@ layout: page
     let total = total_pages.value.slice(-1);
     if (page_input.value <= 1) {
       window.open("/", "_self");
-    } else if(page_input.value > Number(total)){
+    } else if (page_input.value > Number(total)) {
       window.open("/page" + total, "_self");
-    }else{
+    } else {
       window.open("/page" + parseInt(page_input.value), "_self");
     }
   });
