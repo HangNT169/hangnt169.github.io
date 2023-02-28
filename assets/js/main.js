@@ -23,13 +23,6 @@ let index = 0;
 
 let value = localStorage.getItem("check_skin");
 
-if (value) {
-  index++;
-  functionChangeSkin();
-} else {
-  functionChangeSkin();
-}
-
 let functionChangeSkin = toggle.addEventListener("click", () => {
   if (index % 2 == 0) {
     toggle.firstElementChild.className = "far fa-moon";
@@ -54,3 +47,11 @@ let functionChangeSkin = toggle.addEventListener("click", () => {
   }
   index++;
 });
+
+if (value) {
+  index++;
+  functionChangeSkin();
+} else {
+  functionChangeSkin();
+}
+
