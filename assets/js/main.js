@@ -3,6 +3,7 @@ const toggle = document.querySelector(".toggle");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const allElements = document.querySelectorAll("*");
+const dropdownItem = document.querySelectorAll("dropdown-item");
 
 const filteredElements = Array.from(allElements).filter(
   (element) =>
@@ -33,6 +34,9 @@ function changeSkin() {
       localStorage.setItem("check_skin", true);
       p_tag[i].style.color = "white !important";
       p1_tag[i].style.color = "white !important";
+    }
+    for (let i = 0; i < dropdownItem.length; i++) {
+      dropdownItem[i].style.color = "black !important";
     }
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
