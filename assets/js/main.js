@@ -2,6 +2,7 @@ const page_link = document.querySelectorAll(".page-link");
 const toggle = document.querySelector(".toggle");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
+const checkToggle = document.querySelector("#check_toggle");
 const allElements = document.querySelectorAll("*");
 const filteredElements = Array.from(allElements).filter(
   (element) =>
@@ -21,8 +22,6 @@ let index = 0;
 toggle.addEventListener("click", () => {
   if (index % 2 == 0) {
     toggle.firstElementChild.className = "far fa-moon";
-    const moon = document.querySelector("far.fa-mooon");
-    moon.classList.toggle("dark-skin");
     for (let i = 0; i < p_tag.length; i++) {
       p_tag[i].style.color = "white !important";
       p1_tag[i].style.color = "white !important";
@@ -34,6 +33,7 @@ toggle.addEventListener("click", () => {
       p1_tag[i].style.color = "gray !important";
     }
   }
+  checkToggle.classList.toggle("dark-skin");
   for (let i = 0; i < filteredElements.length; i++) {
     filteredElements[i].classList.toggle("dark");
   }
