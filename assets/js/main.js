@@ -4,6 +4,7 @@ const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const postMeta = document.querySelectorAll("span.post-meta");
 const allElements = document.querySelectorAll("*");
+const heading = document.querySelector(".page-heading h1");
 
 var icon = document.createElement("link");
 icon.type = "image/x-icon";
@@ -44,6 +45,7 @@ function changeSkin() {
     for (let i = 0; i < postMeta.length; i++) {
       postMeta[i].style.backgroundColor = "transparent";
     }
+    heading.style.textShadow = "8px 5px 4px white";
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
     for (let i = 0; i < p_tag.length; i++) {
@@ -51,6 +53,7 @@ function changeSkin() {
       p_tag[i].style.color = "gray !important";
       p1_tag[i].style.color = "gray !important";
     }
+    heading.style.textShadow = "8px 5px 4px #835b5b";
   }
   for (let i = 0; i < filteredElements.length; i++) {
     filteredElements[i].classList.toggle("dark");
