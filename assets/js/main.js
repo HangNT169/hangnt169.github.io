@@ -3,7 +3,7 @@ const toggle = document.querySelector(".toggle");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const allElements = document.querySelectorAll("*");
-const fasFaCircle = document.querySelectorAll(".fa-stack.fa-lg");
+const fasFaCircle = document.querySelectorAll(".fas.fa-envelope.fa-stack-1x.fa-inverse");
 
 const filteredElements = Array.from(allElements).filter(
   (element) =>
