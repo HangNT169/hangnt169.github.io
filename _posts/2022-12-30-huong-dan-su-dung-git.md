@@ -3,7 +3,7 @@ layout: post
 title: Sử dụng Git
 subtitle: Hướng dẫn sử dụng Git
 cover-img: /assets/img/04.jpg
-thumbnail-img: /assets/img/github.png
+thumbnail-img: /assets/img/huong-dan-su-dung-git/github.png
 share-img: /assets/img/04.jpg
 tags: [Hướng dẫn sử dụng Git]
 ---
@@ -12,54 +12,54 @@ tags: [Hướng dẫn sử dụng Git]
 
 * ## Bước 1: Tạo repository trên git
 
-![#######](/assets/img/anh34.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh34.png) 
 
-![#######](/assets/img/anh35.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh35.png) 
 
 * ## Bước 2: Clone project với source tree
 
-![#######](/assets/img/anh36.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh36.png) 
 
 * Sau khi clone project
 * Sau khi clone xong chúng ta sẽ có 1 project được lưu ở local (máy tính cá nhân) ở thư mục mà chúng ta điền ở bước 2.
 
 Giao diện trên máy local
 
-![#######](/assets/img/anh37.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh37.png) 
 
 Giao diện trên source tree
 
-![#######](/assets/img/anh38.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh38.png) 
 
 * ## Bước 3: Tạo nhánh cho mình code
 
-![#######](/assets/img/anh39.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh39.png) 
 
-![#######](/assets/img/anh40.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh40.png) 
 
-![#######](/assets/img/anh41.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh41.png) 
 
 * ## Bước 4: Fetch
 
-![#######](/assets/img/anh42.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh42.png) 
 
 * ## Bước 5: Pull
 
-![#######](/assets/img/anh43.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh43.png) 
 
 * ## Bước 6: Checkout sang nhánh của mình
 
-![#######](/assets/img/anh44.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh44.png) 
 
 * ## Bước 7 : Commit
 
 => Sau khi fetch và pull xong thì các bạn tiến hành code => Sau khi code => Quay lại source tree và add những file các bạn vừa thay đổi vào
 
-![#######](/assets/img/anh45.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh45.png) 
 
 * ## Bước 8: Push code
 
-![#######](/assets/img/anh46.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh46.png) 
 
 * ### Notes:
 * Sau khi ấn push quay lại trình duyệt xem code mới đã được up lên chưa
@@ -79,12 +79,12 @@ check-out - chuyển sang nhánh khác để code
 Làm từ bước 1,2
 Sau bước 2 thì tạo 1 project java mới trên máy local
 
-![#######](/assets/img/anh47.png) 
+![#######](/assets/img/huong-dan-su-dung-git/anh47.png) 
 
 Sau đó copy source code từ project java vừa tạo sang project reponsitory vừa lấy từ git về và chuyển tới bước 7
 Đây là kết quả cuối cùng trên git
 
-![#######](/assets/img/anh48.png)
+![#######](/assets/img/huong-dan-su-dung-git/anh48.png)
 
 ## The end
 

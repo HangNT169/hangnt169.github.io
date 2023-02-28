@@ -3,7 +3,7 @@ layout: post
 title: Xử lý conflig
 subtitle: Hướng dẫn xử lý conflig khi làm việc với git
 cover-img: /assets/img/03.jpg
-thumbnail-img: /assets/img/conflig.avif
+thumbnail-img: /assets/img/huong-dan-xu-ly-conflig/conflig.avif
 share-img: /assets/img/03.jpg
 tags: [Hướng dẫn xử lý conflig khi làm việc với git]
 ---
@@ -14,7 +14,7 @@ Git là công cụ làm việc nhóm hiệu quả, nó kiểm soát và quản l
 
 Như đã nói ở trên, conflict nghĩa là xung đột. Trong một hệ thống kiểm soát nguồn như Git, xung đột có thể xảy ra khi hai hoặc nhiều người thay đổi cùng một tệp. Các xung đột có thể xuất hiện tại kho lưu trữ cục bộ của thành viên hoặc kho lưu trữ từ xa Github. Ví dụ dưới đây cho thấy xung đột có thể xảy ra khi 2 branch dev_a và dev_b cùng làm việc trong một dự án. Xung đột xảy ra khi dev_a và dev_b cố gắng merge mã mới vào master mà không cập nhật các thay đổi từ nhau.
 
-![#######](/assets/img/anh49.png) 
+![#######](/assets/img/huong-dan-xu-ly-conflig/anh49.png) 
 
 Ở biểu đồ trên, 2 nhánh dev_a và dev_b cùng thao tác trên một file là person.java.
 
@@ -30,7 +30,7 @@ Như đã nói ở trên, conflict nghĩa là xung đột. Trong một hệ th�
 
 Ở đây, Git sẽ trực tiếp thêm vào một số từ khóa vào trong file person.java (như bên dưới) để nhà phát triển có thể xem xét và quyết định thay đổi của mình.
 
-![#######](/assets/img/anh50.png) 
+![#######](/assets/img/huong-dan-xu-ly-conflig/anh50.png) 
 
 Có thể hiểu những dòng mới trong file person.java này là "Conflict deviders" bộ chia xung đột. Trong đó:
 
@@ -40,7 +40,7 @@ Có thể hiểu những dòng mới trong file person.java này là "Conflict d
 
 Như vậy, sau khi đã xác định nội dung xung đột. Cách trực tiếp nhất để giải quyết xung đột hợp nhất là chỉnh sửa tệp bị xung đột. Mở file person.java trong trình soạn thảo yêu thích của bạn. Ví dụ ở đây tôi chỉ cần loại bỏ tất cả các bộ chia xung đột bằng cách xóa nó đi. Nội dung file person.java được sửa đổi sẽ trông như sau:
 
-![#######](/assets/img/anh51.png) 
+![#######](/assets/img/huong-dan-xu-ly-conflig/anh51.png) 
 
 Bước tiếp theo là thực hiện git add để tạo nội dung hợp nhất mới và để hoàn tất việc hợp nhất, hay sử dụng git commit để tạo một cam kết mới cho kho lưu trữ.
 
@@ -57,42 +57,42 @@ Bước 1: Trên sourcetree các bạn cài thêm difmerge
 
 Link: https://sourcegear.com/diffmerge/downloads.html
 
-![#######](/assets/img/anh52.png) 
+![#######](/assets/img/huong-dan-xu-ly-conflig/anh52.png) 
 
 Các bạn chú ý chọn bản win 64 hoặc 32 bit phụ thuộc vào máy của mình nhé.
 Sau khi tải thì giải nén chúng ta sẽ được như sau:
 
-![#######](/assets/img/anh53.png) 
+![#######](/assets/img/huong-dan-xu-ly-conflig/anh53.png) 
 
 Bước 2: Setup như ảnh dưới đây
 
-![#######](/assets/img/anh54.png)
+![#######](/assets/img/huong-dan-xu-ly-conflig/anh54.png)
 
 Bước 3: Xảy ra conflig và fix
 
 Khi các bạn cùng nhau sửa trên 1 file => Sẽ xảy ra hiện tượng xung đột code(giải thích kĩ ở phần 1) hay còn gọi là
 Dưới đây là ví dụ về các fix conflig:
 
-![#######](/assets/img/anh55.png)
+![#######](/assets/img/huong-dan-xu-ly-conflig/anh55.png)
 
-![#######](/assets/img/anh56.png)
+![#######](/assets/img/huong-dan-xu-ly-conflig/anh56.png)
 
 Bước 4: Sau khi fix xong thì các bạn save và tắt dialog đó đi
 
-![#######](/assets/img/anh57.png)
+![#######](/assets/img/huong-dan-xu-ly-conflig/anh57.png)
 
 Khi fix xong nó sẽ sinh ra 1 file .orig để lưu lại quá trình history config gì.
 Các bạn có thể xoá bằng tay hoặc nếu các bạn không muốn nó sinh ra nữa thì chạy câu lệnh command sau:
 
 git conflig --global mergetool.keepBackup false
 
-![#######](/assets/img/anh58.png)
+![#######](/assets/img/huong-dan-xu-ly-conflig/anh58.png)
 
 Bước 5: Commit file vừa fix conflig
 
 Sau khi fix conflig xong thì đây là kết quả :
 
-![#######](/assets/img/anh59.png)
+![#######](/assets/img/huong-dan-xu-ly-conflig/anh59.png)
 
 ## The End
 

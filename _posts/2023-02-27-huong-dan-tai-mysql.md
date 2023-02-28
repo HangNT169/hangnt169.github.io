@@ -3,7 +3,7 @@ layout: post
 title: Huớng dẫn tải và sử dụng mysql
 subtitle: Huớng dẫn tải và sử dụng mysql
 cover-img: /assets/img/03.jpg
-thumbnail-img: /assets/img/mysql.png
+thumbnail-img: /assets/img/huong-dan-tai-mysql/mysql.png
 share-img: /assets/img/03.jpg
 tags: [Huớng dẫn tải và sử dụng mysql]
 ---

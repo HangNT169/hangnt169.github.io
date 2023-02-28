@@ -3,7 +3,7 @@ layout: post
 title: Git và Github
 subtitle: Phân biệt Git và Github
 cover-img: /assets/img/01.jpg
-thumbnail-img: /assets/img/gitvagithub.jpg
+thumbnail-img: /assets/img/phan-biet-git-va-github/gitvagithub.jpg
 share-img: /assets/img/01.jpg
 tags: [Phân biệt Git và Github]
 ---
@@ -55,59 +55,59 @@ Tham khảo: https://openplanning.net/11707/cai-dat-git-tren-windows
 - Cấu hình ssh-key:
 * B1: Chạy GitBash. Mở 1 folder bất kỳ, click chuột phải -> Chọn Git Bash Here
 
-![#######](/assets/img/anh1.png)
+![#######](/assets/img/phan-biet-git-va-github/anh1.png)
 
 * B2: Thực hiện lần lượt các câu lệnh sau:
 ssh-keygen, nhấn enter cho đến khi hiện ra được như hình dưới là đã tạo được các key (public key & private key) trên máy tính
 Lưu ý đường dẫn của các file key được tạo (đã được git thông báo trong quá trình cài đặt – Hình dưới)
 
-![#######](/assets/img/anh2.png)
+![#######](/assets/img/phan-biet-git-va-github/anh2.png)
 
 eval $(ssh-agent)
 
-![#######](/assets/img/anh3.png)
+![#######](/assets/img/phan-biet-git-va-github/anh3.png)
 
 ssh-add path/to/id_rsa ( đường dẫn trong máy đến thư mục id_rsa)
 
-![#######](/assets/img/anh4.png)
+![#######](/assets/img/phan-biet-git-va-github/anh4.png)
 
 - Mở thư mục id_rsa.pub ra, copy toàn bộ dữ liệu trong đó và copy lên Github ( Nhấn chuột phải, chọn Open With- chọn Notepad)
 - Truy cập vào Github trên web, mở Settings, Chọn SSH and GPG Keys.
 - Trong phần SSH Key chọn New SSH Key. Tại đây nhập Title cho Key và paste dữ liệu ở trong id_rsa.pub vào phần Key.
 
-![#######](/assets/img/anh5.png)
+![#######](/assets/img/phan-biet-git-va-github/anh5.png)
 
 Sau khi tạo xong
 
-![#######](/assets/img/anh6.png)
+![#######](/assets/img/phan-biet-git-va-github/anh6.png)
 
 Kiểm tra cấu hình ssh lên trên máy và github: ssh-T git@github.com**
 
-![#######](/assets/img/anh7.png)
+![#######](/assets/img/phan-biet-git-va-github/anh7.png)
 
 Tạo Github Repository
 Tạo 1 repository: Trên giao diện Github, Chọn New Repository
 Lưu ý: Phần tên repository phải là duy nhất, không được trùng. Ở đây mình có demo thử một repo
 
-![#######](/assets/img/anh8.png)
+![#######](/assets/img/phan-biet-git-va-github/anh8.png)
 
-![#######](/assets/img/anh9.png)
+![#######](/assets/img/phan-biet-git-va-github/anh9.png)
 
 Đây là giao diện khi bạn tạo xong 1 repo, lưu ý ở phần đường dẫn, chọn SSH nhé
 
-![#######](/assets/img/anh10.png)
+![#######](/assets/img/phan-biet-git-va-github/anh10.png)
 * ### Thao tác với Git
 Để bắt đầu làm việc , ta vào đúng mục đó và chọn gitbash
 
-![#######](/assets/img/anh11.png)
+![#######](/assets/img/phan-biet-git-va-github/anh11.png)
 
-![#######](/assets/img/anh12.png)
+![#######](/assets/img/phan-biet-git-va-github/anh12.png)
 
 - Đây sẽ là giao diện để chúng ta viết code để push dữ liệu lên trên github với những câu lệnh và luồng xử lý ở bên dưới
 * Một số lệnh git cơ bản và luồng xử lý
 Luồng hoạt động của git cơ bản (Hình dưới)
 
-![#######](/assets/img/anh13.png)
+![#######](/assets/img/phan-biet-git-va-github/anh13.png)
 
 * ### Các câu lệnh git cơ bản
 * Init : Dùng để khởi tạo 1 git repository 1 project mới hoặc đã có. Đây là lệnh đầu tiên cần dùng trong git khi bắt đầu 1 project mới.
@@ -127,26 +127,26 @@ Luồng hoạt động của git cơ bản (Hình dưới)
 
 - Đầu tiên chọn file cần push, sử dụng câu lệnh git init để khởi tạo ra file .git
 
-![#######](/assets/img/anh14.png)
+![#######](/assets/img/phan-biet-git-va-github/anh14.png)
 
 Sau đó chúng ta kiểm tra xem file đang ở trạng thái nào.
 + Màu đỏ là chưa sẵn sàng để commit, cần phải thực hiện câu lệnh git add
 
 + Màu xanh là đã sẵn sàng để commit
 
-![#######](/assets/img/anh15.png)
+![#######](/assets/img/phan-biet-git-va-github/anh15.png)
 
 - Sử dụng câu lệnh git add . để add toàn bộ dữ liệu file và chuyển chúng sang trạng thái có thể commit ( lưu ý là có dấu chấm nhaaaaa)
 
-![#######](/assets/img/anh16.png)
+![#######](/assets/img/phan-biet-git-va-github/anh16.png)
 
 - Khi file đã vào trạng thái để sẵn sang commit thì commit nó thôi :v . Sử dụng lệnh git commit –m “mess” – trong đó mess là lời nhắn của bạn cho cái lần commit đó để lần sau có xem lại thì hiểu được.
 
-![#######](/assets/img/anh17.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh17.png) 
 
 - Để kiểm tra những file đã commit sử dụng lệnh git log
 
-![#######](/assets/img/anh18.png)  
+![#######](/assets/img/phan-biet-git-va-github/anh18.png)  
 
 - Tuy nhiên ở đây sẽ có vài bạn thắc mắc là sao commit đã thành công rồi mà ở trên mạng vẫn chưa có? Đó là do chúng ta chưa đồng bộ dữ liệu ở trên mạng với ở máy. Để đồng bộ sử dụng câu lệnh:
 git remote add origin <git@github.com:phamlinh02/Demo1.git>
@@ -155,63 +155,63 @@ git push –u origin master
 
 ( Đây cũng là lần duy nhất được làm việc trực tiếp trên nhánh master vì ở trên web chúng ta vẫn chưa có dữ liệu)
 
-![#######](/assets/img/anh19.png)  
+![#######](/assets/img/phan-biet-git-va-github/anh19.png)  
 
-![#######](/assets/img/anh20.png)  
+![#######](/assets/img/phan-biet-git-va-github/anh20.png)  
 
 - Khi load lại trang thì sẽ trở thành như này. Và chúng ta đã push file lên thành công
 
-![#######](/assets/img/anh21.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh21.png) 
 
 - Nhánh master là nhánh chính, nhánh chứa những file đã hoàn thiện, không được chứa những file code bẩn,….. Vì vậy, khi chúng ta có bất kì 1 sự thay đổi nào về file thì khi push lên phải push ở trên một nhánh khác.
 - Chuyển từ nhánh master qua 1 nhánh mới bằng câu lệnh git checkout –b <tên_nhánh>
 
-![#######](/assets/img/anh22.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh22.png) 
 
 Khi đó trên web chúng ta có thêm 1 nhánh nữa.
 
-![#######](/assets/img/anh23.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh23.png) 
 
 File demo ban đầu:
 
-![#######](/assets/img/anh24.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh24.png) 
 
 File demo sau khi sửa:
 
-![#######](/assets/img/anh25.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh25.png) 
 
 - Khi đó khi ta kiểm tra trạng thái của file thì lại thấy chuyển sang trạng thái chưa sẵn sang để commit. Làm tương tự những bước như trên để đổi về trạng thái sẵn sàng commit và commit chúng lại.
 
-![#######](/assets/img/anh26.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh26.png) 
 
 - Chúng ta sẽ push dữ liệu lên trên nhánh vừa tạo đó
 
-![#######](/assets/img/anh27.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh27.png) 
 
 - Và đây là dữ liệu chúng ta push lên trên nhánh đó.
 
-![#######](/assets/img/anh28.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh28.png) 
 
 - Sau đó sẽ nhấn vào nút Compare & pull request. Nó sẽ hiện ra như hình dưới. Và ở đây chúng ta có thể xem sự thay đổi của file giữa lần đầu commit và lần commit sau đó.
 
-![#######](/assets/img/anh29.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh29.png) 
 
-![#######](/assets/img/anh30.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh30.png) 
 
 - Copy đường link dẫn đến cho này gửi cho bạn bè, đồng nghiệp,.. để họ vào xem và kiểm tra code nhé.
 - Để thêm ý kiến,…. và merge nó về nhánh master về code vừa được push lên thì nhấn vào Create pull request.
 
-![#######](/assets/img/anh31.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh31.png) 
 
 - Tại đây chúng ta có thể cmt những ý kiến của bản thân về dòng code trên. Khi nào cảm thấy ok done thì nhấn vào chữ Merge pull request và nhấn vào Confirm request.
 
 - Khi quay trở lại ta sẽ thấy dòng mess ở phần commit ở nhánh master sẽ giống hệt mess ở nhánh phụ mình vừa làm.
 
-![#######](/assets/img/anh32.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh32.png) 
 
 - Khi vào xem code sẽ là code gần nhất chúng ta thay đổi.
 
-![#######](/assets/img/anh33.png) 
+![#######](/assets/img/phan-biet-git-va-github/anh33.png) 
 
 - Khác so với lần commit đầu là đã có thêm dòng <h1> Goodluck <\h1>
 

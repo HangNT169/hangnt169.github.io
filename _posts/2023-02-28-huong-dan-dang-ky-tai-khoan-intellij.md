@@ -2,9 +2,9 @@
 layout: post
 title: Hướng dẫn tải và đăng ký tài khoảng Intellij
 subtitle: Hướng dẫn tải và đăng ký tài khoảng Intellij
-cover-img: /assets/img/inteliji.png
-thumbnail-img: /assets/img/inteliji.png
-share-img: /assets/img/inteliji.png
+cover-img: /assets/img/chay-project-java-4/inteliji.png
+thumbnail-img: /assets/img/chay-project-java-4/inteliji.png
+share-img: /assets/img/chay-project-java-4/inteliji.png
 tags: [Hướng dẫn tải và đăng ký tài khoảng Intellij]
 ---
 

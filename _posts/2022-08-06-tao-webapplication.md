@@ -3,7 +3,7 @@ layout: post
 title: Tạo web application JSP Servlet sử dụng JSTL với Tomcat10 
 subtitle: Tạo web application JSP Servlet sử dụng JSTL với Tomcat10 
 cover-img: /assets/img/01.jpg
-thumbnail-img: /assets/img/webapplication.jpg
+thumbnail-img: /assets/img/tao-web-application/webapplication.jpg
 share-img: /assets/img/01.jpg
 tags: [Tạo web application JSP Servlet sử dụng JSTL với Tomcat10]
 ---
@@ -12,9 +12,9 @@ tags: [Tạo web application JSP Servlet sử dụng JSTL với Tomcat10]
 
 * New project -> jakarta EE -> Template -> web application -> create
 
-![#######](/assets/img/anh76.png) 
+![#######](/assets/img/tao-web-application/anh76.png) 
 
-![#######](/assets/img/anh77.png) 
+![#######](/assets/img/tao-web-application/anh77.png) 
 
 * Thêm tomcat
 
@@ -22,40 +22,40 @@ tags: [Tạo web application JSP Servlet sử dụng JSTL với Tomcat10]
 
 * Core -> click dowload 32 hoặc 64 bit -> giải nén file
 
-![#######](/assets/img/anh78.png) 
+![#######](/assets/img/tao-web-application/anh78.png) 
 
 * Thêm tomcat 10 vào Intellij
 
-![#######](/assets/img/anh79.png) 
+![#######](/assets/img/tao-web-application/anh79.png) 
 
 * Chọn edit configuration -> add new run configuration (hoặc dấu cộng trên cùng bên trái) -> tomcat server -> local
 
-![#######](/assets/img/anh80.png) 
+![#######](/assets/img/tao-web-application/anh80.png) 
 
-![#######](/assets/img/anh81.png) 
+![#######](/assets/img/tao-web-application/anh81.png) 
 
-![#######](/assets/img/anh82.png) 
+![#######](/assets/img/tao-web-application/anh82.png) 
 
 * Click chuột configuration-> click dấu cộng -> click tomcat home -> trỏ tới folder vừa tải tomcat 10 -> ok -> ok
 
-![#######](/assets/img/anh83.png) 
+![#######](/assets/img/tao-web-application/anh83.png) 
 
-![#######](/assets/img/anh84.png) 
+![#######](/assets/img/tao-web-application/anh84.png) 
 
 * Tại Before launch -> click dấu cộng -> Buid Arifacts -> chọn tên folder:war exploded -> ok
 
-![#######](/assets/img/anh85.png) 
+![#######](/assets/img/tao-web-application/anh85.png) 
 
 * Deployment -> dấu cộng -> Arifacts -> chọn tên folder:war exploded
 
-![#######](/assets/img/anh86.png) 
+![#######](/assets/img/tao-web-application/anh86.png) 
 
 * Click OK
 Thực hiện chạy file index.jsp
 
-![#######](/assets/img/anh87.png) 
+![#######](/assets/img/tao-web-application/anh87.png) 
 
-![#######](/assets/img/anh88.png) 
+![#######](/assets/img/tao-web-application/anh88.png) 
 
 * ### Configura trong pom xml thêm dependency
 
@@ -105,7 +105,7 @@ Time is ${stuff}
 
 * ### Kết quả
 
-![#######](/assets/img/anh89.png) 
+![#######](/assets/img/tao-web-application/anh89.png) 
 
 * Xem chi tiết code [tại đây](https://github.com/thangdtph27626/JSP_SERVLET.github.io)
  

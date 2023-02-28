@@ -2,9 +2,9 @@
 layout: post
 title: Check version JDK - IDE (Tool) 
 subtitle: Check version JDK - IDE (Tool)
-cover-img: /assets/img/jdk.png
-thumbnail-img: /assets/img/jdk.png
-share-img: /assets/img/jdk.png
+cover-img: /assets/img/kiem-tra-jdk-ide-dang-dung/jdk.png
+thumbnail-img: /assets/img/kiem-tra-jdk-ide-dang-dung/jdk.png
+share-img: /assets/img/kiem-tra-jdk-ide-dang-dung/jdk.png
 tags: [Check version JDK - IDE (Tool) ]
 ---
 
@@ -16,7 +16,7 @@ có version là 17 và netbean dành cho Java 1-3 (Netbean nên chọn 12.4 tr�
 java --version
 ```
 
-![img.png](../assets/img/hang/img.png)
+![img.png](../assets/img/kiem-tra-jdk-ide-dang-dung/img.png)
 
 Chạy xong câu lệnh đấy ra version là 17 là được.
 <br/>

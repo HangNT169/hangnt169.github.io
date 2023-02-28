@@ -3,7 +3,7 @@ layout: post
 title: Hướng dẫn tạo 1 project spring boot - jsp
 subtitle: Hướng dẫn tạo 1 project spring boot - jsp
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/taoproject.jpg
+thumbnail-img: /assets/img/tao-project-spring-boot/taoproject.jpg
 share-img: /assets/img/path.jpg
 tags: [Hướng dẫn tạo 1 project spring boot - jsp]
 ---
@@ -27,19 +27,19 @@ Tạo project
 
 - B1: Chọn new project -> next -> create
 
-![#######](/assets/img/anh67.png) 
+![#######](/assets/img/tao-project-spring-boot/anh67.png) 
 
-![#######](/assets/img/anh68.png) 
+![#######](/assets/img/tao-project-spring-boot/anh68.png) 
 
 Cấu trúc thư mục
 
-![#######](/assets/img/anh69.png) 
+![#######](/assets/img/tao-project-spring-boot/anh69.png) 
 
 * ## File pom.xml
 
 Thực hiện dependency để chạy dự án
 
-![#######](/assets/img/anh70.jpg) 
+![#######](/assets/img/tao-project-spring-boot/anh70.jpg) 
 
 Để cập nhật lại file pom nhấn chuột phải -> maven -> reload project
 
@@ -47,15 +47,15 @@ Thực hiện dependency để chạy dự án
 
 Đánh dấu class là controller bằng cách sử dụng annotation @Controller
 
-![#######](/assets/img/anh71.jpg) 
+![#######](/assets/img/tao-project-spring-boot/anh71.jpg) 
 
 * ## Hello.Jsp
 
-![#######](/assets/img/anh72.jpg) 
+![#######](/assets/img/tao-project-spring-boot/anh72.jpg) 
 
 * ## Cấu hình application.properties
 
-![#######](/assets/img/anh73.jpg) 
+![#######](/assets/img/tao-project-spring-boot/anh73.jpg) 
 
 Nhấn http://localhost:8080/ trong trình duyệt, kết quả sau sẽ xuất hiện.
 

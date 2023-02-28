@@ -3,7 +3,7 @@ layout: post
 title: Json Server
 subtitle: Hướng dẫn cài đặt Json Server
 cover-img: /assets/img/01.jpg
-thumbnail-img: /assets/img/json-server.jpg
+thumbnail-img: /assets/img/huong-dan-cai-json-server/json-server.jpg
 share-img: /assets/img/01.jpg
 tags: [Hướng dẫn cài đặt Json Server]
 ---

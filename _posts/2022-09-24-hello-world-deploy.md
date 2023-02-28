@@ -3,7 +3,7 @@ layout: post
 title: Deploy Java Servlet Tomcat bằng Docker
 subtitle: Deploy Java Servlet Tomcat bằng Docker
 cover-img: /assets/img/03.jpg
-thumbnail-img: /assets/img/deploy.jpg
+thumbnail-img: /assets/img/demo-deploy/deploy.jpg
 share-img: /assets/img/03.jpg
 tags: [Deploy Java Servlet Tomcat bằng Docker]
 ---
@@ -11,25 +11,25 @@ tags: [Deploy Java Servlet Tomcat bằng Docker]
 
 1. Cấu trúc Dynamic Web Project theo MVC như sau:
    - Tree Map:\
-    ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/demo-deploy/1.png)
+    ![](/assets/img/demo-deploy/1.png)
    - Yêu cầu:\
      - Project configure: Convert to Maven Project.\
-        ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/demo-deploy/2.png)
-        ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/demo-deploy/3.png)
+        ![](/assets/img/demo-deploy/2.png)
+        ![](/assets/img/demo-deploy/3.png)
       - Project configure: Convert to JPA Project.
-        ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/demo-deploy/4.png)
-        ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/demo-deploy/5.png)
+        ![](/assets/img/demo-deploy/4.png)
+        ![](/assets/img/demo-deploy/5.png)
 
 2. Tạo Servlet.\
 - Các bạn có thể tham khảo [tại đây](https://anhquan02.github.io/jekyll/update/2021/11/03/Hello-world-servlet.html).
 - Tạo thư mục theo cấu trúc MVC:
 
-![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/demo-deploy/6.png)
+![](/assets/img/demo-deploy/6.png)
 
 
 Tại folder META-INF bạn hay copy file persistence.xml đã cấu hình theo theo hướng dẫn.\
 ( nếu các bạn deploy project JPA thì làm bước này)\
-![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/demo-deploy/7.png)
+![](/assets/img/demo-deploy/7.png)
 
 - Config file pom.xml:
   - Phần build:
@@ -102,8 +102,8 @@ Tạo thêm thưc mục .docker và các file như hình( Chi tiết file mình 
 - Mở terminal visual studio code( hoặc sử dụng terminal ubuntu trỏ đến project):
 
   - Sử dụng lệnh ‘docker-compose up’.\
-    ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/demo-deploy/8.png)
-    ![](https://raw.githubusercontent.com/anhquan02/anhquan02.github.io/anhquan02/docs/img/demo-deploy/9.png)
+    ![](/assets/img/demo-deploy/8.png)
+    ![](/assets/img/demo-deploy/9.png)
   - Mở thêm 1 terminal nữa, dùng lệnh ‘docker exec -it  helloworld_webapp_1 /bin/bash’.
   - Dùng lệnh ‘cd var/www/app/’.
   - Dùng lệnh ‘mvn clean'.

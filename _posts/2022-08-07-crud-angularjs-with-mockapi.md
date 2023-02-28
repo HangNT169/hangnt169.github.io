@@ -3,7 +3,7 @@ layout: post
 title: Thực hiện CRUD trong angularjs with mockAPI
 subtitle: Thực hiện CRUD trong angularjs with mockAPI
 cover-img: /assets/img/02.jpg
-thumbnail-img: /assets/img/angularjs.png
+thumbnail-img: /assets/img/crud-angularJS/angularjs.png
 share-img: /assets/img/02.jpg
 tags: [Thực hiện CRUD trong angularjs with mockAPI]
 ---

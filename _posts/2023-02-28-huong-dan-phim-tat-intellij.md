@@ -2,9 +2,9 @@
 layout: post
 title: Một số phím tắt trên intellij
 subtitle: Một số phím tắt trên intellij
-cover-img: /assets/img/inteliji.png
-thumbnail-img: /assets/img/inteliji.png
-share-img: /assets/img/inteliji.png
+cover-img: /assets/img/chay-project-java-4/inteliji.png
+thumbnail-img: /assets/img/chay-project-java-4/inteliji.png
+share-img: /assets/img/chay-project-java-4/inteliji.png
 tags: [Một số phím tắt trên intellij]
 ---
 

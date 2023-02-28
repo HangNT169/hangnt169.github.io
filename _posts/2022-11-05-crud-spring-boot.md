@@ -3,7 +3,7 @@ layout: post
 title:  CRUD 1 project 1 bảng mysql spring boot vs jsp
 subtitle:  CRUD 1 project 1 bảng mysql spring boot vs jsp
 cover-img: /assets/img/02.jpg
-thumbnail-img: /assets/img/crudspringboot.jpg
+thumbnail-img: /assets/img/crud-spring-boot/crudspringboot.jpg
 share-img: /assets/img/02.jpg
 tags: [ CRUD 1 project 1 bảng mysql spring boot vs jsp]
 ---
@@ -12,12 +12,12 @@ Trước khi thực hiện bất kỳ thao tác nào trên dữ liệu, bạn c�
 
 Để kiểm tra ứng dụng ngay lập tức, bạn cần có một số dữ liệu trong bảng. Bạn cũng có thể chạy một số thử nghiệm bằng cách tạo thông tin sinh viên mới từ giao diện người dùng nếu ban đầu bảng của bạn không có bất kỳ dữ liệu nào.
 
-![#######](/assets/img/anh74.jpg)
+![#######](/assets/img/crud-spring-boot/anh74.jpg)
 
 - ## Cấu trúc dự án
   Cây thư mục dự án như sau:
 
-![#######](/assets/img/anh75.png)
+![#######](/assets/img/crud-spring-boot/anh75.png)
 
 - ## Thiết lập dự án
   Bạn có thể tạo một dự án dựa trên maven trong IDE hoặc công cụ yêu thích của bạn.
