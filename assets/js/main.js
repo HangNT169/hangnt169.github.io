@@ -6,7 +6,7 @@
 // const nav_tag = document.querySelector("nav");
 // const header_tag = document.querySelector("header");
 // const row_tag = document.querySelector("row");
-// const div_tag = document.querySelector("div");
+const page_link = document.querySelectorAll(".page-link");
 const toggle = document.querySelector(".toggle");
 // const container_tag = document.querySelector("#container-custom");
 // const post_tag = document.querySelectorAll(".post-title");
@@ -39,6 +39,9 @@ toggle.addEventListener("click", () => {
   }
   for (var i = 0; i < allElements.length; i++) {
     allElements[i].classList.toggle("dark");
+  }
+  for (var i = 0; i < page_link.length; i++) {
+    page_link[i].classList.toggle("dark");
   }
   // container_tag.classList.toggle("dark");
   // body_tag.classList.toggle("dark");
