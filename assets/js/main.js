@@ -5,7 +5,6 @@ const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const postMeta = document.querySelectorAll("span.post-meta");
 const allElements = document.querySelectorAll("*");
 const heading = document.querySelector(".page-heading h1");
-const contentFooter = document.querySelector(".copyright.text-muted");
 
 var icon = document.createElement("link");
 icon.type = "image/x-icon";
@@ -38,7 +37,6 @@ toggle.addEventListener("click", () => {
 function changeSkin() {
   if (index % 2 == 0) {
     toggle.firstElementChild.className = "far fa-moon";
-    contentFooter.style.color = "white";
     for (let i = 0; i < p_tag.length; i++) {
       localStorage.setItem("check_skin", true);
       p_tag[i].style.color = "white !important";
@@ -52,7 +50,6 @@ function changeSkin() {
     }
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
-    contentFooter.style.color = "black";
     for (let i = 0; i < p_tag.length; i++) {
       localStorage.setItem("check_skin", false);
       p_tag[i].style.color = "gray !important";
