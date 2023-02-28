@@ -2,13 +2,14 @@ const page_link = document.querySelectorAll(".page-link");
 const toggle = document.querySelector(".toggle");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
+const postMeta = document.querySelectorAll("span.post-meta");
 const allElements = document.querySelectorAll("*");
 
-var icon = document.createElement('link');
-icon.type = 'image/x-icon';
-icon.rel = 'shortcut icon';
-icon.href = '../../assets/img/avatar-icon.jpg';
-document.getElementsByTagName('head')[0].appendChild(icon);
+var icon = document.createElement("link");
+icon.type = "image/x-icon";
+icon.rel = "shortcut icon";
+icon.href = "../../assets/img/avatar-icon.jpg";
+document.getElementsByTagName("head")[0].appendChild(icon);
 
 const filteredElements = Array.from(allElements).filter(
   (element) =>
@@ -22,8 +23,7 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("fa-sun") &&
     !element.classList.contains("fa-moon") &&
     !element.classList.contains("dropdown-item") &&
-    !element.classList.contains("toggle") &&
-    !element.classList.contains("span.post-meta")
+    !element.classList.contains("toggle")
 );
 
 let index = 0;
@@ -40,6 +40,9 @@ function changeSkin() {
       localStorage.setItem("check_skin", true);
       p_tag[i].style.color = "white !important";
       p1_tag[i].style.color = "white !important";
+    }
+    for (let i = 0; i < postMeta.length; i++) {
+      postMeta[i].style.backgroundColor = "transparent";
     }
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
