@@ -27,11 +27,11 @@ toggle.addEventListener("click", () => {
     }
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
+    const moon = document.querySelector("far.fa-mooon");
+    moon.classList.toggle("dark-skin");
     for (var i = 0; i < p_tag.length; i++) {
       p_tag[i].style.color = "gray !important";
       p1_tag[i].style.color = "gray !important";
-      const moon = document.querySelector("far.fa-mooon");
-      moon.classList.toggle("dark-skin");
     }
   }
   for (var i = 0; i < filteredElements.length; i++) {
