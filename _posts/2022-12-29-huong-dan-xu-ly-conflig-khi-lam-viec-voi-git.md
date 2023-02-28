@@ -8,7 +8,7 @@ share-img: /assets/img/03.jpg
 tags: [Hướng dẫn xử lý conflig khi làm việc với git]
 ---
 
-1. Conflig là gì ?
+1. Conflig là gì?
 
 Git là công cụ làm việc nhóm hiệu quả, nó kiểm soát và quản lý rất tốt các đóng góp cho nội dung dự án giữa nhiều tác giả (thường là nhà phát triển). Đôi khi nhiều nhà phát triển có thể cố gắng chỉnh sửa cùng một nội dung. Nếu nhà phát triển A cố gắng chỉnh sửa mã mà Nhà phát triển B đang chỉnh sửa thì có thể xảy ra xung đột conflict. Trong bài này, chúng ta sẽ cùng tìm hiểu khái niệm conflict trong git và học cách giải quyết conflict khi thực hiện hợp nhất merge đơn giản nhất.
 
