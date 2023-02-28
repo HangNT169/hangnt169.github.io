@@ -4,6 +4,7 @@ const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 
 const allElements = document.querySelectorAll('*');
+console.log(allElements);
 const filteredElements = Array.from(allElements).filter(element => !element.classList.contains('container-md') && !element.classList.contains('row') && !element.classList.contains('col-xl-8') && !element.classList.contains('avatar-container') && element.tagName !== 'h1' && !element.classList.contains('post-heading') && !element.classList.contains('post-subheading') && !element.classList.contains('post-meta'));
 
 var index = 0;
