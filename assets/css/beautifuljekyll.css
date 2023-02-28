@@ -1137,6 +1137,7 @@ pre {
 
 .page-heading h1 {
   color: rgb(55, 127, 194);
+  text-shadow: 8px 5px 4px #835b5b;
 }
 
 .dark-skin {
