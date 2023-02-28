@@ -23,7 +23,7 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("fa-moon") &&
     !element.classList.contains("dropdown-item") &&
     !element.classList.contains("toggle") &&
-    !element.classList.contains("post-meta")
+    !element.classList.contains("span.post-meta")
 );
 
 let index = 0;
