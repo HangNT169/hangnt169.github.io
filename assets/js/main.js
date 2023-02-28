@@ -5,6 +5,12 @@ const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const allElements = document.querySelectorAll("*");
 const fasFaCircle = document.querySelector(".fas.fa-envelope.fa-stack-1x.fa-inverse");
 
+var icon = document.createElement('link');
+icon.type = 'image/x-icon';
+icon.rel = 'shortcut icon';
+icon.href = '../img/avatar-icon.jpg';
+document.getElementsByTagName('head')[0].appendChild(icon);
+
 const filteredElements = Array.from(allElements).filter(
   (element) =>
     !element.classList.contains("container-md") &&
