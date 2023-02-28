@@ -22,7 +22,7 @@ Laguage : Chọn Java
 Build system: Có thể chọn Maven hoặc Gradle đều được
 ### Bước 3: Ấn next tiếp tới khi project được tạo thành công
 
-#### Vậy là các bạn đã tạo xong project sử dụng cho java 1-3.
+#### Vậy là các bạn đã tạo xong project sử dụng cho java 4.
 ![img_13.png](img_13.png)
 <br/>
 Các bạn có thể xem thêm video hướng dẫn tại đây : [tại đây](https://youtu.be/3JiWOF-KM5c)
