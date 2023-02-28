@@ -49,6 +49,7 @@ function changeSkin() {
   for (let i = 0; i < page_link.length; i++) {
     page_link[i].classList.toggle("dark");
   }
+  alert(localStorage.getItem("check_skin"))
   index++;
 }
 
