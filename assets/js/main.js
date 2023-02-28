@@ -2,7 +2,6 @@ const page_link = document.querySelectorAll(".page-link");
 const toggle = document.querySelector(".toggle");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
-const checkToggle = document.querySelector("#check_toggle");
 const allElements = document.querySelectorAll("*");
 const filteredElements = Array.from(allElements).filter(
   (element) =>
@@ -15,6 +14,7 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("post-subheading") &&
     !element.classList.contains("fa-sun") &&
     !element.classList.contains("fa-moon") &&
+    !element.classList.contains("toggle") &&
     !element.classList.contains("post-meta")
 );
 
@@ -33,7 +33,6 @@ toggle.addEventListener("click", () => {
       p1_tag[i].style.color = "gray !important";
     }
   }
-  checkToggle.classList.toggle("dark-skin");
   for (let i = 0; i < filteredElements.length; i++) {
     filteredElements[i].classList.toggle("dark");
   }
