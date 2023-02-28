@@ -37,7 +37,9 @@ toggle.addEventListener("click", () => {
       p1_tag[i].style.color = "gray !important";
     }
   }
-  allElements.toggle("dark");
+  for (var i = 0; i < allElements.length; i++) {
+    allElements[i].classList.toggle("dark");
+  }
   container_tag.classList.toggle("dark");
   body_tag.classList.toggle("dark");
   head_tag.classList.toggle("dark");
