@@ -2,10 +2,10 @@
 layout: post
 title: Hướng dẫn tải và đăng ký tài khoảng Intellij
 subtitle: Hướng dẫn tải và đăng ký tài khoảng Intellij
-cover-img: /assets/img/inteliji.jpg
+cover-img: /assets/img/inteliji.png
 thumbnail-img: /assets/img/inteliji.png
-share-img: /assets/img/inteliji.jpg
-tags: [Tạo page github bằng Jekyll]
+share-img: /assets/img/inteliji.png
+tags: [Hướng dẫn tải và đăng ký tài khoảng Intellij]
 ---
 
 Cách cài đặt IntelliJ phiên bản Ultimate trên Windows
@@ -129,3 +129,4 @@ Sau đó bạn tích các ô rồi ấn tiếp
 ### Bước 30: Thành công!
 ![image](https://user-images.githubusercontent.com/97737045/221764341-e8c5fbc3-e4b0-4197-8e66-afc9b3a4ece6.png)
 
+Các bạn có thể xem thêm video hướng dẫn : [tại đây](https://youtu.be/3JiWOF-KM5c)
