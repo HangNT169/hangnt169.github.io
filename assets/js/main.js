@@ -3,7 +3,7 @@ const toggle = document.querySelector(".toggle");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const allElements = document.querySelectorAll("*");
-const dropdownItem = document.querySelectorAll("dropdown-item");
+const dropdownItem = document.querySelectorAll(".dropdown-item");
 
 const filteredElements = Array.from(allElements).filter(
   (element) =>
