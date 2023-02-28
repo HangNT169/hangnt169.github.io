@@ -17,27 +17,27 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("post-meta")
 );
 
-var index = 0;
+let index = 0;
 toggle.addEventListener("click", () => {
   if (index % 2 == 0) {
     toggle.firstElementChild.className = "far fa-moon";
-    for (var i = 0; i < p_tag.length; i++) {
+    const moon = document.querySelector("far.fa-mooon");
+    moon.classList.toggle("dark-skin");
+    for (let i = 0; i < p_tag.length; i++) {
       p_tag[i].style.color = "white !important";
       p1_tag[i].style.color = "white !important";
     }
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
-    const moon = document.querySelector("far.fa-mooon");
-    moon.classList.toggle("dark-skin");
-    for (var i = 0; i < p_tag.length; i++) {
+    for (let i = 0; i < p_tag.length; i++) {
       p_tag[i].style.color = "gray !important";
       p1_tag[i].style.color = "gray !important";
     }
   }
-  for (var i = 0; i < filteredElements.length; i++) {
+  for (let i = 0; i < filteredElements.length; i++) {
     filteredElements[i].classList.toggle("dark");
   }
-  for (var i = 0; i < page_link.length; i++) {
+  for (let i = 0; i < page_link.length; i++) {
     page_link[i].classList.toggle("dark");
   }
   index++;
