@@ -3,7 +3,7 @@ layout: post
 title: Hướng dẫn tạo project java 5 trên intellij
 subtitle: Hướng dẫn tạo project java 5 trên intellij
 cover-img: /assets/img/dang-ky-tai-khoan/inteliji.png
-thumbnail-img: /assets/dang-ky-tai-khoan/img/inteliji.png
+thumbnail-img: /assets/img/dang-ky-tai-khoan/inteliji.png
 share-img: /assets/img/dang-ky-tai-khoan/inteliji.png
 tags: [Hướng dẫn tạo project java 5 trên intellij]
 ---
