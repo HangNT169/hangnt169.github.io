@@ -152,19 +152,19 @@ layout: page
   });
 
   if (localStorage.getItem("utterances-session") == null) {
-    document.querySelector("logoutPost").style.display = "none";
-    document.querySelector("logout").style.display = "none";
-  }else{
-    document.querySelector("logoutPost").style.display = "block";
-    document.querySelector("logout").style.display = "block";
+    document.querySelector("#logoutPost").style.display = "none";
+    document.querySelector("#logout").style.display = "none";
+  } else {
+    document.querySelector("#logoutPost").style.display = "block";
+    document.querySelector("#logout").style.display = "block";
   }
 
-  document.querySelector("logoutPost").addEventListener("click", function () {
+  document.querySelector("#logoutPost").addEventListener("click", function () {
     localStorage.removeItem("utterances-session");
     window.location.reload();
   });
 
-  document.querySelector("logout").addEventListener("click", function () {
+  document.querySelector("#logout").addEventListener("click", function () {
     localStorage.removeItem("utterances-session");
     window.location.reload();
   });
