@@ -53,7 +53,9 @@ function changeSkin() {
       p_tag[i].style.color = "gray !important";
       p1_tag[i].style.color = "gray !important";
     }
-    heading.style.textShadow = "8px 5px 4px #835b5b";
+    if (heading != null) {
+      heading.style.textShadow = "8px 5px 4px #835b5b";
+    }
   }
   for (let i = 0; i < filteredElements.length; i++) {
     filteredElements[i].classList.toggle("dark");
