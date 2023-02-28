@@ -114,8 +114,32 @@ layout: base
   ></script>
   <br />
   <div class="container d-flex justify-content-center">
-    <div class="row d-flex center" >
-      <button class="btn btn-primary" id="logoutPost" type="button">Đăng xuất</button>
+    <div class="row d-flex center">
+      <button class="btn btn-primary" id="logoutPost" type="button">
+        Đăng xuất
+      </button>
     </div>
   </div>
 </div>
+
+<script>
+  let LogoutPost = document.querySelector("#logoutPost");
+
+  if (localStorage.getItem("utterances-session") == null) {
+    if (LogoutPost != null) {
+      LogoutPost.style.display = "none";
+    }
+  } else {
+    if (LogoutPost != null) {
+      LogoutPost.style.display = "block";
+    }
+  }
+
+  if (LogoutPost != null) {
+    LogoutPost.addEventListener("click", function () {
+      localStorage.removeItem("utterances-session");
+      window.location.reload();
+    });
+  }
+
+</script>

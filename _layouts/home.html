@@ -152,29 +152,17 @@ layout: page
   });
 
   let Logout = document.querySelector("#logout");
-  let LogoutPost = document.querySelector("#logoutPost");
 
   if (localStorage.getItem("utterances-session") == null) {
-    if (LogoutPost != null) {
-      LogoutPost.style.display = "none";
-    }
     if (Logout != null) {
       Logout.style.display = "none";
     }
   } else {
-    if (LogoutPost != null) {
-      LogoutPost.style.display = "block";
-    }
     if (Logout != null) {
       Logout.style.display = "block";
     }
   }
-  if (LogoutPost != null) {
-    LogoutPost.addEventListener("click", function () {
-      localStorage.removeItem("utterances-session");
-      window.location.reload();
-    });
-  }
+
   if (Logout != null) {
     Logout.addEventListener("click", function () {
       localStorage.removeItem("utterances-session");
