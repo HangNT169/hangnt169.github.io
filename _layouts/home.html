@@ -129,7 +129,7 @@ layout: page
   async
 ></script>
 <div class="row" style="text-align: center">
-  <button class="btn btn-primary" type="button">Đăng xuất</button>
+  <button class="btn btn-primary" id="logout" type="button">Đăng xuất</button>
 </div>
 <script>
   let page_current_index = document.querySelector("#page_current_index");
@@ -146,5 +146,14 @@ layout: page
     } else {
       window.open("/page" + parseInt(page_input.value), "_self");
     }
+  });
+
+  document.querySelector("#logout").addEventListener("click", function () {
+    document.cookie.split(";").forEach(function (c) {
+      document.cookie = c
+        .replace(/^ +/, "")
+        .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+    window.location.reload(true);
   });
 </script>
