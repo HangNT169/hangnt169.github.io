@@ -108,6 +108,13 @@ img {
   margin-top: -1.5625rem;
 }
 
+.fa.fa-sun {
+  background-color: none;
+}
+
+.fa.fa-moon {
+  background-color: none;
+}
 /* Comments */
 
 .disqus-comments {
