@@ -165,8 +165,13 @@ layout: page
 
   if (Logout != null) {
     Logout.addEventListener("click", function () {
-      localStorage.removeItem("utterances-session");
-      window.location.reload();
+      let check = confirm(
+        "Bạn có chắc muốn đăng xuất tài khoản github của mình trên phần bình luận này hay không ?"
+      );
+      if (check) {
+        localStorage.removeItem("utterances-session");
+        window.location.reload();
+      }
     });
   }
 </script>
