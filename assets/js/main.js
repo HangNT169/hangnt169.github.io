@@ -70,3 +70,53 @@ function changeSkin() {
 if (value) {
   changeSkin();
 }
+
+// Tạo canvas
+var canvas = document.createElement("canvas");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+document.body.appendChild(canvas);
+
+// Lấy context
+var ctx = canvas.getContext("2d");
+
+// Tạo mảng hạt tuyết
+var snowflakes = [];
+for (var i = 0; i < 100; i++) {
+  snowflakes.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 4 + 1,
+    speed: Math.random() * 2 + 1,
+    opacity: Math.random(),
+  });
+}
+
+// Vẽ hạt tuyết
+function drawSnowflakes() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "white";
+  ctx.beginPath();
+  for (var i = 0; i < snowflakes.length; i++) {
+    var flake = snowflakes[i];
+    ctx.moveTo(flake.x, flake.y);
+    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2, true);
+  }
+  ctx.fill();
+  moveSnowflakes();
+}
+
+// Di chuyển hạt tuyết
+function moveSnowflakes() {
+  for (var i = 0; i < snowflakes.length; i++) {
+    var flake = snowflakes[i];
+    flake.y += flake.speed;
+    if (flake.y > canvas.height) {
+      flake.y = -5;
+    }
+  }
+}
+
+// Lặp lại hiệu ứng
+setInterval(drawSnowflakes, 30);
+
