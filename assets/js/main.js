@@ -75,6 +75,8 @@ function changeSkin() {
 
 if (value) {
   changeSkin();
+} else {
+  createCanvas();
 }
 
 // Tạo canvas
