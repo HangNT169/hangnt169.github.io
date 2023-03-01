@@ -615,6 +615,10 @@ footer .footer-custom-content {
   }
 }
 
+#input-value, #max-value {
+  background-color: transparent;
+}
+
 /* Tags page */
 
 .tag-btn {
