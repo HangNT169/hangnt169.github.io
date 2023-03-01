@@ -92,21 +92,28 @@ for (var i = 0; i < 100; i++) {
   });
 }
 
+// Tạo gradient cho hạt tuyết
+var snowflakeGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
+snowflakeGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
+snowflakeGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
 // Vẽ hạt tuyết
 function drawSnowflakes() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "white";
   ctx.beginPath();
   for (var i = 0; i < snowflakes.length; i++) {
     var flake = snowflakes[i];
-    ctx.moveTo(flake.x, flake.y);
-    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2, true);
+    ctx.save();
+    ctx.fillStyle = snowflakeGradient;
+    ctx.translate(flake.x, flake.y);
+    ctx.rotate(flake.angle);
+    ctx.fillRect(-flake.radius, -flake.radius, flake.radius * 2, flake.radius * 2);
+    ctx.restore();
   }
-  ctx.fill();
   moveSnowflakes();
 }
 
-// Di chuyển hạt tuyết
+// Di chuyển hạt tuyết và xoay chúng
 function moveSnowflakes() {
   for (var i = 0; i < snowflakes.length; i++) {
     var flake = snowflakes[i];
@@ -114,6 +121,7 @@ function moveSnowflakes() {
     if (flake.y > canvas.height) {
       flake.y = -5;
     }
+    flake.angle += flake.angleIncrement;
   }
 }
 
