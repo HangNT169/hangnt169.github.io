@@ -36,6 +36,11 @@ toggle.addEventListener("click", () => {
 function changeSkin() {
   if (index % 2 == 0) {
     toggle.firstElementChild.className = "far fa-moon";
+    var canvas = document.querySelector("canvas");
+    if (canvas != null) {
+      canvas.remove();
+    }
+
     for (let i = 0; i < p_tag.length; i++) {
       localStorage.setItem("check_skin", true);
       p_tag[i].style.color = "white !important";
@@ -49,6 +54,7 @@ function changeSkin() {
     }
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
+    createCanvas();
     for (let i = 0; i < p_tag.length; i++) {
       localStorage.setItem("check_skin", false);
       p_tag[i].style.color = "gray !important";
@@ -72,59 +78,65 @@ if (value) {
 }
 
 // Tạo canvas
-var canvas = document.createElement("canvas");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-document.body.appendChild(canvas);
+function createCanvas() {
+  var canvas = document.createElement("canvas");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
 
-// Lấy context
-var ctx = canvas.getContext("2d");
+  // Lấy context
+  var ctx = canvas.getContext("2d");
 
-// Tạo mảng hạt tuyết
-var snowflakes = [];
-for (var i = 0; i < 100; i++) {
-  snowflakes.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    radius: Math.random() * 4 + 1,
-    speed: Math.random() * 2 + 1,
-    opacity: Math.random(),
-  });
-}
-
-// Tạo gradient cho hạt tuyết
-var snowflakeGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
-snowflakeGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
-snowflakeGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
-
-// Vẽ hạt tuyết
-function drawSnowflakes() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.beginPath();
-  for (var i = 0; i < snowflakes.length; i++) {
-    var flake = snowflakes[i];
-    ctx.save();
-    ctx.fillStyle = snowflakeGradient;
-    ctx.translate(flake.x, flake.y);
-    ctx.rotate(flake.angle);
-    ctx.fillRect(-flake.radius, -flake.radius, flake.radius * 2, flake.radius * 2);
-    ctx.restore();
+  // Tạo mảng hạt tuyết
+  var snowflakes = [];
+  for (var i = 0; i < 100; i++) {
+    snowflakes.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 4 + 1,
+      speed: Math.random() * 2 + 1,
+      opacity: Math.random(),
+    });
   }
-  moveSnowflakes();
-}
 
-// Di chuyển hạt tuyết và xoay chúng
-function moveSnowflakes() {
-  for (var i = 0; i < snowflakes.length; i++) {
-    var flake = snowflakes[i];
-    flake.y += flake.speed;
-    if (flake.y > canvas.height) {
-      flake.y = -5;
+  // Tạo gradient cho hạt tuyết
+  var snowflakeGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
+  snowflakeGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
+  snowflakeGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+  // Vẽ hạt tuyết
+  function drawSnowflakes() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    for (var i = 0; i < snowflakes.length; i++) {
+      var flake = snowflakes[i];
+      ctx.save();
+      ctx.fillStyle = snowflakeGradient;
+      ctx.translate(flake.x, flake.y);
+      ctx.rotate(flake.angle);
+      ctx.fillRect(
+        -flake.radius,
+        -flake.radius,
+        flake.radius * 2,
+        flake.radius * 2
+      );
+      ctx.restore();
     }
-    flake.angle += flake.angleIncrement;
+    moveSnowflakes();
   }
+
+  // Di chuyển hạt tuyết và xoay chúng
+  function moveSnowflakes() {
+    for (var i = 0; i < snowflakes.length; i++) {
+      var flake = snowflakes[i];
+      flake.y += flake.speed;
+      if (flake.y > canvas.height) {
+        flake.y = -5;
+      }
+      flake.angle += flake.angleIncrement;
+    }
+  }
+
+  // Lặp lại hiệu ứng
+  setInterval(drawSnowflakes, 30);
 }
-
-// Lặp lại hiệu ứng
-setInterval(drawSnowflakes, 30);
-
