@@ -1179,7 +1179,8 @@ pre {
   .menu {
     position: fixed;
     top: 50%;
-    border-radius: 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     left: 0;
     transform: translateY(-50%);
     background-color: #4d94d2;
@@ -1200,7 +1201,7 @@ pre {
   }
 
   .menu li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     transition: transform 0.3s ease-in-out;
     display: flex; /* để tạo hiệu ứng dọc cho icon */
     align-items: center; /* để căn giữa icon theo chiều dọc */
