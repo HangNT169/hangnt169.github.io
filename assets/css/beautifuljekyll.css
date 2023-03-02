@@ -1177,27 +1177,42 @@ pre {
 }
 
 .menu {
-  position: fixed; /* để giữ menu cố định khi cuộn trang web */
-  top: 50%; /* để đưa menu lên giữa trang web */
-  left: 0; /* để gắn menu vào bên trái của trang web */
-  transform: translateY(-50%); /* để căn giữa menu theo chiều dọc */
-  background-color: #333; /* màu nền của menu */
-  padding: 20px; /* khoảng cách giữa nội dung và các cạnh menu */
-  z-index: 9999; 
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: #333;
+  padding: 20px;
+  z-index: 9999;
 }
 
 .menu ul {
-  list-style-type: none; /* xóa các chấm đầu dòng của danh sách */
-  margin: 0; /* để loại bỏ khoảng cách giữa các mục menu */
-  padding: 0; /* để loại bỏ khoảng cách giữa các mục menu */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .menu li {
-  margin-bottom: 10px; /* khoảng cách giữa các mục menu */
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out; /* chuyển động mượt mà cho các mục menu */
 }
 
 .menu a {
-  color: #fff; /* màu chữ của mục menu */
-  text-decoration: none; /* loại bỏ gạch chân của mục menu */
+  color: #fff;
+  text-decoration: none;
 }
+
+.menu li:hover {
+  transform: translateX(10px); /* di chuyển các mục menu sang phải */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* tạo hiệu ứng bóng cho các mục menu */
+}
+
+.menu li:first-child {
+  margin-top: 0; /* loại bỏ khoảng cách trống ở phía trên menu */
+}
+
+.menu li:last-child {
+  margin-bottom: 0; /* loại bỏ khoảng cách trống ở phía dưới menu */
+}
+
 
