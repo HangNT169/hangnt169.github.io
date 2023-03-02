@@ -20,6 +20,7 @@ const filteredElements = Array.from(allElements).filter(
     element.tagName !== "H1" &&
     !element.classList.contains("post-heading") &&
     !element.classList.contains("post-subheading") &&
+    !element.classList.contains("menu") &&
     !element.classList.contains("fa-sun") &&
     !element.classList.contains("fa-moon") &&
     !element.classList.contains("dropdown-item") &&
