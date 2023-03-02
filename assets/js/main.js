@@ -5,7 +5,7 @@ const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const postMeta = document.querySelectorAll("span.post-meta");
 const allElements = document.querySelectorAll("*");
 const heading = document.querySelector(".page-heading h1");
-const containerCopy = document.querySelectorAll(".highlight-container")
+const containerCopy = document.querySelectorAll("pre.highlight");
 var icon = document.createElement("link");
 icon.type = "image/x-icon";
 icon.rel = "shortcut icon";
@@ -153,36 +153,35 @@ function createCanvas() {
 }
 
 // Lấy tất cả các phần tử pre có class highlight
-var highlights = document.querySelectorAll('pre.highlight');
-  
+var highlights = document.querySelectorAll("pre.highlight");
+
 // Duyệt qua từng phần tử và thêm nút copy vào
-highlights.forEach(function(highlight) {
+highlights.forEach(function (highlight) {
   // Tạo một div mới chứa button và highlight
-  var container = document.createElement('div');
-  container.className = 'highlight-container';
-  
+  var container = document.createElement("div");
+  container.className = "highlight-container";
+
   // Tạo một button mới
-  var button = document.createElement('button');
-  button.className = 'btn-copy';
-  button.textContent = 'Copy';
-  
+  var button = document.createElement("button");
+  button.className = "btn-copy";
+  button.textContent = "Copy";
+
   // Thêm button vào div
   container.appendChild(button);
-  
+
   // Thêm highlight vào div
   container.appendChild(highlight.cloneNode(true));
-  
+
   // Thay thế highlight ban đầu bằng div chứa highlight và button
   highlight.parentNode.replaceChild(container, highlight);
-  
+
   // Sao chép nội dung pre khi nhấp vào button
-  button.addEventListener('click', function() {
-    var code = highlight.querySelector('code').textContent.trim();
+  button.addEventListener("click", function () {
+    var code = highlight.querySelector("code").textContent.trim();
     navigator.clipboard.writeText(code);
-    button.textContent = 'Copied!';
-    setTimeout(function() {
-      button.textContent = 'Copy';
+    button.textContent = "Copied!";
+    setTimeout(function () {
+      button.textContent = "Copy";
     }, 2000);
   });
 });
-
