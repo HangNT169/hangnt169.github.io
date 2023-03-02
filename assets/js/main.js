@@ -8,6 +8,7 @@ const postMeta = document.querySelectorAll("span.post-meta");
 const allElements = document.querySelectorAll("*");
 const heading = document.querySelector(".page-heading h1");
 let interValId;
+var canvas;
 var ctx;
 
 var icon = document.createElement("link");
@@ -113,7 +114,7 @@ tuyetRoi.addEventListener("click", function () {
 
 // Tạo canvas
 function createCanvasTuyetRoi() {
-  var canvas = document.createElement("canvas");
+  canvas = document.createElement("canvas");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   document.body.appendChild(canvas);
@@ -182,7 +183,7 @@ function stopSnowing() {
 
 // Tạo canvas
 function createCanvas() {
-  var canvas = document.createElement("canvas");
+  canvas = document.createElement("canvas");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   document.body.appendChild(canvas);
