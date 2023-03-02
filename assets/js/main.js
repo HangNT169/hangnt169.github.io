@@ -96,69 +96,6 @@ if (value) {
   createCanvas();
 }
 
-// // Tạo canvas
-// function createCanvas() {
-//   var canvas = document.createElement("canvas");
-//   canvas.width = window.innerWidth;
-//   canvas.height = window.innerHeight;
-//   document.body.appendChild(canvas);
-
-//   // Lấy context
-//   var ctx = canvas.getContext("2d");
-
-//   // Tạo mảng hạt tuyết
-//   var snowflakes = [];
-//   for (var i = 0; i < 100; i++) {
-//     snowflakes.push({
-//       x: Math.random() * canvas.width,
-//       y: Math.random() * canvas.height,
-//       radius: Math.random() * 4 + 1,
-//       speed: Math.random() * 2 + 1,
-//       opacity: Math.random(),
-//     });
-//   }
-
-//   // Tạo gradient cho hạt tuyết
-//   var snowflakeGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
-//   snowflakeGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
-//   snowflakeGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
-
-//   // Vẽ hạt tuyết
-//   function drawSnowflakes() {
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-//     ctx.beginPath();
-//     for (var i = 0; i < snowflakes.length; i++) {
-//       var flake = snowflakes[i];
-//       ctx.save();
-//       ctx.fillStyle = snowflakeGradient;
-//       ctx.translate(flake.x, flake.y);
-//       ctx.rotate(flake.angle);
-//       ctx.fillRect(
-//         -flake.radius,
-//         -flake.radius,
-//         flake.radius * 2,
-//         flake.radius * 2
-//       );
-//       ctx.restore();
-//     }
-//     moveSnowflakes();
-//   }
-
-//   // Di chuyển hạt tuyết và xoay chúng
-//   function moveSnowflakes() {
-//     for (var i = 0; i < snowflakes.length; i++) {
-//       var flake = snowflakes[i];
-//       flake.y += flake.speed;
-//       if (flake.y > canvas.height) {
-//         flake.y = -5;
-//       }
-//       flake.angle += flake.angleIncrement;
-//     }
-//   }
-
-//   // Lặp lại hiệu ứng
-//   setInterval(drawSnowflakes, 30);
-// }
 // Tạo canvas
 function createCanvas() {
   var canvas = document.createElement("canvas");
@@ -169,88 +106,58 @@ function createCanvas() {
   // Lấy context
   var ctx = canvas.getContext("2d");
 
-  // Tạo mảng hoa đào
-  var blossoms = [];
+  // Tạo mảng hạt tuyết
+  var snowflakes = [];
   for (var i = 0; i < 100; i++) {
-    blossoms.push({
+    snowflakes.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 10 + 10,
-      speed: Math.random() * 5 + 1,
-      angle: Math.random() * Math.PI * 2,
-      angleIncrement: Math.random() * 0.1 - 0.05,
-      petalCount: Math.floor(Math.random() * 4) + 5,
-      petalLength: Math.random() * 10 + 5,
-      petalWidth: Math.random() * 2 + 1,
-      petalColor: {
-        r: 255,
-        g: Math.floor(Math.random() * 128) + 128,
-        b: Math.floor(Math.random() * 128) + 128,
-      },
+      radius: Math.random() * 4 + 1,
+      speed: Math.random() * 2 + 1,
+      opacity: Math.random(),
     });
   }
 
-  // Tạo gradient cho hoa đào
-  function createPetalGradient(petal) {
-    var gradient = ctx.createLinearGradient(
-      petal.x1,
-      petal.y1,
-      petal.x2,
-      petal.y2
-    );
-    gradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
-    gradient.addColorStop(
-      1,
-      `rgb(${petal.color.r}, ${petal.color.g}, ${petal.color.b})`
-    );
-    return gradient;
-  }
+  // Tạo gradient cho hạt tuyết
+  var snowflakeGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
+  snowflakeGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
+  snowflakeGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
 
-  // Vẽ hoa đào
-  function drawBlossoms() {
+  // Vẽ hạt tuyết
+  function drawSnowflakes() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (var i = 0; i < blossoms.length; i++) {
-      var blossom = blossoms[i];
-      for (var j = 0; j < blossom.petalCount; j++) {
-        var angle = ((Math.PI * 2) / blossom.petalCount) * j + blossom.angle;
-        var petal = {
-          x1: blossom.x + Math.cos(angle) * blossom.radius,
-          y1: blossom.y + Math.sin(angle) * blossom.radius,
-          x2:
-            blossom.x +
-            Math.cos(angle) * (blossom.radius + blossom.petalLength),
-          y2:
-            blossom.y +
-            Math.sin(angle) * (blossom.radius + blossom.petalLength),
-          color: blossom.petalColor,
-          width: blossom.petalWidth,
-        };
-        var petalGradient = createPetalGradient(petal);
-        ctx.beginPath();
-        ctx.strokeStyle = petalGradient;
-        ctx.lineWidth = petal.width;
-        ctx.moveTo(petal.x1, petal.y1);
-        ctx.lineTo(petal.x2, petal.y2);
-        ctx.stroke();
-      }
-
-      // Di chuyển và xoay hoa đào
-      blossom.angle += blossom.angleIncrement;
-      blossom.x += Math.cos(blossom.angle) * blossom.speed;
-      blossom.y += blossom.speed;
-
-      // Nếu hoa
-      // Nếu hoa đào ra khỏi màn hình thì đặt lại vị trí
-      if (blossom.y > canvas.height + blossom.radius) {
-        blossom.y = -blossom.radius;
-        blossom.x = Math.random() * canvas.width;
-      }
+    ctx.beginPath();
+    for (var i = 0; i < snowflakes.length; i++) {
+      var flake = snowflakes[i];
+      ctx.save();
+      ctx.fillStyle = snowflakeGradient;
+      ctx.translate(flake.x, flake.y);
+      ctx.rotate(flake.angle);
+      ctx.fillRect(
+        -flake.radius,
+        -flake.radius,
+        flake.radius * 2,
+        flake.radius * 2
+      );
+      ctx.restore();
     }
-    requestAnimationFrame(drawBlossoms);
+    moveSnowflakes();
   }
 
-  // Gọi hàm vẽ hoa đào
-  drawBlossoms();
+  // Di chuyển hạt tuyết và xoay chúng
+  function moveSnowflakes() {
+    for (var i = 0; i < snowflakes.length; i++) {
+      var flake = snowflakes[i];
+      flake.y += flake.speed;
+      if (flake.y > canvas.height) {
+        flake.y = -5;
+      }
+      flake.angle += flake.angleIncrement;
+    }
+  }
+
+  // Lặp lại hiệu ứng
+  setInterval(drawSnowflakes, 30);
 }
 
 // Lấy tất cả các phần tử pre có class highlight
