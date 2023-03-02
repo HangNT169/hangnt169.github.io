@@ -60,10 +60,14 @@ function changeSkin() {
     toggle.firstElementChild.className = "far fa-moon";
     canvas = document.querySelectorAll("canvas");
     if (canvas != null) {
-      canvas.forEach(element => {
+      canvas.forEach((element) => {
         element.remove();
       });
     }
+
+    stopAnimation();
+    stopRosing();
+    stopSnowing();
 
     for (let i = 0; i < p_tag.length; i++) {
       localStorage.setItem("check_skin", true);
@@ -141,7 +145,13 @@ botNuoc.addEventListener("click", function () {
   if (localStorage.getItem("checkHieuUng") == "2") {
     alert("Bạn đang ở hiệu ứng bọt nước !");
   } else {
-    botNuocFunction();
+    if (localStorage.getItem("check_skin") == true) {
+      alert(
+        "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
+      );
+    } else {
+      botNuocFunction();
+    }
   }
 });
 
@@ -155,7 +165,13 @@ tuyetRoi.addEventListener("click", function () {
   if (localStorage.getItem("checkHieuUng") == "1") {
     alert("Bạn đang ở hiệu ứng tuyết rơi !");
   } else {
-    tuyetRoiFunction();
+    if (localStorage.getItem("check_skin") == true) {
+      alert(
+        "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
+      );
+    } else {
+      tuyetRoiFunction();
+    }
   }
 });
 
@@ -169,7 +185,13 @@ hoaHong.addEventListener("click", function () {
   if (localStorage.getItem("checkHieuUng") == "3") {
     alert("Bạn đang ở hiệu ứng hoa hồng !");
   } else {
-    hoaHongFunction();
+    if (localStorage.getItem("check_skin") == true) {
+      alert(
+        "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
+      );
+    } else {
+      hoaHongFunction();
+    }
   }
 });
 
