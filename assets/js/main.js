@@ -74,8 +74,10 @@ function changeSkin() {
     filteredElements[i].classList.toggle("dark");
   }
   const containerCopy = document.querySelectorAll(".highlight-container pre");
+  const containerCode = document.querySelectorAll(".highlight-container pre code");
   for (let i = 0; i < containerCopy.length; i++) {
     containerCopy[i].classList.toggle("dark");
+    containerCode[i].classList.toggle("dark");
   }
   for (let i = 0; i < page_link.length; i++) {
     page_link[i].classList.toggle("dark");
