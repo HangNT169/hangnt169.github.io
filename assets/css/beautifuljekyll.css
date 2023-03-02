@@ -1219,7 +1219,7 @@ pre {
   }*/
 
   .menu li i:hover {
-    transform: scale(2.5); /* phóng to icon lên 1.2 lần */
+    transform: scale(1.5); /* phóng to icon lên 1.2 lần */
   }
 
   .menu li:first-child {
