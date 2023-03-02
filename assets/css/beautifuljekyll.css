@@ -1179,11 +1179,17 @@ pre {
 .menu {
   position: fixed;
   top: 50%;
+  border-radius: 10px;
   left: 0;
   transform: translateY(-50%);
-  background-color: #333;
+  background-color: #4d94d2;
   padding: 20px;
   z-index: 9999;
+}
+
+.menu li i {
+  font-size: 20px;
+  margin-right: 10px; /* khoảng cách giữa icon và nội dung */
 }
 
 .menu ul {
@@ -1194,12 +1200,16 @@ pre {
 
 .menu li {
   margin-bottom: 10px;
-  transition: transform 0.3s ease-in-out; /* chuyển động mượt mà cho các mục menu */
+  transition: transform 0.3s ease-in-out;
+  display: flex; /* để tạo hiệu ứng dọc cho icon */
+  align-items: center; /* để căn giữa icon theo chiều dọc */
 }
 
 .menu a {
   color: #fff;
   text-decoration: none;
+  display: flex; /* để tạo hiệu ứng dọc cho icon */
+  align-items: center; /* để căn giữa icon theo chiều dọc */  
 }
 
 .menu li:hover {
