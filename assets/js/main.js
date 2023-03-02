@@ -109,19 +109,31 @@ if (value) {
 }
 
 botNuoc.addEventListener("click", function () {
-  stopSnowing();
-  stopRosing();
-  createCanvasBubble();
+  if (localStorage.getItem("checkHieuUng") == "1") {
+    alert("Bạn đang ở hiệu ứng bọt nước !");
+  } else {
+    stopSnowing();
+    stopRosing();
+    createCanvasBubble();
+  }
 });
 tuyetRoi.addEventListener("click", function () {
-  stopAnimation();
-  stopRosing();
-  createCanvasTuyetRoi();
+  if (localStorage.getItem("checkHieuUng") == "1") {
+    alert("Bạn đang ở hiệu ứng tuyết rơi !");
+  } else {
+    stopAnimation();
+    stopRosing();
+    createCanvasTuyetRoi();
+  }
 });
 hoaHong.addEventListener("click", function () {
-  stopAnimation();
-  stopSnowing();
-  createCanvasHoaHongRoi();
+  if (localStorage.getItem("checkHieuUng") == "1") {
+    alert("Bạn đang ở hiệu ứng hoa hồng !");
+  } else {
+    stopAnimation();
+    stopSnowing();
+    createCanvasHoaHongRoi();
+  }
 });
 
 // Tạo canvas
@@ -188,6 +200,7 @@ function createCanvasTuyetRoi() {
 
   // Lặp lại hiệu ứng
   interValId = setInterval(drawSnowflakes, 30);
+  localStorage.setItem("checkHieuUng", "1");
 }
 
 function stopSnowing() {
@@ -240,6 +253,7 @@ function createCanvasBubble() {
 
   // Lặp lại hiệu ứng
   animationId = window.requestAnimationFrame(drawBubbles);
+  localStorage.setItem("checkHieuUng", "2");
 }
 
 function stopAnimation() {
@@ -248,10 +262,9 @@ function stopAnimation() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+// Tạo canvas
 function createCanvasHoaHongRoi() {
-  if (canvas == null) {
-    canvas = document.createElement("canvas");
-  }
+  canvas = document.createElement("canvas");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   document.body.appendChild(canvas);
@@ -261,16 +274,13 @@ function createCanvasHoaHongRoi() {
 
   // Tạo mảng hoa hồng
   var roses = [];
-  for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 100; i++) {
     roses.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 15 + 15,
+      radius: Math.random() * 5 + 5,
       speed: Math.random() * 2 + 1,
       opacity: Math.random() * 0.5 + 0.5,
-      petalCount: Math.floor(Math.random() * 12) + 5,
-      petalLength: Math.random() * 20 + 10,
-      petalWidth: Math.random() * 4 + 1,
     });
   }
 
@@ -285,33 +295,16 @@ function createCanvasHoaHongRoi() {
     ctx.beginPath();
     for (var i = 0; i < roses.length; i++) {
       var rose = roses[i];
-
-      // Vẽ cánh hoa
       ctx.save();
       ctx.fillStyle = roseGradient;
       ctx.translate(rose.x, rose.y);
-      for (var j = 0; j < rose.petalCount; j++) {
-        ctx.rotate((Math.PI * 2) / rose.petalCount);
-        ctx.beginPath();
-        ctx.moveTo(0, 0);
-        ctx.lineTo(rose.petalWidth / 2, -rose.petalLength);
-        ctx.lineTo(-rose.petalWidth / 2, -rose.petalLength);
-        ctx.closePath();
-        ctx.fill();
-      }
+      ctx.fillRect(
+        -rose.radius,
+        -rose.radius,
+        rose.radius * 2,
+        rose.radius * 2
+      );
       ctx.restore();
-
-      // Vẽ đốm
-      ctx.beginPath();
-      ctx.fillStyle = "rgba(255, 255, 255, " + rose.opacity + ")";
-      ctx.arc(rose.x, rose.y, rose.radius / 4, 0, Math.PI * 2, false);
-      ctx.fill();
-
-      // Vẽ bông hoa
-      ctx.beginPath();
-      ctx.fillStyle = "rgba(255, 0, 0, " + rose.opacity + ")";
-      ctx.arc(rose.x, rose.y, rose.radius, 0, Math.PI * 2, false);
-      ctx.fill();
     }
     moveRoses();
   }
@@ -322,13 +315,14 @@ function createCanvasHoaHongRoi() {
       var rose = roses[i];
       rose.y += rose.speed;
       if (rose.y > canvas.height) {
-        rose.y = -rose.radius;
+        rose.y = -10;
       }
     }
   }
 
   // Lặp lại hiệu ứng
   interValIdHoaHong = setInterval(drawRoses, 30);
+  localStorage.setItem("checkHieuUng", "3");
 }
 
 function stopRosing() {
