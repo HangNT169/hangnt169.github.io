@@ -28,8 +28,8 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("ul-custom") &&
     !element.classList.contains("li-custom") &&
     !element.classList.contains("fa-home") &&
-    !element.classList.contains("fa-search") &&
-    !element.classList.contains("fa-regular") &&
+    !element.classList.contains("fa-snowflake") &&
+    !element.classList.contains("fa-circle") &&
     !element.classList.contains("fa-user") &&
     !element.classList.contains("a-custom") &&
     !element.classList.contains("fa-sun") &&
