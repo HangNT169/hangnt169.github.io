@@ -94,6 +94,70 @@ if (value) {
   createCanvas();
 }
 
+// // Tạo canvas
+// function createCanvas() {
+//   var canvas = document.createElement("canvas");
+//   canvas.width = window.innerWidth;
+//   canvas.height = window.innerHeight;
+//   document.body.appendChild(canvas);
+
+//   // Lấy context
+//   var ctx = canvas.getContext("2d");
+
+//   // Tạo mảng hạt tuyết
+//   var snowflakes = [];
+//   for (var i = 0; i < 100; i++) {
+//     snowflakes.push({
+//       x: Math.random() * canvas.width,
+//       y: Math.random() * canvas.height,
+//       radius: Math.random() * 4 + 1,
+//       speed: Math.random() * 2 + 1,
+//       opacity: Math.random(),
+//     });
+//   }
+
+//   // Tạo gradient cho hạt tuyết
+//   var snowflakeGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
+//   snowflakeGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
+//   snowflakeGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+//   // Vẽ hạt tuyết
+//   function drawSnowflakes() {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     ctx.beginPath();
+//     for (var i = 0; i < snowflakes.length; i++) {
+//       var flake = snowflakes[i];
+//       ctx.save();
+//       ctx.fillStyle = snowflakeGradient;
+//       ctx.translate(flake.x, flake.y);
+//       ctx.rotate(flake.angle);
+//       ctx.fillRect(
+//         -flake.radius,
+//         -flake.radius,
+//         flake.radius * 2,
+//         flake.radius * 2
+//       );
+//       ctx.restore();
+//     }
+//     moveSnowflakes();
+//   }
+
+//   // Di chuyển hạt tuyết và xoay chúng
+//   function moveSnowflakes() {
+//     for (var i = 0; i < snowflakes.length; i++) {
+//       var flake = snowflakes[i];
+//       flake.y += flake.speed;
+//       if (flake.y > canvas.height) {
+//         flake.y = -5;
+//       }
+//       flake.angle += flake.angleIncrement;
+//     }
+//   }
+
+//   // Lặp lại hiệu ứng
+//   setInterval(drawSnowflakes, 30);
+// }
+
 // Tạo canvas
 function createCanvas() {
   var canvas = document.createElement("canvas");
@@ -104,59 +168,59 @@ function createCanvas() {
   // Lấy context
   var ctx = canvas.getContext("2d");
 
-  // Tạo mảng hạt tuyết
-  var snowflakes = [];
+  // Tạo mảng hoa đào
+  var cherryBlossoms = [];
   for (var i = 0; i < 100; i++) {
-    snowflakes.push({
+    cherryBlossoms.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 4 + 1,
+      radius: Math.random() * 10 + 5,
       speed: Math.random() * 2 + 1,
       opacity: Math.random(),
+      petalCount: Math.floor(Math.random() * 4) + 5,
     });
   }
 
-  // Tạo gradient cho hạt tuyết
-  var snowflakeGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
-  snowflakeGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
-  snowflakeGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+  // Tạo gradient cho hoa đào
+  var cherryBlossomGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
+  cherryBlossomGradient.addColorStop(0, "rgba(255, 183, 197, 0.8)");
+  cherryBlossomGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
 
-  // Vẽ hạt tuyết
-  function drawSnowflakes() {
+  // Vẽ hoa đào
+  function drawCherryBlossoms() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
-    for (var i = 0; i < snowflakes.length; i++) {
-      var flake = snowflakes[i];
+    for (var i = 0; i < cherryBlossoms.length; i++) {
+      var blossom = cherryBlossoms[i];
       ctx.save();
-      ctx.fillStyle = snowflakeGradient;
-      ctx.translate(flake.x, flake.y);
-      ctx.rotate(flake.angle);
-      ctx.fillRect(
-        -flake.radius,
-        -flake.radius,
-        flake.radius * 2,
-        flake.radius * 2
-      );
+      ctx.fillStyle = cherryBlossomGradient;
+      ctx.translate(blossom.x, blossom.y);
+      for (var j = 0; j < blossom.petalCount; j++) {
+        ctx.rotate(Math.PI / blossom.petalCount);
+        ctx.beginPath();
+        ctx.arc(0, 0, blossom.radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
       ctx.restore();
     }
-    moveSnowflakes();
+    moveCherryBlossoms();
   }
 
-  // Di chuyển hạt tuyết và xoay chúng
-  function moveSnowflakes() {
-    for (var i = 0; i < snowflakes.length; i++) {
-      var flake = snowflakes[i];
-      flake.y += flake.speed;
-      if (flake.y > canvas.height) {
-        flake.y = -5;
+  // Di chuyển hoa đào
+  function moveCherryBlossoms() {
+    for (var i = 0; i < cherryBlossoms.length; i++) {
+      var blossom = cherryBlossoms[i];
+      blossom.y += blossom.speed;
+      if (blossom.y > canvas.height) {
+        blossom.y = -5;
       }
-      flake.angle += flake.angleIncrement;
     }
   }
 
   // Lặp lại hiệu ứng
-  setInterval(drawSnowflakes, 30);
+  setInterval(drawCherryBlossoms, 30);
 }
+
 
 // Lấy tất cả các phần tử pre có class highlight
 var highlights = document.querySelectorAll("pre.highlight");
