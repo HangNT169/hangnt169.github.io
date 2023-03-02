@@ -103,13 +103,12 @@ if (value) {
 }
 
 botNuoc.addEventListener("click", function () {
-  clearInterval(interValId);
+  stopSnowing();
   createCanvas();
 });
 tuyetRoi.addEventListener("click", function () {
   createCanvasTuyetRoi();
 });
-
 
 // Tạo canvas
 function createCanvasTuyetRoi() {
@@ -173,6 +172,11 @@ function createCanvasTuyetRoi() {
 
   // Lặp lại hiệu ứng
   interValId = setInterval(drawSnowflakes, 30);
+}
+
+function stopSnowing() {
+  clearInterval(interValId);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 // Tạo canvas
