@@ -17,6 +17,7 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("container-md") &&
     !element.classList.contains("row") &&
     !element.classList.contains("col-xl-8") &&
+    !element.classList.contains("nav-search") &&
     !element.classList.contains("avatar-container") &&
     element.tagName !== "H1" &&
     !element.classList.contains("post-heading") &&
