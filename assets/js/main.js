@@ -147,3 +147,27 @@ function createCanvas() {
   // Lặp lại hiệu ứng
   setInterval(drawSnowflakes, 30);
 }
+
+// Lấy tất cả các phần tử pre có class highlight
+var highlights = document.querySelectorAll("pre.highlight");
+
+// Duyệt qua từng phần tử và thêm nút copy vào
+highlights.forEach(function (highlight) {
+  // Tạo một button mới
+  var button = document.createElement("button");
+  button.className = "btn-copy";
+  button.textContent = "Copy";
+
+  // Thêm button vào phía bên phải của pre
+  highlight.appendChild(button);
+
+  // Sao chép nội dung pre khi nhấp vào button
+  button.addEventListener("click", function () {
+    var code = highlight.querySelector("code").textContent.trim();
+    navigator.clipboard.writeText(code);
+    button.textContent = "Copied!";
+    setTimeout(function () {
+      button.textContent = "Copy";
+    }, 2000);
+  });
+});
