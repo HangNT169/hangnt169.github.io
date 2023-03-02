@@ -118,7 +118,7 @@ botNuoc.addEventListener("click", function () {
   }
 });
 tuyetRoi.addEventListener("click", function () {
-  if (localStorage.getItem("checkHieuUng") == "1") {
+  if (localStorage.getItem("checkHieuUng") == "2") {
     alert("Bạn đang ở hiệu ứng tuyết rơi !");
   } else {
     stopAnimation();
@@ -127,7 +127,7 @@ tuyetRoi.addEventListener("click", function () {
   }
 });
 hoaHong.addEventListener("click", function () {
-  if (localStorage.getItem("checkHieuUng") == "1") {
+  if (localStorage.getItem("checkHieuUng") == "3") {
     alert("Bạn đang ở hiệu ứng hoa hồng !");
   } else {
     stopAnimation();
