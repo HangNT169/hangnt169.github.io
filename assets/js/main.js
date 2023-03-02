@@ -340,7 +340,6 @@ function createCanvas() {
   drawBubbles();
 }
 
-
 // Lấy tất cả các phần tử pre có class highlight
 var highlights = document.querySelectorAll("pre.highlight");
 
