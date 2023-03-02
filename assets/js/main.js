@@ -220,6 +220,7 @@ if (value) {
 //   setInterval(drawBubbles, 30);
 // }
 
+
 // Tạo canvas
 function createCanvas() {
   var canvas = document.createElement("canvas");
@@ -230,38 +231,54 @@ function createCanvas() {
   // Lấy context
   var ctx = canvas.getContext("2d");
 
-  // Tạo mảng hạt nước
-  var waterDrops = [];
-  for (var i = 0; i < 100; i++) {
-    waterDrops.push({
+  // Tạo mảng bong bóng
+  var bubbles = [];
+  for (var i = 0; i < 50; i++) {
+    bubbles.push({
       x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 4 + 2,
-      speed: Math.random() * 4 + 1,
-      color: "rgba(255, 255, 255, 0.5)",
+      y: Math.random() * canvas.height + canvas.height,
+      radius: Math.random() * 20 + 10,
+      speed: Math.random() * 2 + 1,
+      opacity: Math.random() * 0.5 + 0.5,
     });
   }
 
-  // Vẽ hạt nước
-  function drawWaterDrops() {
+  // Tạo gradient cho bong bóng
+  var bubbleGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
+  bubbleGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
+  bubbleGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+  // Vẽ bong bóng
+  function drawBubbles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (var i = 0; i < waterDrops.length; i++) {
-      var drop = waterDrops[i];
-      ctx.beginPath();
-      ctx.fillStyle = drop.color;
-      ctx.arc(drop.x, drop.y, drop.radius, 0, Math.PI * 2, false);
+    ctx.beginPath();
+    for (var i = 0; i < bubbles.length; i++) {
+      var bubble = bubbles[i];
+      ctx.save();
+      ctx.fillStyle = bubbleGradient;
+      ctx.translate(bubble.x, bubble.y);
+      ctx.arc(0, 0, bubble.radius, 0, Math.PI * 2);
       ctx.fill();
-      drop.y += drop.speed;
-      if (drop.y > canvas.height) {
-        drop.y = 0;
-        drop.x = Math.random() * canvas.width;
+      ctx.restore();
+    }
+    moveBubbles();
+  }
+
+  // Di chuyển bong bóng lên trên và xoay chúng
+  function moveBubbles() {
+    for (var i = 0; i < bubbles.length; i++) {
+      var bubble = bubbles[i];
+      bubble.y -= bubble.speed;
+      if (bubble.y + bubble.radius < 0) {
+        bubble.y = canvas.height + bubble.radius;
       }
     }
   }
 
   // Lặp lại hiệu ứng
-  setInterval(drawWaterDrops, 30);
+  setInterval(drawBubbles, 30);
 }
+
 
 // Lấy tất cả các phần tử pre có class highlight
 var highlights = document.querySelectorAll("pre.highlight");
