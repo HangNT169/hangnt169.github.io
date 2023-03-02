@@ -142,13 +142,13 @@ if (value) {
 }
 
 botNuoc.addEventListener("click", function () {
-  if (localStorage.getItem("checkHieuUng") == "2") {
-    alert("Bạn đang ở hiệu ứng bọt nước !");
+  if (localStorage.getItem("check_skin") == "true") {
+    alert(
+      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
+    );
   } else {
-    if (localStorage.getItem("check_skin") == true) {
-      alert(
-        "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
-      );
+    if (localStorage.getItem("checkHieuUng") == "2") {
+      alert("Bạn đang ở hiệu ứng bọt nước !");
     } else {
       botNuocFunction();
     }
@@ -162,13 +162,13 @@ function botNuocFunction() {
 }
 
 tuyetRoi.addEventListener("click", function () {
-  if (localStorage.getItem("checkHieuUng") == "1") {
-    alert("Bạn đang ở hiệu ứng tuyết rơi !");
+  if (localStorage.getItem("check_skin") == "true") {
+    alert(
+      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
+    );
   } else {
-    if (localStorage.getItem("check_skin") == true) {
-      alert(
-        "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
-      );
+    if (localStorage.getItem("checkHieuUng") == "1") {
+      alert("Bạn đang ở hiệu ứng tuyết rơi !");
     } else {
       tuyetRoiFunction();
     }
@@ -182,13 +182,13 @@ function tuyetRoiFunction() {
 }
 
 hoaHong.addEventListener("click", function () {
-  if (localStorage.getItem("checkHieuUng") == "3") {
-    alert("Bạn đang ở hiệu ứng hoa hồng !");
+  if (localStorage.getItem("check_skin") == "true") {
+    alert(
+      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
+    );
   } else {
-    if (localStorage.getItem("check_skin") == true) {
-      alert(
-        "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
-      );
+    if (localStorage.getItem("checkHieuUng") == "3") {
+      alert("Bạn đang ở hiệu ứng hoa hồng !");
     } else {
       hoaHongFunction();
     }
