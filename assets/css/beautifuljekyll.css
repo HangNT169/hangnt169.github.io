@@ -1225,6 +1225,10 @@ pre {
   margin-bottom: 0; /* loại bỏ khoảng cách trống ở phía dưới menu */
 }
 
+.highlight-container {
+  position: relative;
+}
+
 .btn-copy {
   position: absolute;
   top: 0;
@@ -1236,6 +1240,7 @@ pre {
   border-radius: 0.25em;
   cursor: pointer;
 }
+
 
 
 
