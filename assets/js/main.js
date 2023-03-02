@@ -126,7 +126,9 @@ hoaHong.addEventListener("click", function () {
 
 // Tạo canvas
 function createCanvasTuyetRoi() {
-  canvas = document.createElement("canvas");
+  if (canvas == null) {
+    canvas = document.createElement("canvas");
+  }
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   document.body.appendChild(canvas);
@@ -195,7 +197,9 @@ function stopSnowing() {
 
 // Tạo canvas
 function createCanvasBubble() {
-  canvas = document.createElement("canvas");
+  if (canvas == null) {
+    canvas = document.createElement("canvas");
+  }
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   document.body.appendChild(canvas);
@@ -245,7 +249,9 @@ function stopAnimation() {
 }
 
 function createCanvasHoaHongRoi() {
-  canvas = document.createElement("canvas");
+  if (canvas == null) {
+    canvas = document.createElement("canvas");
+  }
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   document.body.appendChild(canvas);
