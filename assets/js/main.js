@@ -21,6 +21,9 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("post-heading") &&
     !element.classList.contains("post-subheading") &&
     !element.classList.contains("menu") &&
+    !element.classList.contains("ul-custom") &&
+    !element.classList.contains("li-custom") &&
+    !element.classList.contains("a-custom") &&
     !element.classList.contains("fa-sun") &&
     !element.classList.contains("fa-moon") &&
     !element.classList.contains("dropdown-item") &&
