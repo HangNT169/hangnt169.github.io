@@ -1225,4 +1225,17 @@ pre {
   margin-bottom: 0; /* loại bỏ khoảng cách trống ở phía dưới menu */
 }
 
+.btn-copy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+  font-size: 0.8em;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+
 
