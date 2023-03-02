@@ -144,7 +144,7 @@ if (value) {
 botNuoc.addEventListener("click", function () {
   if (localStorage.getItem("check_skin") == "true") {
     alert(
-      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
+      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này !"
     );
   } else {
     if (localStorage.getItem("checkHieuUng") == "2") {
@@ -164,7 +164,7 @@ function botNuocFunction() {
 tuyetRoi.addEventListener("click", function () {
   if (localStorage.getItem("check_skin") == "true") {
     alert(
-      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
+      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này !"
     );
   } else {
     if (localStorage.getItem("checkHieuUng") == "1") {
@@ -184,7 +184,7 @@ function tuyetRoiFunction() {
 hoaHong.addEventListener("click", function () {
   if (localStorage.getItem("check_skin") == "true") {
     alert(
-      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này"
+      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này !"
     );
   } else {
     if (localStorage.getItem("checkHieuUng") == "3") {
