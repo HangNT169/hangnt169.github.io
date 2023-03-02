@@ -77,7 +77,9 @@ function changeSkin() {
     filteredElements[i].classList.toggle("dark");
   }
   const containerCopy = document.querySelectorAll(".highlight-container pre");
-  const containerCode = document.querySelectorAll(".highlight-container pre code");
+  const containerCode = document.querySelectorAll(
+    ".highlight-container pre code"
+  );
   for (let i = 0; i < containerCopy.length; i++) {
     containerCopy[i].classList.toggle("dark");
     containerCode[i].classList.toggle("dark");
@@ -169,58 +171,105 @@ function createCanvas() {
   var ctx = canvas.getContext("2d");
 
   // Tạo mảng hoa đào
-  var cherryBlossoms = [];
+  var blossoms = [];
   for (var i = 0; i < 100; i++) {
-    cherryBlossoms.push({
+    blossoms.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 10 + 5,
+      radius: Math.random() * 4 + 1,
       speed: Math.random() * 2 + 1,
-      opacity: Math.random(),
+      angle: Math.random() * Math.PI * 2,
+      angleIncrement: Math.random() * 0.1 - 0.05,
       petalCount: Math.floor(Math.random() * 4) + 5,
+      petalLength: Math.random() * 10 + 5,
+      petalWidth: Math.random() * 2 + 1,
+      petalColor: {
+        r: Math.floor(Math.random() * 255),
+        g: Math.floor(Math.random() * 255),
+        b: Math.floor(Math.random() * 255),
+      },
     });
   }
 
   // Tạo gradient cho hoa đào
-  var cherryBlossomGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
-  cherryBlossomGradient.addColorStop(0, "rgba(255, 183, 197, 0.8)");
-  cherryBlossomGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+  function createPetalGradient(petal) {
+    var gradient = ctx.createLinearGradient(
+      petal.x1,
+      petal.y1,
+      petal.x2,
+      petal.y2
+    );
+    gradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
+    gradient.addColorStop(
+      1,
+      `rgb(${petal.color.r}, ${petal.color.g}, ${petal.color.b})`
+    );
+    return gradient;
+  }
 
   // Vẽ hoa đào
-  function drawCherryBlossoms() {
+  function drawBlossoms() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
-    for (var i = 0; i < cherryBlossoms.length; i++) {
-      var blossom = cherryBlossoms[i];
-      ctx.save();
-      ctx.fillStyle = cherryBlossomGradient;
-      ctx.translate(blossom.x, blossom.y);
+    for (var i = 0; i < blossoms.length; i++) {
+      var blossom = blossoms[i];
       for (var j = 0; j < blossom.petalCount; j++) {
-        ctx.rotate(Math.PI / blossom.petalCount);
+        var angle = ((Math.PI * 2) / blossom.petalCount) * j + blossom.angle;
+        var petal = {
+          x1: blossom.x + Math.cos(angle) * blossom.radius,
+          y1: blossom.y + Math.sin(angle) * blossom.radius,
+          x2:
+            blossom.x +
+            Math.cos(angle) * (blossom.radius + blossom.petalLength),
+          y2:
+            blossom.y +
+            Math.sin(angle) * (blossom.radius + blossom.petalLength),
+          color: blossom.petalColor,
+          width: blossom.petalWidth,
+        };
+        var petalGradient = createPetalGradient(petal);
         ctx.beginPath();
-        ctx.arc(0, 0, blossom.radius, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      ctx.restore();
-    }
-    moveCherryBlossoms();
-  }
-
-  // Di chuyển hoa đào
-  function moveCherryBlossoms() {
-    for (var i = 0; i < cherryBlossoms.length; i++) {
-      var blossom = cherryBlossoms[i];
-      blossom.y += blossom.speed;
-      if (blossom.y > canvas.height) {
-        blossom.y = -5;
+        ctx.strokeStyle = petalGradient;
+        ctx.lineWidth = petal.width;
+        ctx.moveTo(petal.x1, petal.y1);
+        ctx.lineTo(petal.x2, petal.y2);
+        ctx.stroke();
       }
     }
+    moveBlossoms();
   }
 
-  // Lặp lại hiệu ứng
-  setInterval(drawCherryBlossoms, 30);
+  function moveBlossoms() {
+    for (var i = 0; i < blossoms.length; i++) {
+      var blossom = blossoms[i];
+      blossom.angle += blossom.angleIncrement;
+      blossom.x += Math.cos(blossom.angle) * blossom.speed;
+      blossom.y += Math.sin(blossom.angle) * blossom.speed;
+
+      // Kiểm tra xem hoa đào có di chuyển ra khỏi màn hình không
+      if (
+        blossom.x < -blossom.radius ||
+        blossom.x > canvas.width + blossom.radius ||
+        blossom.y < -blossom.radius ||
+        blossom.y > canvas.height + blossom.radius
+      ) {
+        // Nếu có, di chuyển hoa đào về phía giữa màn hình và đặt lại bán kính và góc
+        blossom.x = canvas.width / 2;
+        blossom.y = canvas.height / 2;
+        blossom.radius = Math.random() * 4 + 1;
+        blossom.angle = Math.random() * Math.PI * 2;
+      }
+    }
+  }
+
+  // Lặp lại vẽ hoa đào với tốc độ 60 khung hình/giây
+  setInterval(drawBlossoms, 1000 / 60);
+
+  // Tự động thay đổi kích thước canvas khi thay đổi kích thước cửa sổ
+  window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
 }
-
 
 // Lấy tất cả các phần tử pre có class highlight
 var highlights = document.querySelectorAll("pre.highlight");
