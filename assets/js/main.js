@@ -159,7 +159,6 @@ if (value) {
 //   // Lặp lại hiệu ứng
 //   setInterval(drawSnowflakes, 30);
 // }
-
 // Tạo canvas
 function createCanvas() {
   var canvas = document.createElement("canvas");
@@ -176,17 +175,17 @@ function createCanvas() {
     blossoms.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 4 + 1,
-      speed: Math.random() * 2 + 1,
+      radius: Math.random() * 10 + 10,
+      speed: Math.random() * 5 + 1,
       angle: Math.random() * Math.PI * 2,
       angleIncrement: Math.random() * 0.1 - 0.05,
       petalCount: Math.floor(Math.random() * 4) + 5,
       petalLength: Math.random() * 10 + 5,
       petalWidth: Math.random() * 2 + 1,
       petalColor: {
-        r: Math.floor(Math.random() * 255),
-        g: Math.floor(Math.random() * 255),
-        b: Math.floor(Math.random() * 255),
+        r: 255,
+        g: Math.floor(Math.random() * 128) + 128,
+        b: Math.floor(Math.random() * 128) + 128,
       },
     });
   }
@@ -234,41 +233,24 @@ function createCanvas() {
         ctx.lineTo(petal.x2, petal.y2);
         ctx.stroke();
       }
-    }
-    moveBlossoms();
-  }
 
-  function moveBlossoms() {
-    for (var i = 0; i < blossoms.length; i++) {
-      var blossom = blossoms[i];
+      // Di chuyển và xoay hoa đào
       blossom.angle += blossom.angleIncrement;
       blossom.x += Math.cos(blossom.angle) * blossom.speed;
-      blossom.y += Math.sin(blossom.angle) * blossom.speed;
+      blossom.y += blossom.speed;
 
-      // Kiểm tra xem hoa đào có di chuyển ra khỏi màn hình không
-      if (
-        blossom.x < -blossom.radius ||
-        blossom.x > canvas.width + blossom.radius ||
-        blossom.y < -blossom.radius ||
-        blossom.y > canvas.height + blossom.radius
-      ) {
-        // Nếu có, di chuyển hoa đào về phía giữa màn hình và đặt lại bán kính và góc
-        blossom.x = canvas.width / 2;
-        blossom.y = canvas.height / 2;
-        blossom.radius = Math.random() * 4 + 1;
-        blossom.angle = Math.random() * Math.PI * 2;
+      // Nếu hoa
+      // Nếu hoa đào ra khỏi màn hình thì đặt lại vị trí
+      if (blossom.y > canvas.height + blossom.radius) {
+        blossom.y = -blossom.radius;
+        blossom.x = Math.random() * canvas.width;
       }
     }
+    requestAnimationFrame(drawBlossoms);
   }
 
-  // Lặp lại vẽ hoa đào với tốc độ 60 khung hình/giây
-  setInterval(drawBlossoms, 1000 / 60);
-
-  // Tự động thay đổi kích thước canvas khi thay đổi kích thước cửa sổ
-  window.addEventListener("resize", function () {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
+  // Gọi hàm vẽ hoa đào
+  drawBlossoms();
 }
 
 // Lấy tất cả các phần tử pre có class highlight
