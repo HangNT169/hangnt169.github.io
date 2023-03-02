@@ -23,7 +23,7 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("menu") &&
     !element.classList.contains("ul-custom") &&
     !element.classList.contains("li-custom") &&
-    !element.classList.contains("fas fa-") &&
+    !element.classList.contains("fas") &&
     !element.classList.contains("a-custom") &&
     !element.classList.contains("fa-sun") &&
     !element.classList.contains("fa-moon") &&
