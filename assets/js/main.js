@@ -8,6 +8,7 @@ const postMeta = document.querySelectorAll("span.post-meta");
 const allElements = document.querySelectorAll("*");
 const heading = document.querySelector(".page-heading h1");
 let interValId;
+var ctx;
 
 var icon = document.createElement("link");
 icon.type = "image/x-icon";
@@ -118,7 +119,7 @@ function createCanvasTuyetRoi() {
   document.body.appendChild(canvas);
 
   // Lấy context
-  var ctx = canvas.getContext("2d");
+  ctx = canvas.getContext("2d");
 
   // Tạo mảng hạt tuyết
   var snowflakes = [];
@@ -187,7 +188,7 @@ function createCanvas() {
   document.body.appendChild(canvas);
 
   // Lấy context
-  var ctx = canvas.getContext("2d");
+  ctx = canvas.getContext("2d");
 
   // Tạo mảng bọt nước
   var bubbles = [];
