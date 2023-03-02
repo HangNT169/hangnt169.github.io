@@ -10,6 +10,8 @@ const heading = document.querySelector(".page-heading h1");
 let interValId;
 var canvas;
 var ctx;
+var animationId;
+var bubbles = [];
 
 var icon = document.createElement("link");
 icon.type = "image/x-icon";
@@ -53,7 +55,7 @@ toggle.addEventListener("click", () => {
 function changeSkin() {
   if (index % 2 == 0) {
     toggle.firstElementChild.className = "far fa-moon";
-    var canvas = document.querySelector("canvas");
+    canvas = document.querySelector("canvas");
     if (canvas != null) {
       canvas.remove();
     }
@@ -106,9 +108,10 @@ if (value) {
 
 botNuoc.addEventListener("click", function () {
   stopSnowing();
-  createCanvas();
+  createCanvasBubble();
 });
 tuyetRoi.addEventListener("click", function () {
+  stopAnimation();
   createCanvasTuyetRoi();
 });
 
@@ -182,7 +185,7 @@ function stopSnowing() {
 }
 
 // Tạo canvas
-function createCanvas() {
+function createCanvasBubble() {
   canvas = document.createElement("canvas");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -192,7 +195,6 @@ function createCanvas() {
   ctx = canvas.getContext("2d");
 
   // Tạo mảng bọt nước
-  var bubbles = [];
   for (var i = 0; i < 100; i++) {
     bubbles.push({
       x: Math.random() * canvas.width,
@@ -220,12 +222,80 @@ function createCanvas() {
         bubble.x = Math.random() * canvas.width;
       }
     }
-    window.requestAnimationFrame(drawBubbles);
+    animationId = window.requestAnimationFrame(drawBubbles);
   }
 
   // Lặp lại hiệu ứng
-  window.requestAnimationFrame(drawBubbles);
+  animationId = window.requestAnimationFrame(drawBubbles);
 }
+
+function stopAnimation() {
+  window.cancelAnimationFrame(animationId);
+  bubbles = [];
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// // Tạo canvas
+// function createCanvasHoaHongRoi() {
+//   canvas = document.createElement("canvas");
+//   canvas.width = window.innerWidth;
+//   canvas.height = window.innerHeight;
+//   document.body.appendChild(canvas);
+
+//   // Lấy context
+//   ctx = canvas.getContext("2d");
+
+//   // Tạo mảng hoa hồng
+//   var roses = [];
+//   for (var i = 0; i < 100; i++) {
+//     roses.push({
+//       x: Math.random() * canvas.width,
+//       y: Math.random() * canvas.height,
+//       radius: Math.random() * 5 + 5,
+//       speed: Math.random() * 2 + 1,
+//       opacity: Math.random() * 0.5 + 0.5,
+//     });
+//   }
+
+//   // Tạo gradient cho hoa hồng
+//   var roseGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
+//   roseGradient.addColorStop(0, "rgba(255, 0, 0, 0.8)");
+//   roseGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+//   // Vẽ hoa hồng
+//   function drawRoses() {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     ctx.beginPath();
+//     for (var i = 0; i < roses.length; i++) {
+//       var rose = roses[i];
+//       ctx.save();
+//       ctx.fillStyle = roseGradient;
+//       ctx.translate(rose.x, rose.y);
+//       ctx.fillRect(
+//         -rose.radius,
+//         -rose.radius,
+//         rose.radius * 2,
+//         rose.radius * 2
+//       );
+//       ctx.restore();
+//     }
+//     moveRoses();
+//   }
+
+//   // Di chuyển hoa hồng
+//   function moveRoses() {
+//     for (var i = 0; i < roses.length; i++) {
+//       var rose = roses[i];
+//       rose.y += rose.speed;
+//       if (rose.y > canvas.height) {
+//         rose.y = -10;
+//       }
+//     }
+//   }
+
+//   // Lặp lại hiệu ứng
+//   interValId = setInterval(drawRoses, 30);
+// }
 
 // Lấy tất cả các phần tử pre có class highlight
 var highlights = document.querySelectorAll("pre.highlight");
