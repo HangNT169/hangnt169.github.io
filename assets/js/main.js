@@ -136,45 +136,45 @@ if (value) {
 }
 
 botNuoc.addEventListener("click", function () {
-  botNuocFunction();
-});
-
-function botNuocFunction() {
   if (localStorage.getItem("checkHieuUng") == "2") {
     alert("Bạn đang ở hiệu ứng bọt nước !");
   } else {
-    stopSnowing();
-    stopRosing();
-    createCanvasBubble();
+    botNuocFunction();
   }
+});
+
+function botNuocFunction() {
+  stopSnowing();
+  stopRosing();
+  createCanvasBubble();
 }
 
 tuyetRoi.addEventListener("click", function () {
-  tuyetRoiFunction();
-});
-
-function tuyetRoiFunction() {
   if (localStorage.getItem("checkHieuUng") == "1") {
     alert("Bạn đang ở hiệu ứng tuyết rơi !");
   } else {
-    stopAnimation();
-    stopRosing();
-    createCanvasTuyetRoi();
+    tuyetRoiFunction();
   }
+});
+
+function tuyetRoiFunction() {
+  stopAnimation();
+  stopRosing();
+  createCanvasTuyetRoi();
 }
 
 hoaHong.addEventListener("click", function () {
-  hoaHongFunction();
-});
-
-function hoaHongFunction() {
   if (localStorage.getItem("checkHieuUng") == "3") {
     alert("Bạn đang ở hiệu ứng hoa hồng !");
   } else {
-    stopAnimation();
-    stopSnowing();
-    createCanvasHoaHongRoi();
+    hoaHongFunction();
   }
+});
+
+function hoaHongFunction() {
+  stopAnimation();
+  stopSnowing();
+  createCanvasHoaHongRoi();
 }
 
 macDinh.addEventListener("click", function () {
