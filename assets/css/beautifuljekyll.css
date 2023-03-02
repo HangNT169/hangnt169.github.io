@@ -1176,54 +1176,55 @@ pre {
   color: rgb(234, 234, 5) !important;
 }
 
-.menu {
-  position: fixed;
-  top: 50%;
-  border-radius: 40px;
-  left: 0;
-  transform: translateY(-50%);
-  background-color: #4d94d2;
-  padding: 10px;
-  z-index: 9999;
-}
+  .menu {
+    position: fixed;
+    top: 50%;
+    border-radius: 40px;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #4d94d2;
+    padding: 10px;
+    z-index: 9999;
+  }
 
-.menu li i {
-  font-size: 20px;
-  margin-right: auto; /* khoảng cách giữa icon và nội dung */
-}
+  .menu li i {
+    font-size: 20px;
+    margin-right: auto; /* khoảng cách giữa icon và nội dung */
+  }
 
-.menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+  .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 
-.menu li {
-  margin-bottom: 10px;
-  transition: transform 0.3s ease-in-out;
-  display: flex; /* để tạo hiệu ứng dọc cho icon */
-  align-items: center; /* để căn giữa icon theo chiều dọc */
-}
+  .menu li {
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+    display: flex; /* để tạo hiệu ứng dọc cho icon */
+    align-items: center; /* để căn giữa icon theo chiều dọc */
+  }
 
-.menu a {
-  color: #fff;
-  text-decoration: none;
-  display: flex; /* để tạo hiệu ứng dọc cho icon */
-  align-items: center; /* để căn giữa icon theo chiều dọc */  
-}
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+    display: flex; /* để tạo hiệu ứng dọc cho icon */
+    align-items: center; /* để căn giữa icon theo chiều dọc */  
+  }
 
-.menu li:hover {
-  transform: translateX(10px); /* di chuyển các mục menu sang phải */
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* tạo hiệu ứng bóng cho các mục menu */
-}
+  .menu li:hover {
+    /* transform: translateX(10px); 
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);  */
+    transform: scale(1.2);
+  }
 
-.menu li:first-child {
-  margin-top: 0; /* loại bỏ khoảng cách trống ở phía trên menu */
-}
+  .menu li:first-child {
+    margin-top: 0; /* loại bỏ khoảng cách trống ở phía trên menu */
+  }
 
-.menu li:last-child {
-  margin-bottom: 0; /* loại bỏ khoảng cách trống ở phía dưới menu */
-}
+  .menu li:last-child {
+    margin-bottom: 0; /* loại bỏ khoảng cách trống ở phía dưới menu */
+  }
 
 .highlight-container {
   position: relative;
