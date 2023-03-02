@@ -109,7 +109,7 @@ if (value) {
 }
 
 botNuoc.addEventListener("click", function () {
-  if (localStorage.getItem("checkHieuUng") == "1") {
+  if (localStorage.getItem("checkHieuUng") == "2") {
     alert("Bạn đang ở hiệu ứng bọt nước !");
   } else {
     stopSnowing();
@@ -118,7 +118,7 @@ botNuoc.addEventListener("click", function () {
   }
 });
 tuyetRoi.addEventListener("click", function () {
-  if (localStorage.getItem("checkHieuUng") == "2") {
+  if (localStorage.getItem("checkHieuUng") == "1") {
     alert("Bạn đang ở hiệu ứng tuyết rơi !");
   } else {
     stopAnimation();
