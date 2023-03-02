@@ -5,6 +5,7 @@ const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const postMeta = document.querySelectorAll("span.post-meta");
 const allElements = document.querySelectorAll("*");
 const heading = document.querySelector(".page-heading h1");
+const containerCopy = document.querySelectorAll(".highlight-container")
 var icon = document.createElement("link");
 icon.type = "image/x-icon";
 icon.rel = "shortcut icon";
@@ -71,6 +72,9 @@ function changeSkin() {
   }
   for (let i = 0; i < filteredElements.length; i++) {
     filteredElements[i].classList.toggle("dark");
+  }
+  for (let i = 0; i < containerCopy.length; i++) {
+    containerCopy[i].classList.toggle("dark");
   }
   for (let i = 0; i < page_link.length; i++) {
     page_link[i].classList.toggle("dark");
