@@ -158,7 +158,6 @@ tuyetRoi.addEventListener("click", function () {
 });
 
 function tuyetRoiFunction() {
-  alert("aaaaaaaaaaaaaaaaaa")
   stopAnimation();
   stopRosing();
   createCanvasTuyetRoi();
@@ -258,7 +257,9 @@ function createCanvasTuyetRoi() {
 
 function stopSnowing() {
   clearInterval(interValId);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (ctx != null) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
 }
 
 // Tạo canvas
@@ -312,7 +313,9 @@ function createCanvasBubble() {
 function stopAnimation() {
   window.cancelAnimationFrame(animationId);
   bubbles = [];
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (ctx != null) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
 }
 
 // Tạo canvas
@@ -380,7 +383,9 @@ function createCanvasHoaHongRoi() {
 
 function stopRosing() {
   clearInterval(interValIdHoaHong);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (ctx != null) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
 }
 
 // Lấy tất cả các phần tử pre có class highlight
