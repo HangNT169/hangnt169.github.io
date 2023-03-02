@@ -220,6 +220,63 @@ if (value) {
 //   setInterval(drawBubbles, 30);
 // }
 
+// // Tạo canvas
+// function createCanvas() {
+//   var canvas = document.createElement("canvas");
+//   canvas.width = window.innerWidth;
+//   canvas.height = window.innerHeight;
+//   document.body.appendChild(canvas);
+
+//   // Lấy context
+//   var ctx = canvas.getContext("2d");
+
+//   // Tạo mảng bong bóng
+//   var bubbles = [];
+//   for (var i = 0; i < 50; i++) {
+//     bubbles.push({
+//       x: Math.random() * canvas.width,
+//       y: Math.random() * canvas.height + canvas.height,
+//       radius: Math.random() * 20 + 10,
+//       speed: Math.random() * 2 + 1,
+//       opacity: Math.random() * 0.5 + 0.5,
+//     });
+//   }
+
+//   // Tạo gradient cho bong bóng
+//   var bubbleGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
+//   bubbleGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
+//   bubbleGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+//   // Vẽ bong bóng
+//   function drawBubbles() {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     ctx.beginPath();
+//     for (var i = 0; i < bubbles.length; i++) {
+//       var bubble = bubbles[i];
+//       ctx.save();
+//       ctx.fillStyle = bubbleGradient;
+//       ctx.translate(bubble.x, bubble.y);
+//       ctx.arc(0, 0, bubble.radius, 0, Math.PI * 2);
+//       ctx.fill();
+//       ctx.restore();
+//     }
+//     moveBubbles();
+//   }
+
+//   // Di chuyển bong bóng lên trên và xoay chúng
+//   function moveBubbles() {
+//     for (var i = 0; i < bubbles.length; i++) {
+//       var bubble = bubbles[i];
+//       bubble.y -= bubble.speed;
+//       if (bubble.y + bubble.radius < 0) {
+//         bubble.y = canvas.height + bubble.radius;
+//       }
+//     }
+//   }
+
+//   // Lặp lại hiệu ứng
+//   setInterval(drawBubbles, 30);
+// }
 
 // Tạo canvas
 function createCanvas() {
@@ -231,54 +288,45 @@ function createCanvas() {
   // Lấy context
   var ctx = canvas.getContext("2d");
 
-  // Tạo mảng bong bóng
+  // Tạo mảng bọt nước
   var bubbles = [];
-  for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 20; i++) {
     bubbles.push({
       x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height + canvas.height,
-      radius: Math.random() * 20 + 10,
-      speed: Math.random() * 2 + 1,
+      y: canvas.height + Math.random() * 100,
+      radius: Math.random() * 20 + 20,
+      speed: Math.random() * 5 + 5,
       opacity: Math.random() * 0.5 + 0.5,
+      color: "rgba(255, 255, 255, " + (Math.random() * 0.5 + 0.5) + ")",
     });
   }
 
-  // Tạo gradient cho bong bóng
-  var bubbleGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
-  bubbleGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
-  bubbleGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
-
-  // Vẽ bong bóng
+  // Vẽ bọt nước
   function drawBubbles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
     for (var i = 0; i < bubbles.length; i++) {
       var bubble = bubbles[i];
-      ctx.save();
-      ctx.fillStyle = bubbleGradient;
-      ctx.translate(bubble.x, bubble.y);
-      ctx.arc(0, 0, bubble.radius, 0, Math.PI * 2);
+      ctx.beginPath();
+      ctx.fillStyle = bubble.color;
+      ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2, false);
       ctx.fill();
-      ctx.restore();
-    }
-    moveBubbles();
-  }
 
-  // Di chuyển bong bóng lên trên và xoay chúng
-  function moveBubbles() {
-    for (var i = 0; i < bubbles.length; i++) {
-      var bubble = bubbles[i];
       bubble.y -= bubble.speed;
-      if (bubble.y + bubble.radius < 0) {
+
+      if (bubble.y < -bubble.radius) {
         bubble.y = canvas.height + bubble.radius;
       }
     }
   }
 
   // Lặp lại hiệu ứng
-  setInterval(drawBubbles, 30);
-}
+  function animateBubbles() {
+    drawBubbles();
+    requestAnimationFrame(animateBubbles);
+  }
 
+  animateBubbles();
+}
 
 // Lấy tất cả các phần tử pre có class highlight
 var highlights = document.querySelectorAll("pre.highlight");
