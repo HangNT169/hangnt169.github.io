@@ -1176,3 +1176,27 @@ pre {
   color: rgb(234, 234, 5) !important;
 }
 
+.menu {
+  position: fixed; /* để giữ menu cố định khi cuộn trang web */
+  top: 50%; /* để đưa menu lên giữa trang web */
+  left: 0; /* để gắn menu vào bên trái của trang web */
+  transform: translateY(-50%); /* để căn giữa menu theo chiều dọc */
+  background-color: #333; /* màu nền của menu */
+  padding: 20px; /* khoảng cách giữa nội dung và các cạnh menu */
+}
+
+.menu ul {
+  list-style-type: none; /* xóa các chấm đầu dòng của danh sách */
+  margin: 0; /* để loại bỏ khoảng cách giữa các mục menu */
+  padding: 0; /* để loại bỏ khoảng cách giữa các mục menu */
+}
+
+.menu li {
+  margin-bottom: 10px; /* khoảng cách giữa các mục menu */
+}
+
+.menu a {
+  color: #fff; /* màu chữ của mục menu */
+  text-decoration: none; /* loại bỏ gạch chân của mục menu */
+}
+
