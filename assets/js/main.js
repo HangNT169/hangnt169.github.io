@@ -244,7 +244,6 @@ function stopAnimation() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-// Tạo canvas
 function createCanvasHoaHongRoi() {
   canvas = document.createElement("canvas");
   canvas.width = window.innerWidth;
@@ -256,13 +255,16 @@ function createCanvasHoaHongRoi() {
 
   // Tạo mảng hoa hồng
   var roses = [];
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 50; i++) {
     roses.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 5 + 5,
+      radius: Math.random() * 15 + 15,
       speed: Math.random() * 2 + 1,
       opacity: Math.random() * 0.5 + 0.5,
+      petalCount: Math.floor(Math.random() * 12) + 5,
+      petalLength: Math.random() * 20 + 10,
+      petalWidth: Math.random() * 4 + 1,
     });
   }
 
@@ -277,16 +279,33 @@ function createCanvasHoaHongRoi() {
     ctx.beginPath();
     for (var i = 0; i < roses.length; i++) {
       var rose = roses[i];
+
+      // Vẽ cánh hoa
       ctx.save();
       ctx.fillStyle = roseGradient;
       ctx.translate(rose.x, rose.y);
-      ctx.fillRect(
-        -rose.radius,
-        -rose.radius,
-        rose.radius * 2,
-        rose.radius * 2
-      );
+      for (var j = 0; j < rose.petalCount; j++) {
+        ctx.rotate((Math.PI * 2) / rose.petalCount);
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(rose.petalWidth / 2, -rose.petalLength);
+        ctx.lineTo(-rose.petalWidth / 2, -rose.petalLength);
+        ctx.closePath();
+        ctx.fill();
+      }
       ctx.restore();
+
+      // Vẽ đốm
+      ctx.beginPath();
+      ctx.fillStyle = "rgba(255, 255, 255, " + rose.opacity + ")";
+      ctx.arc(rose.x, rose.y, rose.radius / 4, 0, Math.PI * 2, false);
+      ctx.fill();
+
+      // Vẽ bông hoa
+      ctx.beginPath();
+      ctx.fillStyle = "rgba(255, 0, 0, " + rose.opacity + ")";
+      ctx.arc(rose.x, rose.y, rose.radius, 0, Math.PI * 2, false);
+      ctx.fill();
     }
     moveRoses();
   }
@@ -297,7 +316,7 @@ function createCanvasHoaHongRoi() {
       var rose = roses[i];
       rose.y += rose.speed;
       if (rose.y > canvas.height) {
-        rose.y = -10;
+        rose.y = -rose.radius;
       }
     }
   }
