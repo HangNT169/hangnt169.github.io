@@ -1179,17 +1179,17 @@ pre {
 .menu {
   position: fixed;
   top: 50%;
-  border-radius: 10px;
+  border-radius: 40px;
   left: 0;
   transform: translateY(-50%);
   background-color: #4d94d2;
-  padding: 20px;
+  padding: 5px;
   z-index: 9999;
 }
 
 .menu li i {
   font-size: 20px;
-  margin-right: 10px; /* khoảng cách giữa icon và nội dung */
+  margin-right: auto; /* khoảng cách giữa icon và nội dung */
 }
 
 .menu ul {
