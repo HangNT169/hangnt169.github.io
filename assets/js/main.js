@@ -58,9 +58,11 @@ toggle.addEventListener("click", () => {
 function changeSkin() {
   if (index % 2 == 0) {
     toggle.firstElementChild.className = "far fa-moon";
-    canvas = document.querySelector("canvas");
+    canvas = document.querySelectorAll("canvas");
     if (canvas != null) {
-      canvas.remove();
+      canvas.forEach(element => {
+        element.remove();
+      });
     }
 
     for (let i = 0; i < p_tag.length; i++) {
