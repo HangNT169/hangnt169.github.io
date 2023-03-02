@@ -158,6 +158,7 @@ tuyetRoi.addEventListener("click", function () {
 });
 
 function tuyetRoiFunction() {
+  alert("aaaaaaaaaaaaaaaaaa")
   stopAnimation();
   stopRosing();
   createCanvasTuyetRoi();
