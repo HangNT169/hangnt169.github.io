@@ -277,7 +277,6 @@ if (value) {
 //   // Lặp lại hiệu ứng
 //   setInterval(drawBubbles, 30);
 // }
-
 // Tạo canvas
 function createCanvas() {
   var canvas = document.createElement("canvas");
@@ -290,43 +289,45 @@ function createCanvas() {
 
   // Tạo mảng bọt nước
   var bubbles = [];
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 50; i++) {
     bubbles.push({
       x: Math.random() * canvas.width,
-      y: canvas.height + Math.random() * 100,
-      radius: Math.random() * 20 + 20,
-      speed: Math.random() * 5 + 5,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 2 + 1,
+      speed: Math.random() * 1 + 0.5,
       opacity: Math.random() * 0.5 + 0.5,
-      color: "rgba(255, 255, 255, " + (Math.random() * 0.5 + 0.5) + ")",
     });
   }
+
+  // Tạo gradient cho bọt nước
+  var bubbleGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
+  bubbleGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
+  bubbleGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
 
   // Vẽ bọt nước
   function drawBubbles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
     for (var i = 0; i < bubbles.length; i++) {
       var bubble = bubbles[i];
-      ctx.beginPath();
-      ctx.fillStyle = bubble.color;
-      ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2, false);
+      ctx.save();
+      ctx.fillStyle = bubbleGradient;
+      ctx.translate(bubble.x, bubble.y);
+      ctx.arc(0, 0, bubble.radius, 0, Math.PI * 2);
       ctx.fill();
-
+      ctx.restore();
       bubble.y -= bubble.speed;
-
       if (bubble.y < -bubble.radius) {
         bubble.y = canvas.height + bubble.radius;
       }
     }
+    window.requestAnimationFrame(drawBubbles);
   }
 
   // Lặp lại hiệu ứng
-  function animateBubbles() {
-    drawBubbles();
-    requestAnimationFrame(animateBubbles);
-  }
-
-  animateBubbles();
+  window.requestAnimationFrame(drawBubbles);
 }
+
 
 // Lấy tất cả các phần tử pre có class highlight
 var highlights = document.querySelectorAll("pre.highlight");
