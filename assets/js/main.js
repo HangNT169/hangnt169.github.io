@@ -277,6 +277,7 @@ if (value) {
 //   // Lặp lại hiệu ứng
 //   setInterval(drawBubbles, 30);
 // }
+
 // Tạo canvas
 function createCanvas() {
   var canvas = document.createElement("canvas");
@@ -287,45 +288,56 @@ function createCanvas() {
   // Lấy context
   var ctx = canvas.getContext("2d");
 
+  // Tạo ảnh bitmap
+  var img = document.createElement("canvas");
+  img.width = 20;
+  img.height = 20;
+  var imgCtx = img.getContext("2d");
+  imgCtx.beginPath();
+  imgCtx.fillStyle = "#fff";
+  imgCtx.arc(10, 10, 2, 0, 2 * Math.PI);
+  imgCtx.fill();
+
   // Tạo mảng bọt nước
   var bubbles = [];
-  for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 100; i++) {
     bubbles.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 2 + 1,
-      speed: Math.random() * 1 + 0.5,
-      opacity: Math.random() * 0.5 + 0.5,
+      size: Math.random() * 4 + 2,
+      speed: Math.random() * 0.5 + 0.1,
+      angle: Math.random() * 2 * Math.PI,
     });
   }
-
-  // Tạo gradient cho bọt nước
-  var bubbleGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
-  bubbleGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
-  bubbleGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
 
   // Vẽ bọt nước
   function drawBubbles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
     for (var i = 0; i < bubbles.length; i++) {
       var bubble = bubbles[i];
-      ctx.save();
-      ctx.fillStyle = bubbleGradient;
-      ctx.translate(bubble.x, bubble.y);
-      ctx.arc(0, 0, bubble.radius, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-      bubble.y -= bubble.speed;
-      if (bubble.y < -bubble.radius) {
-        bubble.y = canvas.height + bubble.radius;
+      bubble.x += Math.cos(bubble.angle) * bubble.speed;
+      bubble.y += Math.sin(bubble.angle) * bubble.speed;
+      if (
+        bubble.x < -bubble.size ||
+        bubble.x > canvas.width + bubble.size ||
+        bubble.y < -bubble.size ||
+        bubble.y > canvas.height + bubble.size
+      ) {
+        bubble.x = Math.random() * canvas.width;
+        bubble.y = -bubble.size;
       }
+      ctx.drawImage(
+        img,
+        bubble.x - bubble.size / 2,
+        bubble.y - bubble.size / 2,
+        bubble.size,
+        bubble.size
+      );
     }
-    window.requestAnimationFrame(drawBubbles);
+    requestAnimationFrame(drawBubbles);
   }
 
-  // Lặp lại hiệu ứng
-  window.requestAnimationFrame(drawBubbles);
+  drawBubbles();
 }
 
 
