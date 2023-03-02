@@ -1220,6 +1220,7 @@ pre {
 
   .menu li i:hover {
     transform: scale(1.5); /* phóng to icon lên 1.2 lần */
+    transition: 5s;
   }
 
   .menu li:first-child {
