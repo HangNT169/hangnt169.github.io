@@ -3,6 +3,7 @@ const toggle = document.querySelector(".toggle");
 const botNuoc = document.querySelector("#botNuoc");
 const tuyetRoi = document.querySelector("#tuyetRoi");
 const hoaHong = document.querySelector("#hoaHong");
+const macDinh = document.querySelector("#macDinh");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const postMeta = document.querySelectorAll("span.post-meta");
@@ -75,7 +76,21 @@ function changeSkin() {
     }
   } else {
     toggle.firstElementChild.className = "fa fa-sun";
-    createCanvasTuyetRoi();
+
+    let checkHieuUng = localStorage.getItem("checkHieuUng");
+    if (checkHieuUng == "0") {
+      macDinhFunction();
+    }
+    if (checkHieuUng == "1") {
+      tuyetRoiFunction();
+    }
+    if (checkHieuUng == "2") {
+      botNuocFunction();
+    }
+    if (checkHieuUng == "3") {
+      hoaHongFunction();
+    }
+
     for (let i = 0; i < p_tag.length; i++) {
       localStorage.setItem("check_skin", false);
       p_tag[i].style.color = "gray !important";
@@ -105,10 +120,26 @@ function changeSkin() {
 if (value) {
   changeSkin();
 } else {
-  createCanvasTuyetRoi();
+  let checkHieuUng = localStorage.getItem("checkHieuUng");
+  if (checkHieuUng == "0") {
+    macDinhFunction();
+  }
+  if (checkHieuUng == "1") {
+    tuyetRoiFunction();
+  }
+  if (checkHieuUng == "2") {
+    botNuocFunction();
+  }
+  if (checkHieuUng == "3") {
+    hoaHongFunction();
+  }
 }
 
 botNuoc.addEventListener("click", function () {
+  botNuocFunction();
+});
+
+function botNuocFunction() {
   if (localStorage.getItem("checkHieuUng") == "2") {
     alert("Bạn đang ở hiệu ứng bọt nước !");
   } else {
@@ -116,8 +147,13 @@ botNuoc.addEventListener("click", function () {
     stopRosing();
     createCanvasBubble();
   }
-});
+}
+
 tuyetRoi.addEventListener("click", function () {
+  tuyetRoiFunction();
+});
+
+function tuyetRoiFunction() {
   if (localStorage.getItem("checkHieuUng") == "1") {
     alert("Bạn đang ở hiệu ứng tuyết rơi !");
   } else {
@@ -125,8 +161,13 @@ tuyetRoi.addEventListener("click", function () {
     stopRosing();
     createCanvasTuyetRoi();
   }
-});
+}
+
 hoaHong.addEventListener("click", function () {
+  hoaHongFunction();
+});
+
+function hoaHongFunction() {
   if (localStorage.getItem("checkHieuUng") == "3") {
     alert("Bạn đang ở hiệu ứng hoa hồng !");
   } else {
@@ -134,7 +175,18 @@ hoaHong.addEventListener("click", function () {
     stopSnowing();
     createCanvasHoaHongRoi();
   }
+}
+
+macDinh.addEventListener("click", function () {
+  macDinhFunction();
 });
+
+function macDinhFunction() {
+  stopRosing();
+  stopAnimation();
+  stopSnowing();
+  localStorage.setItem("checkHieuUng", "0");
+}
 
 // Tạo canvas
 function createCanvasTuyetRoi() {
