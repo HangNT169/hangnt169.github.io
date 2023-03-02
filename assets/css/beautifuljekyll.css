@@ -1190,6 +1190,7 @@ pre {
   .menu li i {
     font-size: 20px;
     margin-right: auto; /* khoảng cách giữa icon và nội dung */
+    transition: transform 0.3s ease-in-out; /* thêm transition để hiệu ứng mượt hơn */
   }
 
   .menu ul {
@@ -1212,10 +1213,13 @@ pre {
     align-items: center; /* để căn giữa icon theo chiều dọc */  
   }
 
-  .menu li:hover {
-    /* transform: translateX(10px); 
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);  */
-    transform: scale(1.2);
+ /* .menu li:hover {
+    transform: translateX(10px); 
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); 
+  }*/
+
+  .menu li i:hover {
+    transform: scale(1.2); /* phóng to icon lên 1.2 lần */
   }
 
   .menu li:first-child {
