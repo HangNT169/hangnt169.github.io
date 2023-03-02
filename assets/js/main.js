@@ -159,7 +159,6 @@ if (value) {
 //   // Lặp lại hiệu ứng
 //   setInterval(drawSnowflakes, 30);
 // }
-
 // Tạo canvas
 function createCanvas() {
   var canvas = document.createElement("canvas");
@@ -170,33 +169,31 @@ function createCanvas() {
   // Lấy context
   var ctx = canvas.getContext("2d");
 
-  // Tạo mảng bọt nước
+  // Tạo mảng hạt bọt nước
   var bubbles = [];
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 50; i++) {
     bubbles.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 10 + 5,
-      speed: Math.random() * 5 + 1,
+      radius: Math.random() * 20 + 10,
+      speed: Math.random() * 2 + 1,
+      riseSpeed: Math.random() * 2 + 1,
       opacity: Math.random() * 0.5 + 0.5,
+      rotation: Math.random() * 360,
+      color: "rgba(255, 255, 255, 0.5)",
     });
   }
 
-  // Tạo gradient cho bọt nước
-  var bubbleGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 10);
-  bubbleGradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
-  bubbleGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
-
-  // Vẽ bọt nước
+  // Vẽ hạt bọt nước
   function drawBubbles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
     for (var i = 0; i < bubbles.length; i++) {
       var bubble = bubbles[i];
       ctx.save();
-      ctx.fillStyle = bubbleGradient;
       ctx.translate(bubble.x, bubble.y);
-      ctx.scale(1, 0.5);
+      ctx.rotate((bubble.rotation * Math.PI) / 180);
+      ctx.fillStyle = bubble.color;
       ctx.beginPath();
       ctx.arc(0, 0, bubble.radius, 0, Math.PI * 2, true);
       ctx.closePath();
@@ -206,12 +203,13 @@ function createCanvas() {
     moveBubbles();
   }
 
-  // Di chuyển bọt nước
+  // Di chuyển hạt bọt nước
   function moveBubbles() {
     for (var i = 0; i < bubbles.length; i++) {
       var bubble = bubbles[i];
-      bubble.y -= bubble.speed;
-      if (bubble.y < -bubble.radius) {
+      bubble.y -= bubble.riseSpeed;
+      bubble.x += Math.sin(bubble.rotation) * bubble.speed;
+      if (bubble.y + bubble.radius < 0) {
         bubble.y = canvas.height + bubble.radius;
       }
     }
