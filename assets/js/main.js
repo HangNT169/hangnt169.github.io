@@ -2,6 +2,8 @@ const page_link = document.querySelectorAll(".page-link");
 const toggle = document.querySelector(".toggle");
 const botNuoc = document.querySelector("#botNuoc");
 const tuyetRoi = document.querySelector("#tuyetRoi");
+const muaRoi = document.querySelector("#muaRoi");
+const saoRoi = document.querySelector("#saoRoi");
 const hoaHong = document.querySelector("#hoaHong");
 const macDinh = document.querySelector("#macDinh");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
@@ -13,6 +15,7 @@ let interValId;
 var canvas = null;
 var interValIdHoaHong;
 var interValIdMuaRoi;
+var interValIdSaoRoi;
 var ctx;
 var animationId;
 var bubbles = [];
@@ -59,16 +62,12 @@ toggle.addEventListener("click", () => {
 function changeSkin() {
   if (index % 2 == 0) {
     toggle.firstElementChild.className = "far fa-moon";
-    // canvas = document.querySelectorAll("canvas");
-    // if (canvas != null) {
-    //   canvas.forEach((element) => {
-    //     element.remove();
-    //   });
-    // }
 
     stopAnimation();
     stopRosing();
     stopSnowing();
+    stopRaning();
+    stopSaoRoi();
 
     for (let i = 0; i < p_tag.length; i++) {
       localStorage.setItem("check_skin", true);
@@ -96,6 +95,12 @@ function changeSkin() {
     }
     if (checkHieuUng == "3") {
       hoaHongFunction();
+    }
+    if (checkHieuUng == "4") {
+      muaRoiFunction();
+    }
+    if (checkHieuUng == "5") {
+      saoRoiFunction();
     }
 
     for (let i = 0; i < p_tag.length; i++) {
@@ -140,8 +145,15 @@ if (value) {
   if (checkHieuUng == "3") {
     hoaHongFunction();
   }
+  if (checkHieuUng == "4") {
+    muaRoiFunction();
+  }
+  if (checkHieuUng == "5") {
+    saoRoiFunction();
+  }
 }
 
+// bọt nước
 botNuoc.addEventListener("click", function () {
   if (localStorage.getItem("check_skin") == "true") {
     alert(
@@ -159,9 +171,11 @@ botNuoc.addEventListener("click", function () {
 function botNuocFunction() {
   stopSnowing();
   stopRosing();
+  stopSaoRoi();
+  stopRaning();
   createCanvasBubble();
 }
-
+// tuyết rơi
 tuyetRoi.addEventListener("click", function () {
   if (localStorage.getItem("check_skin") == "true") {
     alert(
@@ -179,9 +193,11 @@ tuyetRoi.addEventListener("click", function () {
 function tuyetRoiFunction() {
   stopAnimation();
   stopRosing();
+  stopSaoRoi();
+  stopRaning();
   createCanvasTuyetRoi();
 }
-
+// hoa hồng
 hoaHong.addEventListener("click", function () {
   if (localStorage.getItem("check_skin") == "true") {
     alert(
@@ -199,7 +215,55 @@ hoaHong.addEventListener("click", function () {
 function hoaHongFunction() {
   stopAnimation();
   stopSnowing();
+  stopSaoRoi();
+  stopRaning();
   createCanvasHoaHongRoi();
+}
+//Mưa rơi
+
+muaRoi.addEventListener("click", function () {
+  if (localStorage.getItem("check_skin") == "true") {
+    alert(
+      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này !"
+    );
+  } else {
+    if (localStorage.getItem("checkHieuUng") == "4") {
+      alert("Bạn đang ở hiệu ứng mưa rơi !");
+    } else {
+      muaRoiFunction();
+    }
+  }
+});
+
+function muaRoiFunction() {
+  stopAnimation();
+  stopRosing();
+  stopSaoRoi();
+  stopSnowing();
+  createCanvasMuaRoi();
+}
+
+//Sao rơi
+saoRoi.addEventListener("click", function () {
+  if (localStorage.getItem("check_skin") == "true") {
+    alert(
+      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này !"
+    );
+  } else {
+    if (localStorage.getItem("checkHieuUng") == "5") {
+      alert("Bạn đang ở hiệu ứng sao chổi !");
+    } else {
+      saoRoiFunction();
+    }
+  }
+});
+
+function saoRoiFunction() {
+  stopAnimation();
+  stopRosing();
+  stopSnowing();
+  stopRaning();
+  createCanvasSaoRoi();
 }
 
 macDinh.addEventListener("click", function () {
@@ -467,6 +531,76 @@ function createCanvasMuaRoi() {
 
 function stopRaning() {
   clearInterval(interValIdMuaRoi);
+  if (ctx != null) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+}
+
+function createCanvasSaoRoi() {
+  if (canvas == null) {
+    canvas = document.createElement("canvas");
+  }
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
+
+  // Lấy context
+  ctx = canvas.getContext("2d");
+
+  // Tạo mảng sao chổi
+  var saoChois = [];
+  for (var i = 0; i < 10; i++) {
+    saoChois.push({
+      x: Math.random() * canvas.width,
+      y: -100,
+      angle: Math.random() * Math.PI * 2,
+      speed: Math.random() * 2 + 2,
+      size: Math.random() * 20 + 10,
+    });
+  }
+
+  // Vẽ sao chổi
+  function drawSaoChois() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    for (var i = 0; i < saoChois.length; i++) {
+      var saoChoi = saoChois[i];
+      ctx.save();
+      ctx.translate(saoChoi.x, saoChoi.y);
+      ctx.rotate(saoChoi.angle);
+      ctx.fillStyle = "#FFFFFF";
+      ctx.fillRect(
+        -saoChoi.size / 2,
+        -saoChoi.size / 2,
+        saoChoi.size,
+        saoChoi.size
+      );
+      ctx.restore();
+    }
+    moveSaoChois();
+  }
+
+  // Di chuyển sao chổi và xoay chúng
+  function moveSaoChois() {
+    for (var i = 0; i < saoChois.length; i++) {
+      var saoChoi = saoChois[i];
+      saoChoi.x += Math.cos(saoChoi.angle) * saoChoi.speed;
+      saoChoi.y += Math.sin(saoChoi.angle) * saoChoi.speed;
+      if (saoChoi.x > canvas.width + 100 || saoChoi.y > canvas.height + 100) {
+        saoChoi.x = Math.random() * canvas.width;
+        saoChoi.y = -100;
+      }
+      saoChoi.angle += 0.05;
+    }
+  }
+
+  // Lặp lại hiệu ứng
+  interValIdSaoRoi = setInterval(drawSaoChois, 30);
+  localStorage.setItem("checkHieuUng", "5");
+}
+
+function stopSaoRoi() {
+  clearInterval(interValIdSaoRoi);
   if (ctx != null) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
