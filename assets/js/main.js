@@ -3,6 +3,7 @@ const toggle = document.querySelector(".toggle");
 const botNuoc = document.querySelector("#botNuoc");
 const tuyetRoi = document.querySelector("#tuyetRoi");
 const muaRoi = document.querySelector("#muaRoi");
+const laRoi = document.querySelector("#laRoi");
 const saoRoi = document.querySelector("#saoRoi");
 const hoaHong = document.querySelector("#hoaHong");
 const macDinh = document.querySelector("#macDinh");
@@ -16,6 +17,7 @@ var canvas = null;
 var interValIdHoaHong;
 var interValIdMuaRoi;
 var interValIdSaoRoi;
+var interValIdLaRoi;
 var ctx;
 var animationId;
 var bubbles = [];
@@ -102,6 +104,9 @@ function changeSkin() {
     if (checkHieuUng == "5") {
       saoRoiFunction();
     }
+    if (checkHieuUng == "6") {
+      laRoiFunction();
+    }
 
     for (let i = 0; i < p_tag.length; i++) {
       localStorage.setItem("check_skin", false);
@@ -151,6 +156,9 @@ if (value) {
   if (checkHieuUng == "5") {
     saoRoiFunction();
   }
+  if (checkHieuUng == "6") {
+    laRoiFunction();
+  }
 }
 
 // bọt nước
@@ -173,6 +181,7 @@ function botNuocFunction() {
   stopRosing();
   stopSaoRoi();
   stopRaning();
+  stopLaRoi();
   createCanvasBubble();
 }
 // tuyết rơi
@@ -195,6 +204,7 @@ function tuyetRoiFunction() {
   stopRosing();
   stopSaoRoi();
   stopRaning();
+  stopLaRoi();
   createCanvasTuyetRoi();
 }
 // hoa hồng
@@ -216,6 +226,7 @@ function hoaHongFunction() {
   stopAnimation();
   stopSnowing();
   stopSaoRoi();
+  stopLaRoi();
   stopRaning();
   createCanvasHoaHongRoi();
 }
@@ -240,6 +251,7 @@ function muaRoiFunction() {
   stopRosing();
   stopSaoRoi();
   stopSnowing();
+  stopLaRoi();
   createCanvasMuaRoi();
 }
 
@@ -263,7 +275,32 @@ function saoRoiFunction() {
   stopRosing();
   stopSnowing();
   stopRaning();
+  stopLaRoi();
   createCanvasSaoRoi();
+}
+
+// lá rơi
+laRoi.addEventListener("click", function () {
+  if (localStorage.getItem("check_skin") == "true") {
+    alert(
+      "Bạn đang ở chế độ ban đêm, hãy chuyên qua chế độ ban ngày để sử dụng hiệu ứng này !"
+    );
+  } else {
+    if (localStorage.getItem("checkHieuUng") == "6") {
+      alert("Bạn đang ở hiệu ứng lá rơi !");
+    } else {
+      laRoiFunction();
+    }
+  }
+});
+
+function laRoiFunction() {
+  stopAnimation();
+  stopRosing();
+  stopSnowing();
+  stopRaning();
+  stopSaoRoi();
+  createCanvasLaroi();
 }
 
 macDinh.addEventListener("click", function () {
@@ -613,6 +650,75 @@ function createCanvasSaoRoi() {
 
 function stopSaoRoi() {
   clearInterval(interValIdSaoRoi);
+  if (ctx != null) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+}
+
+// Lá rơi
+function createCanvasLaroi() {
+  if (canvas == null) {
+    canvas = document.createElement("canvas");
+  }
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
+
+  // Lấy context
+  ctx = canvas.getContext("2d");
+
+  // Tạo mảng lá
+  var leaves = [];
+  var numLeaves = 50;
+  var images = [
+    "https://i.imgur.com/kKo59V7.png",
+    "https://i.imgur.com/KPpE9m7.png",
+    "https://i.imgur.com/BzASxHi.png",
+    "https://i.imgur.com/T3qJReX.png",
+    "https://i.imgur.com/8g63fna.png",
+  ];
+  for (var i = 0; i < numLeaves; i++) {
+    var imageIndex = Math.floor(Math.random() * images.length);
+    var image = new Image();
+    image.src = images[imageIndex];
+    leaves.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vy: Math.random() * 3 + 1,
+      image: image,
+    });
+  }
+
+  // Vẽ lá
+  function drawLeaves() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < leaves.length; i++) {
+      var leaf = leaves[i];
+      ctx.drawImage(leaf.image, leaf.x, leaf.y);
+    }
+    moveLeaves();
+  }
+
+  // Di chuyển lá
+  function moveLeaves() {
+    for (var i = 0; i < leaves.length; i++) {
+      var leaf = leaves[i];
+      leaf.y += leaf.vy;
+      if (leaf.y > canvas.height) {
+        leaf.y = 0 - leaf.image.height;
+        leaf.x = Math.random() * canvas.width;
+        leaf.vy = Math.random() * 3 + 1;
+      }
+    }
+  }
+
+  // Lặp lại hiệu ứng
+  interValIdLaRoi = setInterval(drawLeaves, 30);
+  localStorage.setItem("checkHieuUng", "6");
+}
+
+function stopLaRoi() {
+  clearInterval(interValIdLaRoi);
   if (ctx != null) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
