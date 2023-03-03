@@ -713,8 +713,8 @@ function createCanvasLaRoi() {
   // Tạo hình dạng lá bàng
   function createLeafShape() {
     var leafCanvas = document.createElement("canvas");
-    leafCanvas.width = 50;
-    leafCanvas.height = 50;
+    leafCanvas.width = 20;
+    leafCanvas.height = 20;
     var leafCtx = leafCanvas.getContext("2d");
 
     // Vẽ hình dạng lá bàng
