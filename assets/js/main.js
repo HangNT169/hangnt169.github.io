@@ -35,6 +35,8 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("col-xl-8") &&
     !element.classList.contains("") &&
     element.id !== "nav-search-input" &&
+    element.id !== "logout" &&
+    element.id !== "logoutPost" &&
     element.id !== "nav-search-exit" &&
     !element.classList.contains("avatar-container") &&
     element.tagName !== "H1" &&
