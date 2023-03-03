@@ -720,10 +720,10 @@ function createCanvasLaRoi() {
     // Vẽ hình dạng lá bàng
     leafCtx.beginPath();
     leafCtx.moveTo(25, 0);
-    leafCtx.bezierCurveTo(12.5, 5, 12.5, 20, 12.5, 25);
-    leafCtx.bezierCurveTo(12.5, 35, 25, 55, 25, 55);
-    leafCtx.bezierCurveTo(25, 55, 37.5, 35, 37.5, 25);
-    leafCtx.bezierCurveTo(37.5, 20, 37.5, 5, 25, 0);
+    leafCtx.bezierCurveTo(7.5, 2.5, 7.5, 10, 7.5, 12.5); // Giảm kích thước lá bàng
+    leafCtx.bezierCurveTo(7.5, 17.5, 15, 27.5, 15, 27.5); // Giảm kích thước lá bàng
+    leafCtx.bezierCurveTo(15, 27.5, 22.5, 17.5, 22.5, 12.5); // Giảm kích thước lá bàng
+    leafCtx.bezierCurveTo(22.5, 10, 22.5, 2.5, 15, 0); // Giảm kích thước lá bàng
     leafCtx.fillStyle = "green";
     leafCtx.fill();
     leafCtx.closePath();
