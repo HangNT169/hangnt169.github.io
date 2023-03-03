@@ -46,7 +46,11 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("fa-home") &&
     !element.classList.contains("fa-snowflake") &&
     !element.classList.contains("fa-circle") &&
-    !element.classList.contains("fa-user") &&
+    !element.classList.contains("fa-sun") &&
+    !element.classList.contains("fa-grin-hearts") &&
+    !element.classList.contains("fa-cloud-rain") &&
+    !element.classList.contains("fa-star") &&
+    !element.classList.contains("fa-leaf") &&
     !element.classList.contains("a-custom") &&
     !element.classList.contains("fa-sun") &&
     !element.classList.contains("fa-moon") &&
