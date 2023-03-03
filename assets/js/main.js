@@ -668,45 +668,78 @@ function createCanvasLaRoi() {
   // Lấy context
   ctx = canvas.getContext("2d");
 
-  // Tạo mảng lá
-  var leaves = [];
-  var leafCount = 100;
-  var colors = ["#9a4f2b", "#993300", "#d44113", "#ea5506", "#ffc20e"];
-  var shapes = ["♥", "♣", "♠", "♦"];
+  // Tạo hình dạng lá bàng
+  var leafShape = createLeafShape();
 
-  for (var i = 0; i < leafCount; i++) {
-    var colorIndex = Math.floor(Math.random() * colors.length);
-    var shapeIndex = Math.floor(Math.random() * shapes.length);
-    var leaf = {
+  // Tạo mảng lá bàng
+  var leaves = [];
+  for (var i = 0; i < 50; i++) {
+    leaves.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      size: Math.random() * 40 + 20,
-      color: colors[colorIndex],
-      shape: shapes[shapeIndex],
-      angle: Math.random() * Math.PI * 2,
-      speed: Math.random() * 5 + 5,
-      spin: Math.random() < 0.5 ? -1 : 1,
-    };
-    leaves.push(leaf);
+      size: Math.random() * 50 + 50,
+      speed: Math.random() * 5 + 1,
+      angle: Math.random() * 360,
+      shape: leafShape,
+    });
   }
 
-  // Vẽ lá
+  // Vẽ lá bàng
   function drawLeaves() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (var i = 0; i < leaves.length; i++) {
       var leaf = leaves[i];
-      var x = leaf.x + Math.sin(leaf.angle) * 20;
-      var y = leaf.y + Math.cos(leaf.angle) * 10;
-      ctx.fillStyle = leaf.color;
-      ctx.font = leaf.size + "px Arial";
-      ctx.fillText(leaf.shape, x, y);
-      leaf.angle += leaf.speed / 100;
+      ctx.save();
+      ctx.translate(leaf.x, leaf.y);
+      ctx.rotate((leaf.angle * Math.PI) / 180);
+      drawLeaf(leaf);
+      ctx.restore();
+    }
+    moveLeaves();
+  }
+
+  // Di chuyển lá bàng
+  function moveLeaves() {
+    for (var i = 0; i < leaves.length; i++) {
+      var leaf = leaves[i];
       leaf.y += leaf.speed;
-      if (leaf.y > canvas.height) {
+      leaf.angle += leaf.speed;
+      if (leaf.y > canvas.height + leaf.size) {
         leaf.y = -leaf.size;
-        leaf.x = Math.random() * canvas.width;
       }
     }
+  }
+
+  // Tạo hình dạng lá bàng
+  function createLeafShape() {
+    var leafCanvas = document.createElement("canvas");
+    leafCanvas.width = 50;
+    leafCanvas.height = 50;
+    var leafCtx = leafCanvas.getContext("2d");
+
+    // Vẽ hình dạng lá bàng
+    leafCtx.beginPath();
+    leafCtx.moveTo(25, 0);
+    leafCtx.bezierCurveTo(12.5, 5, 12.5, 20, 12.5, 25);
+    leafCtx.bezierCurveTo(12.5, 35, 25, 55, 25, 55);
+    leafCtx.bezierCurveTo(25, 55, 37.5, 35, 37.5, 25);
+    leafCtx.bezierCurveTo(37.5, 20, 37.5, 5, 25, 0);
+    leafCtx.fillStyle = "green";
+    leafCtx.fill();
+    leafCtx.closePath();
+
+    return leafCanvas;
+  }
+
+  // Vẽ lá bàng từ hình dạng đã tạo
+  function drawLeaf(leaf) {
+    ctx.drawImage(
+      leaf.shape,
+      -leaf.size / 2,
+      -leaf.size / 2,
+      leaf.size,
+      leaf.size
+    );
   }
 
   // Lặp lại hiệu ứng
