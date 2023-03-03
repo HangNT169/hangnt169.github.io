@@ -536,6 +536,7 @@ function stopRaning() {
   }
 }
 
+// Tạo canvas
 function createCanvasSaoRoi() {
   if (canvas == null) {
     canvas = document.createElement("canvas");
@@ -548,54 +549,63 @@ function createCanvasSaoRoi() {
   ctx = canvas.getContext("2d");
 
   // Tạo mảng sao chổi
-  var saoChois = [];
-  for (var i = 0; i < 10; i++) {
-    saoChois.push({
+  var meteors = [];
+  for (var i = 0; i < 20; i++) {
+    meteors.push({
       x: Math.random() * canvas.width,
-      y: -100,
-      angle: Math.random() * Math.PI * 2,
-      speed: Math.random() * 2 + 2,
-      size: Math.random() * 20 + 10,
+      y: -50,
+      speed: Math.random() * 5 + 2,
+      angle: Math.PI / 4 + Math.random() * Math.PI / 2,
+      rotation: Math.random() * Math.PI,
+      size: Math.random() * 10 + 10,
+      opacity: Math.random(),
     });
   }
 
   // Vẽ sao chổi
-  function drawSaoChois() {
+  function drawMeteors() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
-    for (var i = 0; i < saoChois.length; i++) {
-      var saoChoi = saoChois[i];
+    for (var i = 0; i < meteors.length; i++) {
+      var meteor = meteors[i];
       ctx.save();
-      ctx.translate(saoChoi.x, saoChoi.y);
-      ctx.rotate(saoChoi.angle);
-      ctx.fillStyle = "#FFFFFF";
-      ctx.fillRect(
-        -saoChoi.size / 2,
-        -saoChoi.size / 2,
-        saoChoi.size,
-        saoChoi.size
-      );
+      ctx.translate(meteor.x + meteor.size / 2, meteor.y + meteor.size / 2);
+      ctx.rotate(meteor.rotation);
+      ctx.beginPath();
+      ctx.moveTo(-meteor.size / 2, -meteor.size / 2);
+      ctx.lineTo(meteor.size / 2, meteor.size / 2);
+      ctx.moveTo(meteor.size / 2, -meteor.size / 2);
+      ctx.lineTo(-meteor.size / 2, meteor.size / 2);
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "rgba(255, 255, 255, " + meteor.opacity + ")";
+      ctx.stroke();
       ctx.restore();
     }
-    moveSaoChois();
+    moveMeteors();
   }
 
-  // Di chuyển sao chổi và xoay chúng
-  function moveSaoChois() {
-    for (var i = 0; i < saoChois.length; i++) {
-      var saoChoi = saoChois[i];
-      saoChoi.x += Math.cos(saoChoi.angle) * saoChoi.speed;
-      saoChoi.y += Math.sin(saoChoi.angle) * saoChoi.speed;
-      if (saoChoi.x > canvas.width + 100 || saoChoi.y > canvas.height + 100) {
-        saoChoi.x = Math.random() * canvas.width;
-        saoChoi.y = -100;
+  // Di chuyển sao chổi
+  function moveMeteors() {
+    for (var i = 0; i < meteors.length; i++) {
+      var meteor = meteors[i];
+      meteor.x += Math.cos(meteor.angle) * meteor.speed;
+      meteor.y += Math.sin(meteor.angle) * meteor.speed;
+      meteor.rotation += 0.05;
+      if (meteor.x > canvas.width + 50 || meteor.y > canvas.height + 50) {
+        meteors[i] = {
+          x: Math.random() * canvas.width,
+          y: -50,
+          speed: Math.random() * 5 + 2,
+          angle: Math.PI / 4 + Math.random() * Math.PI / 2,
+          rotation: Math.random() * Math.PI,
+          size: Math.random() * 10 + 10,
+          opacity: Math.random(),
+        };
       }
-      saoChoi.angle += 0.05;
     }
   }
 
   // Lặp lại hiệu ứng
-  interValIdSaoRoi = setInterval(drawSaoChois, 30);
+  interValIdSaoRoi = setInterval(drawMeteors, 30);
   localStorage.setItem("checkHieuUng", "5");
 }
 
