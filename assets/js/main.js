@@ -549,13 +549,14 @@ function createCanvasSaoRoi() {
   ctx = canvas.getContext("2d");
 
   // Tạo mảng sao chổi
+  // Tạo mảng sao chổi
   var meteors = [];
   for (var i = 0; i < 20; i++) {
     meteors.push({
       x: Math.random() * canvas.width,
       y: -50,
-      speed: Math.random() * 5 + 2,
-      angle: Math.PI / 4 + Math.random() * Math.PI / 2,
+      speed: Math.random() * 10 + 5, // tăng tốc độ bay
+      angle: Math.PI / 4 + (Math.random() * Math.PI) / 2, // thay đổi góc bay
       rotation: Math.random() * Math.PI,
       size: Math.random() * 10 + 10,
       opacity: Math.random(),
@@ -584,18 +585,19 @@ function createCanvasSaoRoi() {
   }
 
   // Di chuyển sao chổi
+  // Di chuyển sao chổi
   function moveMeteors() {
     for (var i = 0; i < meteors.length; i++) {
       var meteor = meteors[i];
-      meteor.x += Math.cos(meteor.angle) * meteor.speed;
-      meteor.y += Math.sin(meteor.angle) * meteor.speed;
+      meteor.x += Math.cos(meteor.angle) * meteor.speed * 2; // tăng tốc độ di chuyển
+      meteor.y += Math.sin(meteor.angle) * meteor.speed * 2; // tăng tốc độ di chuyển
       meteor.rotation += 0.05;
       if (meteor.x > canvas.width + 50 || meteor.y > canvas.height + 50) {
         meteors[i] = {
           x: Math.random() * canvas.width,
           y: -50,
-          speed: Math.random() * 5 + 2,
-          angle: Math.PI / 4 + Math.random() * Math.PI / 2,
+          speed: Math.random() * 10 + 5,
+          angle: Math.PI / 4 + (Math.random() * Math.PI) / 2,
           rotation: Math.random() * Math.PI,
           size: Math.random() * 10 + 10,
           opacity: Math.random(),
