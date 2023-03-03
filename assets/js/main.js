@@ -713,13 +713,13 @@ function createCanvasLaRoi() {
   // Tạo hình dạng lá bàng
   function createLeafShape() {
     var leafCanvas = document.createElement("canvas");
-    leafCanvas.width = 20;
-    leafCanvas.height = 20;
+    leafCanvas.width = 30;
+    leafCanvas.height = 30;
     var leafCtx = leafCanvas.getContext("2d");
 
     // Vẽ hình dạng lá bàng
     leafCtx.beginPath();
-    leafCtx.moveTo(25, 0);
+    leafCtx.moveTo(15, 0);
     leafCtx.bezierCurveTo(7.5, 2.5, 7.5, 10, 7.5, 12.5); // Giảm kích thước lá bàng
     leafCtx.bezierCurveTo(7.5, 17.5, 15, 27.5, 15, 27.5); // Giảm kích thước lá bàng
     leafCtx.bezierCurveTo(15, 27.5, 22.5, 17.5, 22.5, 12.5); // Giảm kích thước lá bàng
