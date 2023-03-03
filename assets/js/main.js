@@ -556,7 +556,7 @@ function createCanvasSaoRoi() {
     meteors.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      speed: Math.random() * 10 + 20, // tăng tốc độ bay
+      speed: Math.random() * 20 + 20, // tăng tốc độ bay
       angle: angle, // sử dụng cùng một góc cho tất cả các sao
       rotation: Math.random() * Math.PI,
       size: Math.random() * 10 + 10,
