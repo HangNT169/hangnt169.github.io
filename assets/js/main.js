@@ -10,8 +10,9 @@ const postMeta = document.querySelectorAll("span.post-meta");
 const allElements = document.querySelectorAll("*");
 const heading = document.querySelector(".page-heading h1");
 let interValId;
-var canvas;
+var canvas = null;
 var interValIdHoaHong;
+var interValIdMuaRoi;
 var ctx;
 var animationId;
 var bubbles = [];
@@ -58,12 +59,12 @@ toggle.addEventListener("click", () => {
 function changeSkin() {
   if (index % 2 == 0) {
     toggle.firstElementChild.className = "far fa-moon";
-    canvas = document.querySelectorAll("canvas");
-    if (canvas != null) {
-      canvas.forEach((element) => {
-        element.remove();
-      });
-    }
+    // canvas = document.querySelectorAll("canvas");
+    // if (canvas != null) {
+    //   canvas.forEach((element) => {
+    //     element.remove();
+    //   });
+    // }
 
     stopAnimation();
     stopRosing();
@@ -407,6 +408,65 @@ function createCanvasHoaHongRoi() {
 
 function stopRosing() {
   clearInterval(interValIdHoaHong);
+  if (ctx != null) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+}
+
+function createCanvasMuaRoi() {
+  if (canvas == null) {
+    canvas = document.createElement("canvas");
+  }
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
+
+  // Lấy context
+  ctx = canvas.getContext("2d");
+
+  // Tạo mảng giọt mưa
+  var drops = [];
+  for (var i = 0; i < 100; i++) {
+    drops.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      length: Math.random() * 30 + 10,
+      speed: Math.random() * 10 + 5,
+    });
+  }
+
+  // Vẽ giọt mưa
+  function drawDrops() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < drops.length; i++) {
+      var drop = drops[i];
+      ctx.beginPath();
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.5)";
+      ctx.moveTo(drop.x, drop.y);
+      ctx.lineTo(drop.x, drop.y + drop.length);
+      ctx.stroke();
+    }
+    moveDrops();
+  }
+
+  // Di chuyển giọt mưa
+  function moveDrops() {
+    for (var i = 0; i < drops.length; i++) {
+      var drop = drops[i];
+      drop.y += drop.speed;
+      if (drop.y > canvas.height) {
+        drop.y = -drop.length;
+      }
+    }
+  }
+
+  // Lặp lại hiệu ứng
+  interValIdMuaRoi = setInterval(drawDrops, 30);
+  localStorage.setItem("checkHieuUng", "4");
+}
+
+function stopRaning() {
+  clearInterval(interValIdMuaRoi);
   if (ctx != null) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
