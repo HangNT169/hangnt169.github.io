@@ -537,7 +537,6 @@ function stopRaning() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 }
-
 // Tạo canvas
 function createCanvasSaoRoi() {
   if (canvas == null) {
@@ -551,13 +550,12 @@ function createCanvasSaoRoi() {
   ctx = canvas.getContext("2d");
 
   // Tạo mảng sao chổi
-  // Tạo mảng sao chổi
   var meteors = [];
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 10; i++) {
     meteors.push({
       x: Math.random() * canvas.width,
       y: -50,
-      speed: Math.random() * 10 + 5, // tăng tốc độ bay
+      speed: Math.random() * 20 + 20, // tăng tốc độ bay
       angle: Math.PI / 4 + (Math.random() * Math.PI) / 2, // thay đổi góc bay
       rotation: Math.random() * Math.PI,
       size: Math.random() * 10 + 10,
@@ -574,10 +572,15 @@ function createCanvasSaoRoi() {
       ctx.translate(meteor.x + meteor.size / 2, meteor.y + meteor.size / 2);
       ctx.rotate(meteor.rotation);
       ctx.beginPath();
-      ctx.moveTo(-meteor.size / 2, -meteor.size / 2);
-      ctx.lineTo(meteor.size / 2, meteor.size / 2);
-      ctx.moveTo(meteor.size / 2, -meteor.size / 2);
-      ctx.lineTo(-meteor.size / 2, meteor.size / 2);
+      ctx.moveTo(-meteor.size / 2, 0);
+      ctx.lineTo(-meteor.size / 4, -meteor.size / 4);
+      ctx.lineTo(0, -meteor.size / 2);
+      ctx.lineTo(meteor.size / 4, -meteor.size / 4);
+      ctx.lineTo(meteor.size / 2, 0);
+      ctx.lineTo(meteor.size / 4, meteor.size / 4);
+      ctx.lineTo(0, meteor.size / 2);
+      ctx.lineTo(-meteor.size / 4, meteor.size / 4);
+      ctx.closePath();
       ctx.lineWidth = 2;
       ctx.strokeStyle = "rgba(255, 255, 255, " + meteor.opacity + ")";
       ctx.stroke();
@@ -586,7 +589,6 @@ function createCanvasSaoRoi() {
     moveMeteors();
   }
 
-  // Di chuyển sao chổi
   // Di chuyển sao chổi
   function moveMeteors() {
     for (var i = 0; i < meteors.length; i++) {
@@ -598,7 +600,7 @@ function createCanvasSaoRoi() {
         meteors[i] = {
           x: Math.random() * canvas.width,
           y: -50,
-          speed: Math.random() * 10 + 5,
+          speed: Math.random() * 20 + 20,
           angle: Math.PI / 4 + (Math.random() * Math.PI) / 2,
           rotation: Math.random() * Math.PI,
           size: Math.random() * 10 + 10,
