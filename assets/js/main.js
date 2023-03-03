@@ -551,12 +551,13 @@ function createCanvasSaoRoi() {
 
   // Tạo mảng sao chổi
   var meteors = [];
-  for (var i = 0; i < 10; i++) {
+  var angle = Math.PI / 4; // Góc bay chéo từ trái qua phải
+  for (var i = 0; i < 20; i++) {
     meteors.push({
       x: Math.random() * canvas.width,
-      y: -50,
-      speed: Math.random() * 20 + 20, // tăng tốc độ bay
-      angle: Math.PI / 4 + (Math.random() * Math.PI) / 2, // thay đổi góc bay
+      y: Math.random() * canvas.height,
+      speed: Math.random() * 10 + 20, // tăng tốc độ bay
+      angle: angle, // sử dụng cùng một góc cho tất cả các sao
       rotation: Math.random() * Math.PI,
       size: Math.random() * 10 + 10,
       opacity: Math.random(),
@@ -572,15 +573,10 @@ function createCanvasSaoRoi() {
       ctx.translate(meteor.x + meteor.size / 2, meteor.y + meteor.size / 2);
       ctx.rotate(meteor.rotation);
       ctx.beginPath();
-      ctx.moveTo(-meteor.size / 2, 0);
-      ctx.lineTo(-meteor.size / 4, -meteor.size / 4);
-      ctx.lineTo(0, -meteor.size / 2);
-      ctx.lineTo(meteor.size / 4, -meteor.size / 4);
-      ctx.lineTo(meteor.size / 2, 0);
-      ctx.lineTo(meteor.size / 4, meteor.size / 4);
-      ctx.lineTo(0, meteor.size / 2);
-      ctx.lineTo(-meteor.size / 4, meteor.size / 4);
-      ctx.closePath();
+      ctx.moveTo(-meteor.size / 2, -meteor.size / 2);
+      ctx.lineTo(meteor.size / 2, meteor.size / 2);
+      ctx.moveTo(meteor.size / 2, -meteor.size / 2);
+      ctx.lineTo(-meteor.size / 2, meteor.size / 2);
       ctx.lineWidth = 2;
       ctx.strokeStyle = "rgba(255, 255, 255, " + meteor.opacity + ")";
       ctx.stroke();
@@ -593,15 +589,15 @@ function createCanvasSaoRoi() {
   function moveMeteors() {
     for (var i = 0; i < meteors.length; i++) {
       var meteor = meteors[i];
-      meteor.x += Math.cos(meteor.angle) * meteor.speed * 2; // tăng tốc độ di chuyển
-      meteor.y += Math.sin(meteor.angle) * meteor.speed * 2; // tăng tốc độ di chuyển
+      meteor.x += Math.cos(meteor.angle) * meteor.speed; // tăng tốc độ di chuyển
+      meteor.y += Math.sin(meteor.angle) * meteor.speed; // tăng tốc độ di chuyển
       meteor.rotation += 0.05;
       if (meteor.x > canvas.width + 50 || meteor.y > canvas.height + 50) {
         meteors[i] = {
           x: Math.random() * canvas.width,
-          y: -50,
-          speed: Math.random() * 20 + 20,
-          angle: Math.PI / 4 + (Math.random() * Math.PI) / 2,
+          y: Math.random() * canvas.height,
+          speed: Math.random() * 10 + 20,
+          angle: angle,
           rotation: Math.random() * Math.PI,
           size: Math.random() * 10 + 10,
           opacity: Math.random(),
