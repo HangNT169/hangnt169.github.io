@@ -672,12 +672,14 @@ function createCanvasLaRoi() {
   var leafShape = createLeafShape();
 
   // Tạo mảng lá bàng
+  // Tạo mảng lá bàng
   var leaves = [];
-  for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 100; i++) {
+    // tăng số lượng lá lên để mật độ lá dày hơn
     leaves.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      size: Math.random() * 50 + 50,
+      size: Math.random() * 10 + 20, // giảm kích thước lá xuống còn 20-30px
       speed: Math.random() * 5 + 1,
       angle: Math.random() * 360,
       shape: leafShape,
