@@ -70,6 +70,7 @@ function changeSkin() {
     stopSnowing();
     stopRaning();
     stopSaoRoi();
+    stopLaRoi();
 
     for (let i = 0; i < p_tag.length; i++) {
       localStorage.setItem("check_skin", true);
@@ -313,6 +314,7 @@ function macDinhFunction() {
   stopSnowing();
   stopSaoRoi();
   stopRaning();
+  stopLaRoi();
   localStorage.setItem("checkHieuUng", "0");
 }
 
