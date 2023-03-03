@@ -274,6 +274,8 @@ function macDinhFunction() {
   stopRosing();
   stopAnimation();
   stopSnowing();
+  stopSaoRoi();
+  stopRaning();
   localStorage.setItem("checkHieuUng", "0");
 }
 
