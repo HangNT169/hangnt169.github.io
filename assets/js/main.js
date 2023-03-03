@@ -657,46 +657,46 @@ function stopSaoRoi() {
   }
 }
 
-// Lá rơi
 function createCanvasLaroi() {
-  if (canvas == null) {
-    canvas = document.createElement("canvas");
-  }
+  // Tạo canvas
+  var canvas = document.createElement("canvas");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   document.body.appendChild(canvas);
 
   // Lấy context
-  ctx = canvas.getContext("2d");
+  var ctx = canvas.getContext("2d");
 
   // Tạo mảng lá
   var leaves = [];
-  var numLeaves = 50;
-  var images = [
-    "https://i.imgur.com/kKo59V7.png",
-    "https://i.imgur.com/KPpE9m7.png",
-    "https://i.imgur.com/BzASxHi.png",
-    "https://i.imgur.com/T3qJReX.png",
-    "https://i.imgur.com/8g63fna.png",
-  ];
-  for (var i = 0; i < numLeaves; i++) {
-    var imageIndex = Math.floor(Math.random() * images.length);
-    var image = new Image();
-    image.src = images[imageIndex];
-    leaves.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vy: Math.random() * 3 + 1,
-      image: image,
-    });
+  for (var i = 0; i < 50; i++) {
+    var leaf = {
+      x: Math.random() * canvas.width, // Tọa độ x
+      y: Math.random() * canvas.height, // Tọa độ y
+      speed: Math.random() + 0.5, // Tốc độ rơi
+      size: Math.random() * 10 + 10, // Kích thước lá
+      angle: Math.random() * 360, // Góc quay
+    };
+    leaves.push(leaf);
   }
 
   // Vẽ lá
   function drawLeaves() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "green";
     for (var i = 0; i < leaves.length; i++) {
       var leaf = leaves[i];
-      ctx.drawImage(leaf.image, leaf.x, leaf.y);
+      ctx.save();
+      ctx.translate(leaf.x, leaf.y);
+      ctx.rotate((leaf.angle * Math.PI) / 180);
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(leaf.size / 2, leaf.size);
+      ctx.lineTo(0, leaf.size / 2);
+      ctx.lineTo(-leaf.size / 2, leaf.size);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
     }
     moveLeaves();
   }
@@ -705,17 +705,16 @@ function createCanvasLaroi() {
   function moveLeaves() {
     for (var i = 0; i < leaves.length; i++) {
       var leaf = leaves[i];
-      leaf.y += leaf.vy;
+      leaf.y += leaf.speed;
+      leaf.angle += Math.random() * 5 - 2.5; // Góc quay ngẫu nhiên
       if (leaf.y > canvas.height) {
-        leaf.y = 0 - leaf.image.height;
-        leaf.x = Math.random() * canvas.width;
-        leaf.vy = Math.random() * 3 + 1;
+        leaf.y = -leaf.size; // Cho lá rơi từ đầu khi vượt quá chiều cao của canvas
       }
     }
   }
 
   // Lặp lại hiệu ứng
-  interValIdLaRoi = setInterval(drawLeaves, 30);
+  setInterval(drawLeaves, 30);
   localStorage.setItem("checkHieuUng", "6");
 }
 
