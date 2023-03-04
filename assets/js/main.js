@@ -51,6 +51,9 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("fa-sun") &&
     !element.classList.contains("fa-grin-hearts") &&
     !element.classList.contains("fa-cloud-rain") &&
+    !element.classList.contains("fa-file-image") &&
+    !element.classList.contains("fa-image") &&
+    !element.classList.contains("fa-headphones") &&
     !element.classList.contains("fa-star") &&
     !element.classList.contains("fa-leaf") &&
     !element.classList.contains("a-custom") &&
