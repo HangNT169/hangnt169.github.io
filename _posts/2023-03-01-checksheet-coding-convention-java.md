@@ -16,10 +16,12 @@ tags: [Convention Java]
 * Sử dụng khoảng trắng<br/>
 *  Đóng ngoặc, mở ngoặc<br/>
 *  Đặt tên lớp, thuộc tính, phương thức<br/>
+* ![chuan_dat_ten_hinh_thuc.jpg](..%2Fassets%2Fimg%2Fconvention%2Fchuan_dat_ten_hinh_thuc.jpg)
 ### 1.2 Chuẩn ngữ nghĩa
 * Biểu thức so sánh
 * Cấu trúc điều khiển : if, for, while
 * Cài đặt phương thức
+![hinhthuc.jpg](..%2Fassets%2Fimg%2Fconvention%2Fhinhthuc.jpg)
 ## 2. White Space
 * Những quy định về sử dụng khoảng trắng (space), thụt đầu dòng, xuống dòng, dòng trống: giúp cho nội dung văn bản được tổ chức một cách có hệ thống để người đọc dễ dàng tiếp thu.
 * 1 đơn vị thụt đầu dòng = 1 tab(*)
@@ -38,7 +40,7 @@ tags: [Convention Java]
 * Khi dùng nhiều endline comment trên các dòng code liên tiếp nhau thì các comment này phải được canh lề như nhau.
 * Nên vừa code vừa viết comment. Tránh trường hợp viết code xong rồi mới viết comment.
 * Không nên đụng chỗ nào cũng comment, chỉ viết comment khi bạn cảm nhận là đoạn code của mình quá phức tạp.
-
+![comment.jpg](..%2Fassets%2Fimg%2Fconvention%2Fcomment.jpg)
 ## 5. Quy ước đặt tên
 ### 5.1 Các cách đặt tên trong lập trình 
 * Pascal case
@@ -104,7 +106,7 @@ tags: [Convention Java]
   * Ví dụ:
      * Đúng: com.example.deepspace
      *  Sai: com.example.deepSpace hoặc com.example.deep_space
-
+![package_class.jpg](..%2Fassets%2Fimg%2Fconvention%2Fpackage_class.jpg)
 ## 6. Import thư viện sử dụng
 * Chỉ import thư viện sử dụng cần thiết. Không sử dụng import tất cả.
   * Ví dụ: sử dụng import java.util.List; thay cho import java.util.*;
