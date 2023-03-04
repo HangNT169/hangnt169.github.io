@@ -1181,12 +1181,17 @@ pre {
   display: block;
   position: absolute;
   top: 50%;
-  right: -17px;
+  right: -12px;
   transform: translateY(-50%);
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-left: 10px solid #4d94d2;
 }
+
+.menu:hover::before {
+  transform: translateY(-50%) rotate(180deg);
+}
+
 
 
   .menu {
