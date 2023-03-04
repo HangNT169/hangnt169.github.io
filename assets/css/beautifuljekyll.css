@@ -1232,6 +1232,62 @@ pre {
     margin-bottom: 0; /* loại bỏ khoảng cách trống ở phía dưới menu */
   }
 
+  .menuRight {
+    position: fixed;
+    top: 50%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #4d94d2;
+    padding: 10px;
+    z-index: 9999;
+  }
+
+  .menuRight li i {
+    font-size: 20px;
+    margin-right: auto; /* khoảng cách giữa icon và nội dung */
+    transition: transform 0.3s ease-in-out; /* thêm transition để hiệu ứng mượt hơn */
+  }
+
+  .menuRight ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menuRight li {
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+    display: flex; /* để tạo hiệu ứng dọc cho icon */
+    align-items: center; /* để căn giữa icon theo chiều dọc */
+  }
+
+  .menuRight a {
+    color: #fff;
+    text-decoration: none;
+    display: flex; /* để tạo hiệu ứng dọc cho icon */
+    align-items: center; /* để căn giữa icon theo chiều dọc */  
+  }
+
+ /* .menuRight li:hover {
+    transform: translateX(10px); 
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); 
+  }*/
+
+  .menuRight li i:hover {
+    transform: scale(1.5); /* phóng to icon lên 1.2 lần */
+    transition: 1s;
+  }
+
+  .menuRight li:first-child {
+    margin-top: 0; /* loại bỏ khoảng cách trống ở phía trên menuRight */
+  }
+
+  .menuRight li:last-child {
+    margin-bottom: 0; /* loại bỏ khoảng cách trống ở phía dưới menu */
+  }
+
 .highlight-container {
   position: relative;
 }
