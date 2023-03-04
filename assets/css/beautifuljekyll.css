@@ -1176,6 +1176,19 @@ pre {
   color: rgb(234, 234, 5) !important;
 }
 
+.menu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #4d94d2;
+}
+
+
   .menu {
     position: fixed;
     top: 50%;
