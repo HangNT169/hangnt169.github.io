@@ -10,6 +10,7 @@ const macDinh = document.querySelector("#macDinh");
 const backgroundMacDinh = document.querySelector("#backgroundMacDinh");
 const background1 = document.querySelector("#background1");
 const background2 = document.querySelector("#background2");
+const background3 = document.querySelector("#background3");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const postMeta = document.querySelectorAll("span.post-meta");
@@ -159,6 +160,10 @@ function checkBackgroundShow() {
   if (checkBackground == "2") {
     document.body.style.background =
       "url('/assets/img/anhnen1.jpg')";
+  }
+  if (checkBackground == "3") {
+    document.body.style.background =
+      "url('/assets/img/bgimage.png')";
   }
 }
 
@@ -834,4 +839,10 @@ background2.addEventListener("click", function () {
   document.body.style.background =
     "url('/assets/img/anhnen1.jpg')";
   localStorage.setItem("checkBackground", "2");
+});
+
+background3.addEventListener("click", function () {
+  document.body.style.background =
+    "url('/assets/img/bgimage.png')";
+  localStorage.setItem("checkBackground", "3");
 });
