@@ -154,16 +154,13 @@ function checkBackgroundShow() {
     document.body.style.background = "transparent";
   }
   if (checkBackground == "1") {
-    document.body.style.background =
-      "url('/assets/img/anhnen2.jpg')";
+    document.body.style.background = "url('/assets/img/anhnen2.jpg')";
   }
   if (checkBackground == "2") {
-    document.body.style.background =
-      "url('/assets/img/anhnen1.jpg')";
+    document.body.style.background = "url('/assets/img/anhnen1.jpg')";
   }
   if (checkBackground == "3") {
-    document.body.style.background =
-      "url('/assets/img/bgimage.png')";
+    document.body.style.background = "url('/assets/img/bgimage.png')";
   }
 }
 
@@ -830,19 +827,20 @@ backgroundMacDinh.addEventListener("click", function () {
 });
 
 background1.addEventListener("click", function () {
-  document.body.style.background =
-    "url('/assets/img/anhnen2.jpg')";
+  document.body.style.background = "url('/assets/img/anhnen2.jpg')";
   localStorage.setItem("checkBackground", "1");
 });
 
 background2.addEventListener("click", function () {
-  document.body.style.background =
-    "url('/assets/img/anhnen1.jpg')";
+  document.body.style.background = "url('/assets/img/anhnen1.jpg')";
   localStorage.setItem("checkBackground", "2");
 });
 
 background3.addEventListener("click", function () {
-  document.body.style.background =
-    "url('/assets/img/bgimage.png')";
+  document.body.style.background = "url('/assets/img/bgimage.png')";
   localStorage.setItem("checkBackground", "3");
+});
+
+document.querySelector(".menu::before").addEventListener(function () {
+  document.querySelector(".menu").toggleClass("menu-expanded");
 });

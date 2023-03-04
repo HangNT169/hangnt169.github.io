@@ -1176,6 +1176,10 @@ pre {
   color: rgb(234, 234, 5) !important;
 }
 
+.menu-expanded {
+  display: none;
+}
+
 .menu::before {
   content: "";
   display: block;
