@@ -1192,6 +1192,10 @@ pre {
   border-left: 15px solid #4d94d2;
 }
 
+.menu:hover + .menu-items {
+  transform: translateX(0);
+}
+
 .menu:hover::before {
   transform: translateY(-50%) rotate(180deg);
   transition: 0.75s;
