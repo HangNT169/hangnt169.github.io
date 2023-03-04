@@ -7,6 +7,9 @@ const laRoi = document.querySelector("#laRoi");
 const saoRoi = document.querySelector("#saoRoi");
 const hoaHong = document.querySelector("#hoaHong");
 const macDinh = document.querySelector("#macDinh");
+const backgroundMacDinh = document.querySelector("#backgroundMacDinh");
+const background1 = document.querySelector("#background1");
+const background2 = document.querySelector("#background2");
 const p_tag = document.querySelectorAll("p.copyright.text-muted");
 const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
 const postMeta = document.querySelectorAll("span.post-meta");
@@ -797,4 +800,8 @@ highlights.forEach(function (highlight) {
       button.textContent = "Copy";
     }, 2000);
   });
+});
+
+backgroundMacDinh.addEventListener("click", function () {
+  document.body.style.background = "transparent";
 });
