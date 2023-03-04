@@ -147,6 +147,23 @@ function changeSkin() {
   index++;
 }
 
+function checkBackgroundShow() {
+  let checkBackground = localStorage.setItem("checkBackground");
+  if (checkBackground == "0") {
+    document.body.style.background = "transparent";
+  }
+  if (checkBackground == "1") {
+    document.body.style.background =
+      "url('/assets/img/anhnen2.jpg') no-repeat center center fixed";
+  }
+  if (checkBackground == "2") {
+    document.body.style.background =
+      "url('/assets/img/anhnen1.jpg') no-repeat center center fixed";
+  }
+}
+
+checkBackgroundShow();
+
 if (value) {
   changeSkin();
 } else {
@@ -804,4 +821,17 @@ highlights.forEach(function (highlight) {
 
 backgroundMacDinh.addEventListener("click", function () {
   document.body.style.background = "transparent";
+  localStorage.setItem("checkBackground", "0");
+});
+
+background1.addEventListener("click", function () {
+  document.body.style.background =
+    "url('/assets/img/anhnen2.jpg') no-repeat center center fixed";
+  localStorage.setItem("checkBackground", "1");
+});
+
+background2.addEventListener("click", function () {
+  document.body.style.background =
+    "url('/assets/img/anhnen1.jpg') no-repeat center center fixed";
+  localStorage.setItem("checkBackground", "2");
 });
