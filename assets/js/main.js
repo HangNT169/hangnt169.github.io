@@ -148,7 +148,7 @@ function changeSkin() {
 }
 
 function checkBackgroundShow() {
-  let checkBackground = localStorage.setItem("checkBackground");
+  let checkBackground = localStorage.getItem("checkBackground");
   if (checkBackground == "0") {
     document.body.style.background = "transparent";
   }
