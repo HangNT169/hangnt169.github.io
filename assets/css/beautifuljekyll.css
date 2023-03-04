@@ -1181,7 +1181,7 @@ pre {
   display: block;
   position: absolute;
   top: 50%;
-  right: -12px;
+  right: -17px;
   transform: translateY(-50%);
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
@@ -1190,7 +1190,7 @@ pre {
 
 .menu:hover::before {
   transform: translateY(-50%) rotate(180deg);
-  transition: 1s;
+  transition: 0.75s;
 }
 
 
