@@ -841,6 +841,3 @@ background3.addEventListener("click", function () {
   localStorage.setItem("checkBackground", "3");
 });
 
-document.querySelector(".menu::before").addEventListener(function () {
-  document.querySelector(".menu").toggleClass("menu-expanded");
-});

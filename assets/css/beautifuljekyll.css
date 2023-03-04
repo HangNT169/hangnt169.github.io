@@ -1176,32 +1176,6 @@ pre {
   color: rgb(234, 234, 5) !important;
 }
 
-.menu-expanded {
-  display: none;
-}
-
-.menu::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: -17px;
-  transform: translateY(-50%);
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 15px solid #4d94d2;
-}
-
-.menu:hover + .menu-items {
-  transform: translateX(0);
-}
-
-.menu:hover::before {
-  transform: translateY(-50%) rotate(180deg);
-  transition: 0.75s;
-}
-
-
 
   .menu {
     position: fixed;
