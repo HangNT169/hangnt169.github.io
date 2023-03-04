@@ -154,11 +154,11 @@ function checkBackgroundShow() {
   }
   if (checkBackground == "1") {
     document.body.style.background =
-      "url('/assets/img/anhnen2.jpg') no-repeat center center fixed";
+      "url('/assets/img/anhnen2.jpg')";
   }
   if (checkBackground == "2") {
     document.body.style.background =
-      "url('/assets/img/anhnen1.jpg') no-repeat center center fixed";
+      "url('/assets/img/anhnen1.jpg')";
   }
 }
 
@@ -826,12 +826,12 @@ backgroundMacDinh.addEventListener("click", function () {
 
 background1.addEventListener("click", function () {
   document.body.style.background =
-    "url('/assets/img/anhnen2.jpg') no-repeat center center fixed";
+    "url('/assets/img/anhnen2.jpg')";
   localStorage.setItem("checkBackground", "1");
 });
 
 background2.addEventListener("click", function () {
   document.body.style.background =
-    "url('/assets/img/anhnen1.jpg') no-repeat center center fixed";
+    "url('/assets/img/anhnen1.jpg')";
   localStorage.setItem("checkBackground", "2");
 });
