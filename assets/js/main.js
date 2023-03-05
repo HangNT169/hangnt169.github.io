@@ -381,19 +381,15 @@ function createCanvasTuyetRoi() {
   // Vẽ hạt tuyết
   function drawSnowflakes() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
     for (var i = 0; i < snowflakes.length; i++) {
       var flake = snowflakes[i];
       ctx.save();
       ctx.fillStyle = snowflakeGradient;
       ctx.translate(flake.x, flake.y);
       ctx.rotate(flake.angle);
-      ctx.fillRect(
-        -flake.radius,
-        -flake.radius,
-        flake.radius * 2,
-        flake.radius * 2
-      );
+      ctx.beginPath();
+      ctx.arc(0, 0, flake.radius, 0, Math.PI * 2);
+      ctx.fill();
       ctx.restore();
     }
     moveSnowflakes();
@@ -840,4 +836,3 @@ background3.addEventListener("click", function () {
   document.body.style.background = "url('/assets/img/bgimage.png')";
   localStorage.setItem("checkBackground", "3");
 });
-
