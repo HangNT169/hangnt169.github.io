@@ -1316,11 +1316,7 @@ pre {
   line-height: 40px;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-
-#back-to-top-btn.visible {
-  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 #back-to-top-btn:hover {

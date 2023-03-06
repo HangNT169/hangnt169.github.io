@@ -848,7 +848,18 @@ window.onscroll = function () {
   }
 };
 
-btn.onclick = function () {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+btn.onclick = function() {
+  scrollToTop(500);
 };
+
+function scrollToTop(scrollDuration) {
+  var scrollStep = -window.scrollY / (scrollDuration / 15);
+  var scrollInterval = setInterval(function() {
+    if (window.scrollY !== 0) {
+      window.scrollBy(0, scrollStep);
+    } else {
+      clearInterval(scrollInterval);
+    }
+  },15);
+}
+
