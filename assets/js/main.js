@@ -60,6 +60,7 @@ const filteredElements = Array.from(allElements).filter(
     !element.classList.contains("fa-image") &&
     !element.classList.contains("fa-headphones") &&
     !element.classList.contains("fa-star") &&
+    !element.classList.contains("fa-chevron") &&
     !element.classList.contains("fa-leaf") &&
     !element.classList.contains("a-custom") &&
     !element.classList.contains("fa-sun") &&
