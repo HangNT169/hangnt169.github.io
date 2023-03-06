@@ -836,3 +836,17 @@ background3.addEventListener("click", function () {
   document.body.style.background = "url('/assets/img/bgimage.png')";
   localStorage.setItem("checkBackground", "3");
 });
+
+window.onscroll = function () {
+  var btn = document.getElementById("back-to-top-btn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
+
+btn.onclick = function () {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+};
