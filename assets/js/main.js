@@ -42,6 +42,7 @@ const filteredElements = Array.from(allElements).filter(
     element.id !== "logout" &&
     element.id !== "logoutPost" &&
     element.id !== "nav-search-exit" &&
+    element.id !== "back-to-top-btn" &&
     !element.classList.contains("avatar-container") &&
     element.tagName !== "H1" &&
     !element.classList.contains("post-heading") &&
