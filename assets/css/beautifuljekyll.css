@@ -1315,8 +1315,6 @@ pre {
   font-size: 20px;
   line-height: 40px;
   text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
 }
 
 #back-to-top-btn:hover {
