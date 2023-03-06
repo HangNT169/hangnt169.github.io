@@ -837,8 +837,9 @@ background3.addEventListener("click", function () {
   localStorage.setItem("checkBackground", "3");
 });
 
+var btn = document.getElementById("back-to-top-btn");
+
 window.onscroll = function () {
-  var btn = document.getElementById("back-to-top-btn");
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     btn.style.display = "block";
   } else {
