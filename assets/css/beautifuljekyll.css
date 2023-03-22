@@ -1327,11 +1327,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #4d94d2;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #356b8fc1;
+  background-color: #ffffffc1;
   border-radius: 10px;
 }
 
