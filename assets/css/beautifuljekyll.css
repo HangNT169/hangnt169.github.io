@@ -1322,6 +1322,18 @@ pre {
   background-color: #1e4fa8;
 }
 
+body::-webkit-scrollbar {
+  width: 8px; 
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #356b8fc1;
+  border-radius: 10px;
+}
 
 
 
