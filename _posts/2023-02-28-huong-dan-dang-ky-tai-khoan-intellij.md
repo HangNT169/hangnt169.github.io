@@ -130,3 +130,7 @@ Sau đó bạn tích các ô rồi ấn tiếp
 ![image](https://user-images.githubusercontent.com/97737045/221764341-e8c5fbc3-e4b0-4197-8e66-afc9b3a4ece6.png)
 
 Các bạn có thể xem thêm video hướng dẫn : [tại đây](https://youtu.be/3JiWOF-KM5c)
+
+Video hướng dẫn cài đặt Inteliij của cô HangNT169: [tại đây](https://www.youtube.com/watch?v=wPZas8c00GA&list=PLLoi_UNiyVQYnBexjr_F_EUPB76plrvzw)
+
+## THE END

@@ -27,4 +27,6 @@ Build system: Có thể chọn Maven hoặc Gradle đều được
 <br/>
 Các bạn có thể xem thêm video hướng dẫn tại đây : [tại đây](https://youtu.be/3JiWOF-KM5c)
 
+Video hướng dẫn của cô HangNT169: [tại đây](https://www.youtube.com/watch?v=70Qpc0PO8sc&list=PLLoi_UNiyVQYnBexjr_F_EUPB76plrvzw&index=3)
+
 ## The End

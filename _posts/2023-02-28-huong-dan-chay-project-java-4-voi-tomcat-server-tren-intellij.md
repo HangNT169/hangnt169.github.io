@@ -61,4 +61,6 @@ Như vậy là các bạn đã hoàn thành việc setup tomcat vào project đ�
 <br/>
 Các bạn có thể xem thêm video hướng dẫn tại đây : [tại đây](https://youtu.be/3JiWOF-KM5c)
 
+Video hướng dẫn của cô HangNT169: [tại đây](https://www.youtube.com/watch?v=DEyecpT24e0&list=PLLoi_UNiyVQYnBexjr_F_EUPB76plrvzw&index=4)
+
 ## The End

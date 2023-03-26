@@ -121,3 +121,7 @@ tags: [Huớng dẫn tải và sử dụng mysql]
 ![image](https://user-images.githubusercontent.com/97737045/221545425-022d0d55-7dd5-4eda-b33f-7ea7f0477421.png)
 
 Các bạn có thể xem thêm video hướng dẫn : [tại đây](https://youtu.be/3JiWOF-KM5c)
+
+Video hướng dẫn tải mysql của cô HangNT169: [tại đây](https://www.youtube.com/watch?v=nX2MVoZ2T2s&list=PLLoi_UNiyVQYnBexjr_F_EUPB76plrvzw&index=2)
+
+## THE END
