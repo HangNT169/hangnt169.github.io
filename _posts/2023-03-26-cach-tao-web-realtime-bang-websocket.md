@@ -14,9 +14,11 @@ tags: [Cách tạo Web realtime đơn giản bằng Websocket, Java Spring Boot,
 ###  Websocket giống HTTP ở điểm gì?
 - Điểm giống nhau là cả WebSocket và HTTP đều là những giao thức hỗ trợ việc truyền tải thông tin giữa máy chủ và máy trạm.
 - Mục đích của các nhà phát triển khi tạo ra WebSocket là nhằm để khắc phục được nhược điểm độ trễ cao của HTTP.
+
 ###  Websocket khác HTTP ở điểm gì?
 - HTTP là giao thức 1 chiều dựa theo giao thức TCP, bạn có thể tạo ra các kết nối dựa vào request HTTP, sau khi kết nối được thực hiện xong và được phản hồi lại, quá trình sẽ kết thúc và đóng lại.
 - Trong khi đó, WebSocket là một giao thức truyền tải 2 chiều giữa máy chủ và máy khách. Dữ liệu có thể truyền 2 chiều giữa máy khách – máy chủ hoặc máy chủ – máy khách dựa trên những kết nối đã được thiết lập.
+
 ###  Nên sử dụng WebSocket trong trường hợp nào?
 - Ứng dụng theo thời gian thực
 - Game Online
