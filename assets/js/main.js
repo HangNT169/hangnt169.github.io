@@ -819,25 +819,25 @@ highlights.forEach(function (highlight) {
   });
 });
 
-backgroundMacDinh.addEventListener("click", function () {
-  document.body.style.background = "transparent";
-  localStorage.setItem("checkBackground", "0");
-});
+// backgroundMacDinh.addEventListener("click", function () {
+//   document.body.style.background = "transparent";
+//   localStorage.setItem("checkBackground", "0");
+// });
 
-background1.addEventListener("click", function () {
-  document.body.style.background = "url('/assets/img/anhnen2.jpg')";
-  localStorage.setItem("checkBackground", "1");
-});
+// background1.addEventListener("click", function () {
+//   document.body.style.background = "url('/assets/img/anhnen2.jpg')";
+//   localStorage.setItem("checkBackground", "1");
+// });
 
-background2.addEventListener("click", function () {
-  document.body.style.background = "url('/assets/img/anhnen1.jpg')";
-  localStorage.setItem("checkBackground", "2");
-});
+// background2.addEventListener("click", function () {
+//   document.body.style.background = "url('/assets/img/anhnen1.jpg')";
+//   localStorage.setItem("checkBackground", "2");
+// });
 
-background3.addEventListener("click", function () {
-  document.body.style.background = "url('/assets/img/bgimage.png')";
-  localStorage.setItem("checkBackground", "3");
-});
+// background3.addEventListener("click", function () {
+//   document.body.style.background = "url('/assets/img/bgimage.png')";
+//   localStorage.setItem("checkBackground", "3");
+// });
 
 var btn = document.getElementById("back-to-top-btn");
 
