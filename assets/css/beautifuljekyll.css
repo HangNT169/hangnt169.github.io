@@ -1308,6 +1308,7 @@ pre {
   display: none;
   background-color: #4d94d2;
   color: #fff;
+  cursor: pointer;
   border: none;
   border-radius: 50%;
   width: 40px;
