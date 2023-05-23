@@ -1,80 +1,80 @@
-const page_link = document.querySelectorAll(".page-link");
-const toggle = document.querySelector(".toggle");
-const botNuoc = document.querySelector("#botNuoc");
-const tuyetRoi = document.querySelector("#tuyetRoi");
-const muaRoi = document.querySelector("#muaRoi");
-const laRoi = document.querySelector("#laRoi");
-const saoRoi = document.querySelector("#saoRoi");
-const hoaHong = document.querySelector("#hoaHong");
-const macDinh = document.querySelector("#macDinh");
-const backgroundMacDinh = document.querySelector("#backgroundMacDinh");
-const background1 = document.querySelector("#background1");
-const background2 = document.querySelector("#background2");
-const background3 = document.querySelector("#background3");
-const p_tag = document.querySelectorAll("p.copyright.text-muted");
-const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
-const postMeta = document.querySelectorAll("span.post-meta");
-const allElements = document.querySelectorAll("*");
-const heading = document.querySelector(".page-heading h1");
-let interValId;
-var canvas = null;
-var interValIdHoaHong;
-var interValIdMuaRoi;
-var interValIdSaoRoi;
-var interValIdLaRoi;
-var ctx;
-var animationId;
-var bubbles = [];
+// const page_link = document.querySelectorAll(".page-link");
+// const toggle = document.querySelector(".toggle");
+// const botNuoc = document.querySelector("#botNuoc");
+// const tuyetRoi = document.querySelector("#tuyetRoi");
+// const muaRoi = document.querySelector("#muaRoi");
+// const laRoi = document.querySelector("#laRoi");
+// const saoRoi = document.querySelector("#saoRoi");
+// const hoaHong = document.querySelector("#hoaHong");
+// const macDinh = document.querySelector("#macDinh");
+// const backgroundMacDinh = document.querySelector("#backgroundMacDinh");
+// const background1 = document.querySelector("#background1");
+// const background2 = document.querySelector("#background2");
+// const background3 = document.querySelector("#background3");
+// const p_tag = document.querySelectorAll("p.copyright.text-muted");
+// const p1_tag = document.querySelectorAll("p.theme-by.text-muted");
+// const postMeta = document.querySelectorAll("span.post-meta");
+// const allElements = document.querySelectorAll("*");
+// const heading = document.querySelector(".page-heading h1");
+// let interValId;
+// var canvas = null;
+// var interValIdHoaHong;
+// var interValIdMuaRoi;
+// var interValIdSaoRoi;
+// var interValIdLaRoi;
+// var ctx;
+// var animationId;
+// var bubbles = [];
 
-var icon = document.createElement("link");
-icon.type = "image/x-icon";
-icon.rel = "shortcut icon";
-icon.href = "../../assets/img/avatar-icon.jpg";
-document.getElementsByTagName("head")[0].appendChild(icon);
+// var icon = document.createElement("link");
+// icon.type = "image/x-icon";
+// icon.rel = "shortcut icon";
+// icon.href = "../../assets/img/avatar-icon.jpg";
+// document.getElementsByTagName("head")[0].appendChild(icon);
 
-const filteredElements = Array.from(allElements).filter(
-  (element) =>
-    !element.classList.contains("container-md") &&
-    !element.classList.contains("row") &&
-    !element.classList.contains("col-xl-8") &&
-    !element.classList.contains("") &&
-    element.id !== "nav-search-input" &&
-    element.id !== "logout" &&
-    element.id !== "logoutPost" &&
-    element.id !== "nav-search-exit" &&
-    element.id !== "back-to-top-btn" &&
-    !element.classList.contains("avatar-container") &&
-    element.tagName !== "H1" &&
-    !element.classList.contains("post-heading") &&
-    !element.classList.contains("post-subheading") &&
-    !element.classList.contains("menu") &&
-    !element.classList.contains("ul-custom") &&
-    !element.classList.contains("li-custom") &&
-    !element.classList.contains("fa-home") &&
-    !element.classList.contains("fa-snowflake") &&
-    !element.classList.contains("fa-circle") &&
-    !element.classList.contains("fa-sun") &&
-    !element.classList.contains("fa-grin-hearts") &&
-    !element.classList.contains("fa-cloud-rain") &&
-    !element.classList.contains("fa-file-image") &&
-    !element.classList.contains("fa-image") &&
-    !element.classList.contains("fa-headphones") &&
-    !element.classList.contains("fa-star") &&
-    !element.classList.contains("fa-chevron-up") &&
-    !element.classList.contains("fa-leaf") &&
-    !element.classList.contains("a-custom") &&
-    !element.classList.contains("fa-sun") &&
-    !element.classList.contains("fa-moon") &&
-    !element.classList.contains("dropdown-item") &&
-    !element.classList.contains("toggle")
-);
+// const filteredElements = Array.from(allElements).filter(
+//   (element) =>
+//     !element.classList.contains("container-md") &&
+//     !element.classList.contains("row") &&
+//     !element.classList.contains("col-xl-8") &&
+//     !element.classList.contains("") &&
+//     element.id !== "nav-search-input" &&
+//     element.id !== "logout" &&
+//     element.id !== "logoutPost" &&
+//     element.id !== "nav-search-exit" &&
+//     element.id !== "back-to-top-btn" &&
+//     !element.classList.contains("avatar-container") &&
+//     element.tagName !== "H1" &&
+//     !element.classList.contains("post-heading") &&
+//     !element.classList.contains("post-subheading") &&
+//     !element.classList.contains("menu") &&
+//     !element.classList.contains("ul-custom") &&
+//     !element.classList.contains("li-custom") &&
+//     !element.classList.contains("fa-home") &&
+//     !element.classList.contains("fa-snowflake") &&
+//     !element.classList.contains("fa-circle") &&
+//     !element.classList.contains("fa-sun") &&
+//     !element.classList.contains("fa-grin-hearts") &&
+//     !element.classList.contains("fa-cloud-rain") &&
+//     !element.classList.contains("fa-file-image") &&
+//     !element.classList.contains("fa-image") &&
+//     !element.classList.contains("fa-headphones") &&
+//     !element.classList.contains("fa-star") &&
+//     !element.classList.contains("fa-chevron-up") &&
+//     !element.classList.contains("fa-leaf") &&
+//     !element.classList.contains("a-custom") &&
+//     !element.classList.contains("fa-sun") &&
+//     !element.classList.contains("fa-moon") &&
+//     !element.classList.contains("dropdown-item") &&
+//     !element.classList.contains("toggle")
+// );
 
-let index = 0;
+// let index = 0;
 
-let value = localStorage.getItem("check_skin") === "true";
-toggle.addEventListener("click", () => {
-  changeSkin();
-});
+// let value = localStorage.getItem("check_skin") === "true";
+// toggle.addEventListener("click", () => {
+//   changeSkin();
+// });
 
 // function changeSkin() {
 //   if (index % 2 == 0) {
@@ -150,23 +150,23 @@ toggle.addEventListener("click", () => {
 //   index++;
 // }
 
-function checkBackgroundShow() {
-  let checkBackground = localStorage.getItem("checkBackground");
-  if (checkBackground == "0") {
-    document.body.style.background = "transparent";
-  }
-  if (checkBackground == "1") {
-    document.body.style.background = "url('/assets/img/anhnen2.jpg')";
-  }
-  if (checkBackground == "2") {
-    document.body.style.background = "url('/assets/img/anhnen1.jpg')";
-  }
-  if (checkBackground == "3") {
-    document.body.style.background = "url('/assets/img/bgimage.png')";
-  }
-}
+// function checkBackgroundShow() {
+//   let checkBackground = localStorage.getItem("checkBackground");
+//   if (checkBackground == "0") {
+//     document.body.style.background = "transparent";
+//   }
+//   if (checkBackground == "1") {
+//     document.body.style.background = "url('/assets/img/anhnen2.jpg')";
+//   }
+//   if (checkBackground == "2") {
+//     document.body.style.background = "url('/assets/img/anhnen1.jpg')";
+//   }
+//   if (checkBackground == "3") {
+//     document.body.style.background = "url('/assets/img/bgimage.png')";
+//   }
+// }
 
-checkBackgroundShow();
+// checkBackgroundShow();
 
 // if (value) {
 //   changeSkin();
