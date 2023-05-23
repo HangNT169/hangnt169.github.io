@@ -20,6 +20,7 @@ author: Nguyễn Thúy Hằng
 ###############################################
 
 navbar-links:
+
   👩 About Me:
     - Nguyễn Thúy Hằng: "https://github.com/HangNT169"
   🤙 Contact:
@@ -27,6 +28,7 @@ navbar-links:
     - Phạm Xuân Hải: "https://github.com/xuanhai2907"
     - Nguyễn Quốc Huy: "https://github.com/Huya22042003"
   🎧 Radio lofi chill: https://thangncph26123.github.io/lofi-chill-by-ban-giau-ten/
+  
 
 ################
 # --- Logo --- #
@@ -294,4 +296,7 @@ plugins:
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
+
+
+
 
