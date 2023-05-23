@@ -137,32 +137,9 @@ function changeSkin() {
 
 // checkBackgroundShow();
 
-// if (value) {
-//   changeSkin();
-// } else {
-//   let checkHieuUng = localStorage.getItem("checkHieuUng");
-//   if (checkHieuUng == "0") {
-//     macDinhFunction();
-//   }
-//   if (checkHieuUng == "1") {
-//     tuyetRoiFunction();
-//   }
-//   if (checkHieuUng == "2") {
-//     botNuocFunction();
-//   }
-//   if (checkHieuUng == "3") {
-//     hoaHongFunction();
-//   }
-//   if (checkHieuUng == "4") {
-//     muaRoiFunction();
-//   }
-//   if (checkHieuUng == "5") {
-//     saoRoiFunction();
-//   }
-//   if (checkHieuUng == "6") {
-//     laRoiFunction();
-//   }
-// }
+if (value) {
+  changeSkin();
+} 
 
 // // bọt nước
 // botNuoc.addEventListener("click", function () {
